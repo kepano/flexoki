@@ -2,7 +2,7 @@
 
 Flexoki is an inky color scheme for prose and code. Flexoki is designed for reading and writing on digital screens. It is inspired by analog printing inks and warm shades of paper.
 
-Learn more at [flexoki.com](https://flexoki.com)
+Learn more at [stephango.com/flexoki](https://stephango.com/flexoki)
 
 ## Base tones
 
