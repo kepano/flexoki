@@ -50,3 +50,13 @@ Learn more at [stephango.com/flexoki](https://stephango.com/flexoki)
 | blue    | `#4385BE` | `67, 133, 190`  |
 | purple  | `#8B7EC8` | `139, 126, 200` |
 | magenta | `#CE5D97` | `206, 93, 151`  |
+
+## Apps
+
+Flexoki is available for the following apps:
+
+- Obsidian as a standalone theme (WIP), or part of [Minimal]([url](https://github.com/kepano/obsidian-minimal))
+
+## Contributing
+
+Flexoki is MIT licensed. You are free to port Flexoki to any app. Please include attribution and a link to [stephango.com/flexoki](https://stephango.com/flexoki) and add a link to your port in the list above via pull request.
