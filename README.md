@@ -55,7 +55,7 @@ Learn more at [stephango.com/flexoki](https://stephango.com/flexoki)
 
 Flexoki is available for the following apps:
 
-- Obsidian as a [standalone theme](https://github.com/kepano/obsidian-flexoki) and part of [Minimal](https://github.com/kepano/obsidian-minimal)
+- Obsidian as a [standalone theme](https://github.com/kepano/flexoki-obsidian) and part of [Minimal](https://github.com/kepano/obsidian-minimal)
 
 ## Contributing
 
