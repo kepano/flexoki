@@ -1,4 +1,4 @@
-![Flexoki](flexoki-dark.png)
+[![Flexoki](flexoki-dark.png)](https://stephango.com/flexoki)
 
 Flexoki is an inky color scheme for prose and code. Flexoki is designed for reading and writing on digital screens. It is inspired by analog printing inks and warm shades of paper.
 
