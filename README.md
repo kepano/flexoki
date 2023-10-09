@@ -20,6 +20,7 @@ Flexoki is available for the following apps and tools.
 - [Neovim](https://github.com/kepano/flexoki/tree/main/neovim) by @stevedylandev
 - [macOS Terminal](https://github.com/kepano/flexoki/tree/main/terminal) by @getninjaN
 - [Windows Terminal](https://github.com/kepano/flexoki/tree/main/windows-terminal) by @2joukevandermaas
+- [Alacritty](https://github.com/kepano/flexoki/tree/main/alacritty) by @willtheodore
 
 ### Frameworks
 
@@ -61,7 +62,7 @@ Please [see documentation](https://stephango.com/flexoki) for how to apply these
 
 ### Dark colors
 
-| Color   | Hex       | RGB    |
+| Color   | Hex       | RGB            |
 | ------- | --------- | -------------- |
 | red     | `#AF3029` | `175, 48, 41`  |
 | orange  | `#BC5215` | `188, 82, 21`  |
@@ -74,7 +75,7 @@ Please [see documentation](https://stephango.com/flexoki) for how to apply these
 
 ### Light colors
 
-| Color   | Hex       | RGB     |
+| Color   | Hex       | RGB             |
 | ------- | --------- | --------------- |
 | red     | `#D14D41` | `209, 77, 65`   |
 | orange  | `#DA702C` | `218, 112, 44`  |
