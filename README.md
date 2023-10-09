@@ -55,16 +55,26 @@ Learn more at [stephango.com/flexoki](https://stephango.com/flexoki)
 | purple  | `#8B7EC8` | `139, 126, 200` |
 | magenta | `#CE5D97` | `206, 93, 151`  |
 
-## Apps
+## Ports
 
-Flexoki is available for the following apps:
+Flexoki is available for the following apps and tools
+
+### Apps
 
 - [Obsidian theme](https://github.com/kepano/flexoki-obsidian) and part of [Minimal theme](https://github.com/kepano/obsidian-minimal) by @kepano
-- [GIMP palette](https://github.com/kepano/flexoki/tree/main/gimp) by @xTibor
 - [iTerm2](https://github.com/kepano/flexoki/tree/main/iterm2) thanks to @techvlad
 - [Neovim](https://github.com/kepano/flexoki/tree/main/neovim) by @stevedylandev
 - [macOS Terminal](https://github.com/kepano/flexoki/tree/main/terminal) by @getninjaN
 - [Windows Terminal](https://github.com/kepano/flexoki/tree/main/windows-terminal) by 2joukevandermaas
+
+### Frameworks
+
+- [Shadcn](https://gist.github.com/phenomen/affd8c346538378548febd20dccdbfcc) by phenomen
+- [Tailwind](https://gist.github.com/martin-mael/4b50fa8e55da846f3f73399d84fa1848) by martin-mael
+
+## Other
+
+- [GIMP palette](https://github.com/kepano/flexoki/tree/main/gimp) by @xTibor
 
 ## Contributing
 
