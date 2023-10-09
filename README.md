@@ -15,12 +15,12 @@ Flexoki is available for the following apps and tools.
 ### Apps
 
 - [Obsidian theme](https://github.com/kepano/flexoki-obsidian) and part of [Minimal theme](https://github.com/kepano/obsidian-minimal) by @kepano
+- [Alacritty](https://github.com/kepano/flexoki/tree/main/alacritty) by @willtheodore
 - [iTerm2](https://github.com/kepano/flexoki/tree/main/iterm2) by @techvlad and @pingiun
 - [Kitty](https://github.com/kepano/flexoki/tree/main/kitty) by @peterjbachman
 - [Neovim](https://github.com/kepano/flexoki/tree/main/neovim) by @stevedylandev
 - [macOS Terminal](https://github.com/kepano/flexoki/tree/main/terminal) by @getninjaN
 - [Windows Terminal](https://github.com/kepano/flexoki/tree/main/windows-terminal) by @2joukevandermaas
-- [Alacritty](https://github.com/kepano/flexoki/tree/main/alacritty) by @willtheodore
 
 ### Frameworks
 
