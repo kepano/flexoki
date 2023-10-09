@@ -4,6 +4,10 @@ Flexoki is an inky color scheme for prose and code. Flexoki is designed for read
 
 Learn more at [stephango.com/flexoki](https://stephango.com/flexoki)
 
+## Syntax highlighting
+
+![Flexoki](flexoki-code.png)
+
 ## Base tones
 
 | Value | Hex       | RGB             |
