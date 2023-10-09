@@ -57,7 +57,7 @@ Learn more at [stephango.com/flexoki](https://stephango.com/flexoki)
 
 ## Ports
 
-Flexoki is available for the following apps and tools
+Flexoki is available for the following apps and tools.
 
 ### Apps
 
@@ -72,7 +72,7 @@ Flexoki is available for the following apps and tools
 - [Shadcn](https://gist.github.com/phenomen/affd8c346538378548febd20dccdbfcc) by phenomen
 - [Tailwind](https://gist.github.com/martin-mael/4b50fa8e55da846f3f73399d84fa1848) by martin-mael
 
-## Other
+### Other
 
 - [GIMP palette](https://github.com/kepano/flexoki/tree/main/gimp) by @xTibor
 
