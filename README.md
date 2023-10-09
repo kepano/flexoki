@@ -21,6 +21,7 @@ Flexoki is available for the following apps and tools.
 - [Neovim](https://github.com/kepano/flexoki/tree/main/neovim) by @stevedylandev
 - [macOS Terminal](https://github.com/kepano/flexoki/tree/main/terminal) by @getninjaN
 - [Windows Terminal](https://github.com/kepano/flexoki/tree/main/windows-terminal) by @2joukevandermaas
+- Many more via [iTerm2-Color-Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes) by @jamesbvaughan
 
 ### Frameworks
 
