@@ -28,6 +28,7 @@ Flexoki is available for the following apps and tools.
 
 ### Other
 
+- [Figma](https://www.figma.com/community/file/1293274371462921490/flexoki) by @kepano
 - [GIMP palette](https://github.com/kepano/flexoki/tree/main/gimp) by @xTibor
 
 ## Contributing
