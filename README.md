@@ -60,10 +60,11 @@ Learn more at [stephango.com/flexoki](https://stephango.com/flexoki)
 Flexoki is available for the following apps:
 
 - [Obsidian theme](https://github.com/kepano/flexoki-obsidian) and part of [Minimal theme](https://github.com/kepano/obsidian-minimal) by @kepano
-- [iTerm2 theme](https://github.com/kepano/flexoki/tree/main/iterm2) thanks to @techvlad
-- [macOS terminal theme](https://github.com/kepano/flexoki/tree/main/terminal) by @getninjaN
-- [Windows terminal theme](https://github.com/kepano/flexoki/tree/main/windows-terminal) by 2joukevandermaas
 - [GIMP palette](https://github.com/kepano/flexoki/tree/main/gimp) by @xTibor
+- [iTerm2](https://github.com/kepano/flexoki/tree/main/iterm2) thanks to @techvlad
+- [Neovim](https://github.com/kepano/flexoki/tree/main/neovim) by @stevedylandev
+- [macOS Terminal](https://github.com/kepano/flexoki/tree/main/terminal) by @getninjaN
+- [Windows Terminal](https://github.com/kepano/flexoki/tree/main/windows-terminal) by 2joukevandermaas
 
 ## Contributing
 
