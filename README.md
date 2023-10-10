@@ -16,6 +16,7 @@ Flexoki is available for the following apps and tools.
 
 - [Obsidian theme](https://github.com/kepano/flexoki-obsidian) and part of [Minimal theme](https://github.com/kepano/obsidian-minimal) by @kepano
 - [Alacritty](https://github.com/kepano/flexoki/tree/main/alacritty) by @willtheodore
+- [Emacs](https://github.com/crmsnbleyd/flexoki-emacs-theme) by @crmsnbleyd
 - [iTerm2](https://github.com/kepano/flexoki/tree/main/iterm2) by @techvlad and @pingiun
 - [Kitty](https://github.com/kepano/flexoki/tree/main/kitty) by @peterjbachman
 - [Neovim](https://github.com/kepano/flexoki/tree/main/neovim) by @stevedylandev
