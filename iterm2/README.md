@@ -7,5 +7,5 @@
 ## Flexoki Light
 ![Flexoki Light](screenshots/flexoki_light.itermcolors.png)
 
-## Flexoki Dimmed
+## Flexoki Light Dimmed
 ![Flexoki Light](screenshots/flexoki_light_dimmed.itermcolors.png)
