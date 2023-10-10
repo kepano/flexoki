@@ -1,6 +1,6 @@
 {
   "name": "Flexoki Theme",
-  "type": "dark",
+  "type": "light",
   "colors": {
     "editor.background": "#FFFCF0",
     "editor.foreground": "#100F0F",
