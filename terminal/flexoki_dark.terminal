@@ -1506,12 +1506,8 @@
 	WCRjbGFzc2VzV05TQ29sb3KiFhhYTlNPYmplY3QIERokKTI3SUxRU1ddZGp3foWHiY6Z
 	oqqtAAAAAAAAAQEAAAAAAAAAGQAAAAAAAAAAAAAAAAAAALY=
 	</data>
-	<key>columnCount</key>
-	<integer>212</integer>
 	<key>name</key>
 	<string>Flexoki</string>
-	<key>rowCount</key>
-	<integer>55</integer>
 	<key>type</key>
 	<string>Window Settings</string>
 </dict>
