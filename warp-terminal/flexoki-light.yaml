@@ -1,0 +1,25 @@
+# inspiration https://stephango.com/flexoki
+
+accent: "#DA702C" # Accent color for UI elements
+background: "#FFFCF0" # Terminal background color
+details: lighter # Whether the theme is lighter or darker.
+foreground: "#100F0F" # The foreground color.
+terminal_colors: # Ansi escape colors.
+  bright:
+    black: "#1C1B1A"
+    blue: "#4385BE"
+    cyan: "#3AA99F"
+    green: "#879A39"
+    magenta: "#CE5D97"
+    red: "#D14D41"
+    white: "#6F6E69"
+    yellow: "#D0A215"
+  normal:
+    black: "#282726"
+    blue: "#205EA6"
+    cyan: "#24837B"
+    green: "#66800B"
+    magenta: "#A02F6F"
+    red: "#AF3029"
+    white: "#878580"
+    yellow: "#AD8301"
