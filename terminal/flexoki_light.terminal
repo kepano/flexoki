@@ -1571,12 +1571,8 @@
 	AR0NaQ1uDXkNgg2PDZINnw2oDa0NtQAAAAAAAAIBAAAAAAAAACgAAAAAAAAAAAAAAAAA
 	AA24
 	</data>
-	<key>columnCount</key>
-	<integer>212</integer>
 	<key>name</key>
 	<string>Flexoki - Light</string>
-	<key>rowCount</key>
-	<integer>55</integer>
 	<key>type</key>
 	<string>Window Settings</string>
 </dict>
