@@ -21,7 +21,6 @@ Flexoki is available for the following apps and tools.
 - [Neovim](https://github.com/kepano/flexoki/tree/main/neovim) by @stevedylandev
 - [macOS Terminal](https://github.com/kepano/flexoki/tree/main/terminal) by @getninjaN
 - [Visual Studio Code](https://github.com/kepano/flexoki/tree/main/vscode) by @Railly
-- [Xresources](https://github.com/kepano/flexoki/tree/main/xresources) by @dmb2
 - [WezTerm](https://github.com/kepano/flexoki/tree/main/wezterm) by @jbromley
 - [Xresources](https://github.com/kepano/flexoki/tree/main/xresources) by @dmb2
 
