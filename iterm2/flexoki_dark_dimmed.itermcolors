@@ -7,11 +7,11 @@
         <key>Color Space</key>
         <string>sRGB</string>
         <key>Red Component</key>
-        <real>0.06274509803921569</real>
+        <real>0.10980392156862745</real>
         <key>Green Component</key>
-        <real>0.058823529411764705</real>
+        <real>0.10588235294117647</real>
         <key>Blue Component</key>
-        <real>0.058823529411764705</real>
+        <real>0.10196078431372549</real>
         <key>Alpha Component</key>
         <real>1</real>
     </dict>
@@ -215,11 +215,11 @@
         <key>Color Space</key>
         <string>sRGB</string>
         <key>Red Component</key>
-        <real>0.06274509803921569</real>
+        <real>0.10980392156862745</real>
         <key>Green Component</key>
-        <real>0.058823529411764705</real>
+        <real>0.10588235294117647</real>
         <key>Blue Component</key>
-        <real>0.058823529411764705</real>
+        <real>0.10196078431372549</real>
         <key>Alpha Component</key>
         <real>1</real>
     </dict>
@@ -280,11 +280,11 @@
         <key>Color Space</key>
         <string>sRGB</string>
         <key>Red Component</key>
-        <real>0.06274509803921569</real>
+        <real>0.10980392156862745</real>
         <key>Green Component</key>
-        <real>0.058823529411764705</real>
+        <real>0.10588235294117647</real>
         <key>Blue Component</key>
-        <real>0.058823529411764705</real>
+        <real>0.10196078431372549</real>
         <key>Alpha Component</key>
         <real>1</real>
     </dict>
@@ -319,11 +319,11 @@
         <key>Color Space</key>
         <string>sRGB</string>
         <key>Red Component</key>
-        <real>0.06274509803921569</real>
+        <real>0.10980392156862745</real>
         <key>Green Component</key>
-        <real>0.058823529411764705</real>
+        <real>0.10588235294117647</real>
         <key>Blue Component</key>
-        <real>0.058823529411764705</real>
+        <real>0.10196078431372549</real>
         <key>Alpha Component</key>
         <real>1</real>
     </dict>
