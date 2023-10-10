@@ -14,13 +14,14 @@ Flexoki is available for the following apps and tools.
 
 ### Apps
 
-- [Obsidian theme](https://github.com/kepano/flexoki-obsidian) and part of [Minimal theme](https://github.com/kepano/obsidian-minimal) by @kepano
 - [Alacritty](https://github.com/kepano/flexoki/tree/main/alacritty) by @willtheodore
 - [Emacs](https://github.com/crmsnbleyd/flexoki-emacs-theme) by @crmsnbleyd
 - [iTerm2](https://github.com/kepano/flexoki/tree/main/iterm2) by @techvlad and @pingiun
 - [Kitty](https://github.com/kepano/flexoki/tree/main/kitty) by @peterjbachman
 - [Neovim](https://github.com/kepano/flexoki/tree/main/neovim) by @stevedylandev
+- [Obsidian](https://github.com/kepano/flexoki-obsidian) and part of [Minimal theme](https://github.com/kepano/obsidian-minimal) by @kepano
 - [macOS Terminal](https://github.com/kepano/flexoki/tree/main/terminal) by @getninjaN
+- [Sublime Text](https://github.com/kepano/flexoki-sublime) by @kepano
 - [Visual Studio Code](https://github.com/kepano/flexoki/tree/main/vscode) by @Railly
 - [Warp](https://github.com/kepano/flexoki/tree/main/warp-terminal) by @tplesnar
 - [WezTerm](https://github.com/kepano/flexoki/tree/main/wezterm) by @jbromley
