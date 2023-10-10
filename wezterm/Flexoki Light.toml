@@ -1,0 +1,43 @@
+# name: Flexoki (Light)
+# author: Kepano
+# license: MIT
+# upstream: https://stephango.com/flexoki
+# blurb: An inky color scheme for prose and code[colors]
+
+ansi = [
+  "#AF3029",
+  "#BC5215",
+  "#AD8301",
+  "#66800B",
+  "#24837B",
+  "#205EA6",
+  "#5E409D",
+  "#A02F6F",
+]
+brights = [
+  "#D14D41",
+  "#DA702C",
+  "#D0A215",
+  "#879A39",
+  "#3AA99F",
+  "#4385BE",
+  "#8B7EC8",
+  "#CE5D97",
+]
+foreground = "#100F0F"
+background = "#FFFCF0"
+
+selection_fg = "#100F0F"
+selection_bg = "#CECDC3"
+
+cursor_bg = "#100F0F"
+cursor_border = "#100F0F"
+cursor_fg = "#FFFCF0"
+
+[colors.indexed]
+
+[metadata]
+aliases = [ "Flexoki Light", ]
+name = "Flexoki Light"
+origin_url = "https://stephango.com/flexoki"
+wezterm_version = "Always"
