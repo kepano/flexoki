@@ -38,7 +38,7 @@ Flexoki is available for the following apps and tools.
 
 ## Contributing
 
-Flexoki is MIT licensed. You are free to port Flexoki to any app. Please include attribution and a link to [stephango.com/flexoki](https://stephango.com/flexoki) and add a link to your port in the list above via pull request.
+Flexoki is MIT licensed. You are free to port Flexoki to any app. Please include attribution and a link to [stephango.com/flexoki](https://stephango.com/flexoki). Add a link to your port in the list above via pull request.
 
 ## Colors
 
