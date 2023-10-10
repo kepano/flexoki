@@ -1,0 +1,62 @@
+! Flexoki color scheme for the X Window System
+!
+! https://stephango.com/flexoki
+! xrdb -merge $PWD/Xresources/flexoki-dark
+
+! Light Tones 
+#define yellow       #AD8301
+#define orange       #BC5215
+#define red          #AF3029
+#define magenta      #A02F6F
+#define violet       #5E409D
+#define blue         #205EA6
+#define cyan         #24837B
+#define green        #66800B
+#define white        #FFFCF0
+#define black        #100F0F
+
+
+#define bryellow     #D0A215
+#define brorange     #DA702C
+#define brred        #D14D41
+#define brmagenta    #CE5D97
+#define brviolet     #8B7EC8
+#define brblue       #4385BE
+#define brcyan       #3AA99F
+#define brgreen      #879A39
+#define brwhite      #F2F0E5 
+#define brblack      #1C1B1A 
+
+*background:              white
+*foreground:              black
+*fading:                  40
+*fadeColor:               white
+*cursorColor:             black
+*pointerColorBackground:  brwhite
+*pointerColorForeground:  white
+
+
+!black
+*color0:     brblack
+*color8:     black
+!red
+*color1:     brred
+*color9:     red
+!green
+*color2:     brgreen
+*color10:    green
+!yellow
+*color3:     bryellow
+*color11:    yellow
+!blue
+*color4:     brblue
+*color12:    blue
+!magenta
+*color5:     brmagenta
+*color13:    magenta
+!cyan
+*color6:     brcyan
+*color14:    cyan
+!white
+*color7:     brwhite
+*color15:    white
