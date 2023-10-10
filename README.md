@@ -22,6 +22,7 @@ Flexoki is available for the following apps and tools.
 - [macOS Terminal](https://github.com/kepano/flexoki/tree/main/terminal) by @getninjaN
 - [Visual Studio Code](https://github.com/kepano/flexoki/tree/main/vscode) by @raillyhugo
 - [Windows Terminal](https://github.com/kepano/flexoki/tree/main/windows-terminal) by @2joukevandermaas
+- [X resources](https://github.com/kepano/flexoki/tree/main/resources) by @dmb2
 
 ### Frameworks
 
