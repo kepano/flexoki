@@ -1,4 +1,4 @@
-[![Flexoki](flexoki-dark.png)](https://stephango.com/flexoki)
+[![Flexoki](_images/flexoki-dark.png)](https://stephango.com/flexoki)
 
 Flexoki is an inky color scheme for prose and code. Flexoki is designed for reading and writing on digital screens. It is inspired by analog printing inks and warm shades of paper.
 
@@ -6,7 +6,7 @@ Learn more at [stephango.com/flexoki](https://stephango.com/flexoki)
 
 ## Syntax highlighting
 
-![Flexoki](flexoki-code.png)
+![Flexoki](_images/flexoki-code.png)
 
 ## Ports
 
@@ -43,6 +43,11 @@ Flexoki is available for the following apps and tools.
 ## Contributing
 
 Flexoki is MIT licensed. You are free to port Flexoki to any app. Please include attribution and a link to [stephango.com/flexoki](https://stephango.com/flexoki). Add a link to your port in the list above via pull request.
+
+
+## Screenshots
+
+![Flexoki](_images/flexoki-apps-sublime.png)
 
 ## Colors
 
