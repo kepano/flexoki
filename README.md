@@ -47,11 +47,11 @@ Flexoki is MIT licensed. You are free to port Flexoki to any app. Please include
 
 ## Screenshots
 
-Sublime Text
+#### Sublime Text
 
 ![Flexoki Sublime](_images/flexoki-sublime.png)
 
-VS Code
+#### VS Code
 
 ![Flexoki VS Code Dark](vscode/flexoki-vscode-dark.png)
 ![Flexoki VS Code Light](vscode/flexoki-vscode-light.png)
