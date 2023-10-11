@@ -99,7 +99,7 @@ const flexokiDarkDimmedColorScheme: iTerm2ColorScheme =
   )
 
 const flexokiLightColorScheme: iTerm2ColorScheme = {
-  'Ansi 0 Color': palette.lt_bg,
+  'Ansi 0 Color': palette.lt_tx,
   'Ansi 1 Color': palette.lt_re,
   'Ansi 2 Color': palette.lt_gr,
   'Ansi 3 Color': palette.lt_ye,
@@ -117,12 +117,12 @@ const flexokiLightColorScheme: iTerm2ColorScheme = {
   'Ansi 15 Color': palette.lt_ui_3,
   'Background Color': palette.lt_bg,
   'Foreground Color': palette.lt_tx,
-  'Link Color': palette.paper,
+  'Link Color': palette.lt_tx_2,
   'Bold Color': palette.paper,
   'Cursor Color': palette.lt_tx,
   'Cursor Text Color': palette.lt_bg,
   'Cursor Guide Color': palette.paper,
-  'Selection Color': palette.lt_tx,
+  'Selection Color': palette.lt_tx_2,
   'Selected Text Color': palette.lt_bg
 }
 
@@ -130,7 +130,6 @@ const flexokiLightDimmedColorScheme: iTerm2ColorScheme =
   Object.assign<iTerm2ColorScheme, Partial<iTerm2ColorScheme>>(
     { ...flexokiLightColorScheme },
     {
-      'Ansi 0 Color': palette.lt_bg_2,
       'Background Color': palette.lt_bg_2,
       'Cursor Text Color': palette.lt_bg_2,
       'Selected Text Color': palette.lt_bg_2
