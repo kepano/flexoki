@@ -80,7 +80,7 @@
     "terminal.ansiRed": "#AF3029",
     "terminal.ansiWhite": "#CECDC3",
     "terminal.ansiYellow": "#AD8301",
-    "terminal.background": "#343331",
+    "terminal.background": "#1C1B1A",
     "terminal.foreground": "#CECDC3",
     "gitDecoration.conflictingResourceForeground": "#DA702C",
     "gitDecoration.deletedResourceForeground": "#D14D41",
@@ -277,9 +277,12 @@
       }
     },
     {
-      "scope": "punctuation",
+      "scope": [
+        "punctuation",
+        "meta.brace"
+      ],
       "settings": {
-        "foreground": "#CECDC3"
+        "foreground": "#878580"
       }
     },
     {
@@ -292,7 +295,7 @@
     {
       "scope": "punctuation.definition.tag",
       "settings": {
-        "foreground": "#CECDC3",
+        "foreground": "#878580",
         "fontStyle": ""
       }
     },
