@@ -1,6 +1,6 @@
 {
   "name": "Flexoki Theme",
-  "type": "light",
+  "type": "dark",
   "colors": {
     "editor.background": "#FFFCF0",
     "editor.foreground": "#100F0F",
@@ -80,7 +80,7 @@
     "terminal.ansiRed": "#D14D41",
     "terminal.ansiWhite": "#100F0F",
     "terminal.ansiYellow": "#D0A215",
-    "terminal.background": "#DAD8CE",
+    "terminal.background": "#F2F0E5",
     "terminal.foreground": "#100F0F",
     "gitDecoration.conflictingResourceForeground": "#BC5215",
     "gitDecoration.deletedResourceForeground": "#AF3029",
@@ -277,9 +277,12 @@
       }
     },
     {
-      "scope": "punctuation",
+      "scope": [
+        "punctuation",
+        "meta.brace"
+      ],
       "settings": {
-        "foreground": "#100F0F"
+        "foreground": "#6F6E69"
       }
     },
     {
@@ -292,7 +295,7 @@
     {
       "scope": "punctuation.definition.tag",
       "settings": {
-        "foreground": "#100F0F",
+        "foreground": "#6F6E69",
         "fontStyle": ""
       }
     },
