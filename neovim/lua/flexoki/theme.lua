@@ -191,7 +191,7 @@ theme.set_highlights = function()
 
   -- Whichkey
   hl(0, "WhichKey", { fg = c.purple, bg = 'NONE' })
-  hl(0, "WhichKeySeperator", { fg = c.green, bg = 'NONE' })
+  hl(0, "WhichKeySeparator", { fg = c.green, bg = 'NONE' })
   hl(0, "WhichKeyGroup", { fg = c.blue, bg = 'NONE' })
   hl(0, "WhichKeyDesc", { fg = c.light_blue, bg = 'NONE' })
   hl(0, "WhichKeyFloat", { fg = 'NONE', bg = c.dark })
