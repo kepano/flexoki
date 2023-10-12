@@ -247,7 +247,7 @@ markdownEscape = 'yellow'
 
 [Whichkey]
 WhichKey = 'purple'
-WhichKeySeperator = 'green'
+WhichKeySeparator = 'green'
 WhichKeyGroup = 'blue'
 WhichKeyDesc = 'light_blue'
 WhichKeyFloat = '- dark'
