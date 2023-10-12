@@ -6,33 +6,33 @@
 
 [colors]
 ansi = [
-  "#AF3029",
-  "#BC5215",
-  "#AD8301",
-  "#66800B",
-  "#24837B",
-  "#205EA6",
-  "#5E409D",
-  "#A02F6F",
+  "rgb(16, 15, 15)",    #Black
+  "rgb(175, 48, 41)",   # Red
+  "rgb(102, 128, 11)",  # Green
+  "rgb(173, 131, 1)",   # Yellow
+  "rgb(32, 94, 166)",   # Blue
+  "rgb(94, 64, 157)",   # Purple
+  "rgb(36, 131, 123)",  # Cyan
+  "rgb(135, 133, 128)", # White
 ]
 brights = [
-  "#D14D41",
-  "#DA702C",
-  "#D0A215",
-  "#879A39",
-  "#3AA99F",
-  "#4385BE",
-  "#8B7EC8",
-  "#CE5D97",
+  "rgb(28, 27, 26)",    # Black
+  "rgb(209, 77, 65)",   # Red
+  "rgb(135, 154, 57)",  # Green
+  "rgb(208, 162, 21)",  # Yellow
+  "rgb(67, 133, 190)",  # Blue
+  "rgb(139, 126, 200)", # Purple
+  "rgb(58, 169, 159)",  # Cyan
+  "rgb(206, 205, 195)", # White
 ]
-foreground = "#FFFCF0"
-background = "#100F0F"
+foreground = "rgb(206, 205, 195)"
+background = "rgb(16, 15, 15)"
 
-cursor_bg = "#FFFCF0"
-cursor_border = "#FFFCF0"
-cursor_fg = "#100f0f"
-selection_bg = "#403E3C"
-selection_fg = "#FFFCF0"
+cursor_bg = "rgb(206, 205, 195)"
+cursor_border = "rgb(206, 205, 195)"
+cursor_fg = "rgb(16, 15, 15)"
+selection_bg = "rgb(64, 62, 60)"
+selection_fg = "rgb(206, 205, 195)"
 
 [colors.indexed]
 
