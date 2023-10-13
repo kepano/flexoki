@@ -6,7 +6,7 @@
 
 ## Light
 
-![](assets/flexoki_fzf_light.png)
+![Flexoki Light for FZF](screenshots/flexoki-fzf-light.png)
 
 * Bash/ZSH:
 
@@ -21,7 +21,7 @@
 
 ## Dark
 
-![](assets/flexoki_fzf_dark.png)
+![Flexoki Dark for FZF](screenshots/flexoki-fzf-dark.png)
 
 * Bash/ZSH:
 
