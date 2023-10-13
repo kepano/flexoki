@@ -1,3 +1,5 @@
+# Flexoki for iTerm2
+
 ## Flexoki Dark
 ![Flexoki Dark](screenshots/flexoki_dark.itermcolors.png)
 

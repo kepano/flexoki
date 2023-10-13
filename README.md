@@ -16,8 +16,8 @@ Flexoki is available for the following apps and tools.
 
 - [Alacritty](https://github.com/kepano/flexoki/tree/main/alacritty) by @willtheodore
 - [Emacs](https://github.com/crmsnbleyd/flexoki-emacs-theme) by @crmsnbleyd
+- [IntelliJ](https://github.com/kepano/flexoki/tree/main/intellij) by @annoyingmouse
 - [iTerm2](https://github.com/kepano/flexoki/tree/main/iterm2) by @techvlad and @pingiun
-- [Jetbrains IDEs](https://github.com/kepano/flexoki/tree/main/intellij) by @annoyingmouse
 - [Kitty](https://github.com/kepano/flexoki/tree/main/kitty) by @peterjbachman
 - [Lite XL](https://github.com/kepano/flexoki/tree/main/lite_xl) by @chambored
 - [Neovim](https://github.com/kepano/flexoki/tree/main/neovim) by @stevedylandev

@@ -1,10 +1,12 @@
-## Flexoki-Dark-color-theme
+# Flexoki for IntelliJ
+
+## Flexoki Dark
 
 ![Flexoki Dark](screenshots/flexoki-intellij-dark.png)
 
 ![Flexoki Dark](screenshots/flexoki-intellij-dark-2.png)
 
-## Flexoki-Light-color-theme
+## Flexoki Light
 
 ![Flexoki Light](screenshots/flexoki-intellij-light.png)
 
