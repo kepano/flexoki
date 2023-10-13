@@ -1,4 +1,4 @@
-# Flexoki for IntelliJ
+# Flexoki for IntelliJ and Jetbrains IDEs
 
 ## Flexoki Dark
 
