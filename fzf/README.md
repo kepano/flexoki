@@ -2,8 +2,6 @@
 	<h1 align="center">Flexofi for FZF</h2>
 </p>
 
--
-
 <p align="center">An inky color scheme for prose and code.</p>
 
 ## Light
