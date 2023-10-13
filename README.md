@@ -54,8 +54,8 @@ Flexoki is MIT licensed. You are free to port Flexoki to any app. Please include
 
 #### VS Code
 
-![Flexoki VS Code Dark](vscode/flexoki-vscode-dark.png)
-![Flexoki VS Code Light](vscode/flexoki-vscode-light.png)
+![Flexoki VS Code Dark](vscode/screenshots/flexoki-vscode-dark.png)
+![Flexoki VS Code Light](vscode/screenshots/flexoki-vscode-light.png)
 
 ## Colors
 
