@@ -1,7 +1,8 @@
 local M = {}
-local theme = require('flexoki.theme')
 
-M.setup = function()
+M.setup = function(opts)
+	local theme = opts.variant == 'light' and require('flexoki.theme-light') or require('flexoki.theme')
+	
   vim.cmd('hi clear')
 
   vim.o.background = 'dark'
