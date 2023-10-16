@@ -33,9 +33,20 @@ require('packer').startup(function(use)
 end)
 ```
 
+## Usage
+
+* Dark
+
 ```lua
 -- Set colorscheme after options
 vim.cmd('colorscheme flexoki')
+```
+
+* Light
+
+```lua
+-- Set colorscheme after options
+vim.cmd('colorscheme flexoki-light')
 ```
 
 ## Building and Contributing
