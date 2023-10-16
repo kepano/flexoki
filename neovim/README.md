@@ -1,7 +1,10 @@
 # flexoki-nvim
 A nvim adaptation of flexoki by Steph Ango (stephango.com/flexoki)
 
-This is an early version and is very simple, only supporting dark mode for now.
+![Flexoki Dark for Neovim](screenshots/flexoki-neovim-dark.png)
+
+![Flexoki Light for Neovim](screenshots/flexoki-neovim-light.png)
+
 
 ## Installation
 To install simply add via your plugin manager and call the theme
@@ -30,9 +33,20 @@ require('packer').startup(function(use)
 end)
 ```
 
+## Usage
+
+* Dark
+
 ```lua
 -- Set colorscheme after options
 vim.cmd('colorscheme flexoki')
+```
+
+* Light
+
+```lua
+-- Set colorscheme after options
+vim.cmd('colorscheme flexoki-light')
 ```
 
 ## Building and Contributing
