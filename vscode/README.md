@@ -4,8 +4,8 @@ Also available as an option in [One Hunter theme](https://github.com/Railly/one-
 
 ## Flexoki Dark
 
-![Flexoki dark for VS Code](screensots/flexoki-vscode-dark.png)
+![Flexoki dark for VS Code](screenshots/flexoki-vscode-dark.png)
 
 ## Flexoki Light
 
-![Flexoki light for VS Code](screensots/flexoki-vscode-light.png)
+![Flexoki light for VS Code](screenshots/flexoki-vscode-light.png)
