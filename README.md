@@ -23,6 +23,7 @@ Flexoki is available for the following apps and tools.
 - [Neovim](https://github.com/kepano/flexoki/tree/main/neovim) by @stevedylandev and @dinocosta
 - [Obsidian](https://github.com/kepano/flexoki-obsidian) and part of [Minimal theme](https://github.com/kepano/obsidian-minimal) by @kepano
 - [macOS Terminal](https://github.com/kepano/flexoki/tree/main/terminal) by @getninjaN
+- [Slack](https://github.com/kepano/flexoki/tree/main/slack) by @maxobat
 - [Sublime Text](https://github.com/kepano/flexoki-sublime) by @kepano
 - [Visual Studio Code](https://github.com/kepano/flexoki/tree/main/vscode) by @Railly
 - [Warp](https://github.com/kepano/flexoki/tree/main/warp-terminal) by @tplesnar
@@ -44,7 +45,6 @@ Flexoki is available for the following apps and tools.
 ## Contributing
 
 Flexoki is MIT licensed. You are free to port Flexoki to any app. Please include attribution and a link to [stephango.com/flexoki](https://stephango.com/flexoki). Add a link to your port in the list above via pull request.
-
 
 ## Screenshots
 
