@@ -118,7 +118,7 @@ const flexokiLightColorScheme: iTerm2ColorScheme = {
   'Background Color': palette.lt_bg,
   'Foreground Color': palette.lt_tx,
   'Link Color': palette.lt_tx_2,
-  'Bold Color': palette.paper,
+  'Bold Color': palette.lt_tx_2,
   'Cursor Color': palette.lt_tx,
   'Cursor Text Color': palette.lt_bg,
   'Cursor Guide Color': palette.paper,
