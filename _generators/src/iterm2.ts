@@ -118,10 +118,10 @@ const flexokiLightColorScheme: iTerm2ColorScheme = {
   'Background Color': palette.lt_bg,
   'Foreground Color': palette.lt_tx,
   'Link Color': palette.lt_tx_2,
-  'Bold Color': palette.paper,
+  'Bold Color': palette.lt_tx_2,
   'Cursor Color': palette.lt_tx,
   'Cursor Text Color': palette.lt_bg,
-  'Cursor Guide Color': palette.paper,
+  'Cursor Guide Color': palette.lt_bg_2,
   'Selection Color': palette.lt_tx_2,
   'Selected Text Color': palette.lt_bg
 }
@@ -132,6 +132,7 @@ const flexokiLightDimmedColorScheme: iTerm2ColorScheme =
     {
       'Background Color': palette.lt_bg_2,
       'Cursor Text Color': palette.lt_bg_2,
+      'Cursor Guide Color': palette.lt_ui,
       'Selected Text Color': palette.lt_bg_2
     }
   )
