@@ -26,6 +26,7 @@ Flexoki is available for the following apps and tools.
 - [Slack](https://github.com/kepano/flexoki/tree/main/slack) by @maxobat
 - [Sublime Text](https://github.com/kepano/flexoki-sublime) by @kepano
 - [Visual Studio Code](https://github.com/kepano/flexoki/tree/main/vscode) by @Railly
+- [Visual Studio Code & Windows Terminal](https://github.com/mthierman/Flexoki) by @mthierman
 - [Warp](https://github.com/kepano/flexoki/tree/main/warp-terminal) by @tplesnar
 - [WezTerm](https://github.com/kepano/flexoki/tree/main/wezterm) by @jbromley
 - [Windows Terminal](https://github.com/kepano/flexoki/tree/main/windows-terminal) by @joukevandermaas
