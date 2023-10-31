@@ -1,0 +1,56 @@
+# Name: Flexoki
+# Variant: Light
+# URL: https://stephango.com/flexoki
+# Description: An inky color scheme for prose and code.
+# Note: Color hexes in lower case to avoid tmux flag confusion
+
+flexoki_black="#100f0f"
+flexoki_base_950="#1c1b1a"
+flexoki_base_900="#282726"
+flexoki_base_850="#343331"
+flexoki_base_800="#403e3c"
+flexoki_base_700="#575653"
+flexoki_base_600="#6f6e69"
+flexoki_base_500="#878580"
+flexoki_base_300="#b7b5ac"
+flexoki_base_200="#cecdc3"
+flexoki_base_150="#dad8ce"
+flexoki_base_100="#e6e4d9"
+flexoki_base_50="#f2f0e5"
+flexoki_paper="#fffcf0"
+
+flexoki_red="#d14d41"
+flexoki_orange="#da702c"
+flexoki_yellow="#d0a215"
+flexoki_green="#879a39"
+flexoki_cyan="#3aa99f"
+flexoki_blue="#4385be"
+flexoki_purple="#8b7ec8"
+flexoki_magenta="#ce5d97"
+
+flexoki_red_2="#af3029"
+flexoki_orange_2="#bc5215"
+flexoki_yellow_2="#ad8301"
+flexoki_green_2="#66800b"
+flexoki_cyan_2="#24837b"
+flexoki_blue_2="#205ea6"
+flexoki_purple_2="#5e409d"
+flexoki_magenta_2="#a02f6f"
+
+color_tx_1=$flexoki_black
+color_tx_2=$flexoki_base_600
+color_tx_3=$flexoki_base_300
+color_bg_1=$flexoki_paper
+color_bg_2=$flexoki_base_50
+color_ui_1=$flexoki_base_100
+color_ui_2=$flexoki_base_150
+color_ui_3=$flexoki_base_200
+
+color_red=$flexoki_red
+color_orange=$flexoki_orange
+color_yellow=$flexoki_yellow
+color_green=$flexoki_green
+color_cyan=$flexoki_cyan
+color_blue=$flexoki_blue
+color_purple=$flexoki_purple
+color_magenta=$flexoki_magenta
