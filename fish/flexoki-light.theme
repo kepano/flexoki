@@ -13,6 +13,8 @@ fish_color_param	       205ea6 # bl
 fish_color_comment	       b7b5ac # tx-3
 fish_color_autosuggestion      878580 # tx-2
 
-fish_pager_color_selected_prefix     fffcf0 # bg
-fish_pager_color_selected_completion f2f0e5 # bg-2
+fish_pager_color_description b7b5ac # tx-3
+fish_pager_color_selected_prefix      fffcf0 # bg
+fish_pager_color_selected_completion  fcf0e5 # bg-2
+fish_pager_color_selected_description e6e4d9 # ui
 fish_pager_color_selected_background --background=100f0f # tx
