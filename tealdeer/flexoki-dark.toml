@@ -1,0 +1,10 @@
+[style.description]
+foreground = { rgb = { r = 206, g = 205, b = 195 } }
+[style.command_name]
+foreground = { rgb = { r = 135, g = 154, b = 57 } }
+[style.example_text]
+foreground = { rgb = { r = 87, g = 86, b = 83 } }
+[style.example_code]
+foreground = { rgb = { r = 206, g = 205, b = 195} }
+[style.variable]
+foreground = { rgb = { r = 67, g = 133, b = 190} }
