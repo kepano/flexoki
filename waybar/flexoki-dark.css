@@ -1,0 +1,30 @@
+/*
+ * https://stephango.com/flexoki
+ */
+
+@define-color bg   #100f0f;
+@define-color bg-2 #1c1b1a;
+@define-color ui   #282726;
+@define-color ui-2 #343331;
+@define-color ui-3 #403e3c;
+@define-color tx-3 #575653;
+@define-color tx-2 #878580;
+@define-color tx   #cecdc3;
+
+@define-color re   #d14d41;
+@define-color or   #da702c;
+@define-color ye   #d0a215;
+@define-color gr   #879a39;
+@define-color cy   #3aa99f;
+@define-color bl   #4385be;
+@define-color pu   #8b7ec8;
+@define-color ma   #ce5d97;
+
+@define-color re-2 #af3029;
+@define-color or-2 #bc5215;
+@define-color ye-2 #ad8301;
+@define-color gr-2 #66800b;
+@define-color cy-2 #24937b;
+@define-color bl-2 #205ea6;
+@define-color pu-2 #5e409d;
+@define-color ma-2 #a02f6f;
