@@ -26,9 +26,11 @@ Flexoki is available for the following apps and tools.
 - [macOS Terminal](https://github.com/kepano/flexoki/tree/main/terminal) by @getninjaN
 - [Slack](https://github.com/kepano/flexoki/tree/main/slack) by @maxobat
 - [Sublime Text](https://github.com/kepano/flexoki-sublime) by @kepano
+- [Tealdeer](https://github.com/kepano/flexoki/tree/main/tealdeer) by @Orest58008
 - [tmux](https://github.com/kepano/flexoki/tree/main/tmux) by @tklai
 - [Visual Studio Code](https://github.com/kepano/flexoki/tree/main/vscode) by @Railly
 - [Warp](https://github.com/kepano/flexoki/tree/main/warp-terminal) by @tplesnar
+- [Waybar](https://github.com/kepano/flexoki/tree/main/waybar) by @Orest58008
 - [WezTerm](https://github.com/kepano/flexoki/tree/main/wezterm) by @jbromley
 - [Windows Terminal](https://github.com/kepano/flexoki/tree/main/windows-terminal) by @joukevandermaas
 - [Xresources](https://github.com/kepano/flexoki/tree/main/xresources) by @dmb2
