@@ -10,6 +10,7 @@ fish_color_redirection	ce5d97 # ma
 fish_color_end		ce5d97 # ma
 fish_color_error	d14d41 # re
 fish_color_param	4385be # bl
+fish_color_operator	878580 # tx-2
 fish_color_comment	575653 # tx-3
 
 fish_pager_color_description b7b5ac # tx-3

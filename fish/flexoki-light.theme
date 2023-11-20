@@ -2,16 +2,16 @@
 # url: https://stephango.com/flexoki
 # preferred_background: fffcf0 # bg
 
-fish_color_normal	       100f0f # tx
-fish_color_command	       bc5215 # or
-fish_color_keyword	       66800b # gr
-fish_color_quote	       24837b # cy
-fish_color_redirection	       a02f6f # ma
-fish_color_end		       a02f6f # ma
-fish_color_error	       af3029 # re
-fish_color_param	       205ea6 # bl
-fish_color_comment	       b7b5ac # tx-3
-fish_color_autosuggestion      878580 # tx-2
+fish_color_normal	100f0f # tx
+fish_color_command	bc5215 # or
+fish_color_keyword	66800b # gr
+fish_color_quote	24837b # cy
+fish_color_redirection	a02f6f # ma
+fish_color_end		a02f6f # ma
+fish_color_error	af3029 # re
+fish_color_param	205ea6 # bl
+fish_color_operator	6f6e69 # tx-2
+fish_color_comment	b7b5ac # tx-3
 
 fish_pager_color_description b7b5ac # tx-3
 fish_pager_color_selected_prefix      fffcf0 # bg
