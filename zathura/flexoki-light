@@ -1,0 +1,24 @@
+#
+# https://stephango.com/flexoki
+# 
+
+set	default-bg	\#FFFCF0 # bg
+set	default-fg	\#100F0F # tx
+
+set	inputbar-bg	\#F2F0E5 # bg-2
+set	inputbar-fg	\#100F0F # tx
+set	statusbar-bg	\#F2F0E5 # bg-2
+set	statusbar-fg	\#100F0F # tx
+
+set	notification-bg		\#F2F0E5 # bg-2
+set	notification-fg		\#100F0F # tx
+set	notification-error-bg	\#AF3029 # re
+set	notification-error-fg	\#100F0F # tx
+set	notification-warning-bg	\#DC5215 # or
+set	notification-warning-fg	\#100F0F # tx
+
+
+set	completion-bg		 \#F2F0E5 # bg-2
+set	completion-fg		 \#6F6E69 # tx-2
+set	completion-highlight-fg	 \#F2F0E5 # bg-2
+set	completion-highlight-bg	 \#100F0F # tx
