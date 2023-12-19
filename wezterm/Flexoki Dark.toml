@@ -6,38 +6,38 @@
 
 [colors]
 ansi = [
-  "rgb(16, 15, 15)",    #Black
-  "rgb(175, 48, 41)",   # Red
-  "rgb(102, 128, 11)",  # Green
-  "rgb(173, 131, 1)",   # Yellow
-  "rgb(32, 94, 166)",   # Blue
-  "rgb(94, 64, 157)",   # Purple
-  "rgb(36, 131, 123)",  # Cyan
-  "rgb(135, 133, 128)", # White
+  "#100F0F", #Black
+  "#AF3029", # Red
+  "#66800B", # Green
+  "#AD8301", # Yellow
+  "#205EA6", # Blue
+  "#5E409D", # Purple
+  "#24837B", # Cyan
+  "#CECDC3", # White
 ]
 brights = [
-  "rgb(28, 27, 26)",    # Black
-  "rgb(209, 77, 65)",   # Red
-  "rgb(135, 154, 57)",  # Green
-  "rgb(208, 162, 21)",  # Yellow
-  "rgb(67, 133, 190)",  # Blue
-  "rgb(139, 126, 200)", # Purple
-  "rgb(58, 169, 159)",  # Cyan
-  "rgb(206, 205, 195)", # White
+  "#575653", # Black
+  "#D14D41", # Red
+  "#879A39", # Green
+  "#D0A215", # Yellow
+  "#4385BE", # Blue
+  "#8B7EC8", # Purple
+  "#3AA99F", # Cyan
+  "#FFFCF0", # White
 ]
-foreground = "rgb(206, 205, 195)"
-background = "rgb(16, 15, 15)"
+foreground = "#CECDC3"
+background = "#100F0F"
 
-cursor_bg = "rgb(206, 205, 195)"
-cursor_border = "rgb(206, 205, 195)"
-cursor_fg = "rgb(16, 15, 15)"
-selection_bg = "rgb(64, 62, 60)"
-selection_fg = "rgb(206, 205, 195)"
+cursor_bg = "#CECDC3"
+cursor_border = "#CECDC3"
+cursor_fg = "#100F0F"
+selection_bg = "#282726"
+selection_fg = "#CECDC3"
 
 [colors.indexed]
 
 [metadata]
-aliases = [ "Flexoki Dark", ]
+aliases = ["Flexoki Dark"]
 name = "Flexoki Dark"
 origin_url = "https://stephango.com/flexoki"
 wezterm_version = "Always"
