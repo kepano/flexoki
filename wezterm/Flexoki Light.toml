@@ -6,39 +6,41 @@
 
 [colors]
 ansi = [
-  "#AF3029",
-  "#BC5215",
-  "#AD8301",
-  "#66800B",
-  "#24837B",
-  "#205EA6",
-  "#5E409D",
-  "#A02F6F",
+  "#100F0F", # Black
+  "#AF3029", # Red
+  "#66800B", # Green
+  "#AD8301", # Yellow
+  "#205EA6", # Blue
+  "#A02F6F", # Magenta
+  "#24837B", # Cyan
+  "#DAD8CE", # White
 ]
+
 brights = [
-  "#D14D41",
-  "#DA702C",
-  "#D0A215",
-  "#879A39",
-  "#3AA99F",
-  "#4385BE",
-  "#8B7EC8",
-  "#CE5D97",
+  "#B7B5AC", # Black
+  "#D14D41", # Red
+  "#879A39", # Green
+  "#D0A215", # Yellow
+  "#4385BE", # Blue
+  "#CE5D97", # Magenta
+  "#3AA99F", # Cyan
+  "#E6E4D9", # White
 ]
+
 foreground = "#100F0F"
 background = "#FFFCF0"
 
-selection_fg = "#100F0F"
-selection_bg = "#CECDC3"
-
-cursor_bg = "#100F0F"
-cursor_border = "#100F0F"
+cursor_bg = "#403E3C"
+cursor_border = "#403E3C"
 cursor_fg = "#FFFCF0"
+
+selection_fg = "#100F0F"
+selection_bg = "#E6E4D9"
 
 [colors.indexed]
 
 [metadata]
-aliases = [ "Flexoki Light", ]
+aliases = ["Flexoki Light"]
 name = "Flexoki Light"
 origin_url = "https://stephango.com/flexoki"
 wezterm_version = "Always"
