@@ -23,4 +23,4 @@
 4. Click "Profiles"
 5. Click the circle with three dots from the bottom of list
 6. Click "Import..."
-7. Select the download file
+7. Select the downloaded file
