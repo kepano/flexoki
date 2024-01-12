@@ -26,6 +26,7 @@ Flexoki is available for the following apps and tools.
 - [macOS Terminal](https://github.com/kepano/flexoki/tree/main/terminal) by @getninjaN
 - [Slack](https://github.com/kepano/flexoki/tree/main/slack) by @maxobat
 - [Sublime Text](https://github.com/kepano/flexoki-sublime) by @kepano
+- [Tape](https://github.com/kepano/flexoki/tree/main/tape) by @TheLastZombie
 - [Tealdeer](https://github.com/kepano/flexoki/tree/main/tealdeer) by @Orest58008
 - [tmux](https://github.com/kepano/flexoki/tree/main/tmux) by @tklai
 - [Visual Studio Code](https://github.com/kepano/flexoki/tree/main/vscode) by @Railly
