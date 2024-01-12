@@ -1,0 +1,21 @@
+<svg width="96px" height="64px" xmlns="http://www.w3.org/2000/svg" baseProfile="full" version="1.1">
+  <!-- Author: Steph Ango -->
+  <rect width="96" height="64" id="background" fill="#282726"/>
+  <!-- Foreground -->
+  <circle cx="24" cy="24" r="8" id="f_high" fill="#cecdc3"/>
+  <circle cx="40" cy="24" r="8" id="f_med" fill="#ce5d97"/>
+  <circle cx="56" cy="24" r="8" id="f_low" fill="0"/>
+  <circle cx="72" cy="24" r="8" id="f_inv" fill="#cecdc3"/>
+  <!-- Background -->
+  <circle cx="24" cy="40" r="8" id="b_high" fill="#100f0f"/>
+  <circle cx="40" cy="40" r="8" id="b_med" fill="#100f0f"/>
+  <circle cx="56" cy="40" r="8" id="b_low" fill="#1c1b1a"/>
+  <circle cx="72" cy="40" r="8" id="b_inv" fill="0"/>
+  <!-- Tape -->
+  <desc id="tape_style" fill="0"/>
+  <desc id="tape_priority" fill="#d14d41"/>
+  <desc id="tape_working" fill="#d0a215"/>
+  <desc id="tape_submitted" fill="#4385be"/>
+  <desc id="tape_approved" fill="#ce5d97"/>
+  <desc id="tape_done" fill="#879a39"/>
+</svg>
