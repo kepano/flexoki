@@ -25,6 +25,7 @@ Flexoki is available for the following apps and tools.
 - [Obsidian](https://github.com/kepano/flexoki-obsidian) and part of [Minimal theme](https://github.com/kepano/obsidian-minimal) by @kepano
 - [macOS Terminal](https://github.com/kepano/flexoki/tree/main/terminal) by @getninjaN
 - [Slack](https://github.com/kepano/flexoki/tree/main/slack) by @maxobat
+- [Standard Notes](https://github.com/myreli/sn-flexoki) by @myreli
 - [Sublime Text](https://github.com/kepano/flexoki-sublime) by @kepano
 - [Tape](https://github.com/kepano/flexoki/tree/main/tape) by @TheLastZombie
 - [Tealdeer](https://github.com/kepano/flexoki/tree/main/tealdeer) by @Orest58008
