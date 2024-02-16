@@ -21,9 +21,9 @@ Flexoki is available for the following apps and tools.
 - [iTerm2](https://github.com/kepano/flexoki/tree/main/iterm2) by @techvlad and @pingiun
 - [Kitty](https://github.com/kepano/flexoki/tree/main/kitty) by @peterjbachman
 - [Lite XL](https://github.com/kepano/flexoki/tree/main/lite_xl) by @chambored
+- [macOS Terminal](https://github.com/kepano/flexoki/tree/main/terminal) by @getninjaN
 - [Neovim](https://github.com/kepano/flexoki-neovim) by @stevedylandev and @dinocosta
 - [Obsidian](https://github.com/kepano/flexoki-obsidian) and part of [Minimal theme](https://github.com/kepano/obsidian-minimal) by @kepano
-- [macOS Terminal](https://github.com/kepano/flexoki/tree/main/terminal) by @getninjaN
 - [Slack](https://github.com/kepano/flexoki/tree/main/slack) by @maxobat
 - [Standard Notes](https://github.com/myreli/sn-flexoki) by @myreli
 - [Sublime Text](https://github.com/kepano/flexoki-sublime) by @kepano
