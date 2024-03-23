@@ -1,11 +1,10 @@
-# put this file in ~/.config/wal/colorschemes/dark
 {
     "wallpaper": "",
     "alpha": "100",
     "special": {
-        "background": "#282726",
-        "foreground": "#FFFCF0",
-        "cursor": "#FFFCF0"
+        "background": "#100F0F",
+        "foreground": "#CECDC3",
+        "cursor": "#CECDC3"
     },
     "colors": {
         "color0": "#100F0F",
@@ -16,13 +15,13 @@
         "color5": "#A02F6F",
         "color6": "#24837B",
         "color7": "#FFFCF0",
-        "color8": "#100F0F",
+        "color8": "#6F6E69",
         "color9": "#D14D41",
         "color10": "#879A39",
         "color11": "#D0A215",
         "color12": "#4385BE",
         "color13": "#CE5D97",
         "color14": "#3AA99F",
-        "color15": "#FFFCF0"
+        "color15": "#F2F0E5"
     }
 }
