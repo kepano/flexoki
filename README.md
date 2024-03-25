@@ -38,11 +38,16 @@ Flexoki is available for the following apps and tools.
 - [Windows Terminal](https://github.com/kepano/flexoki/tree/main/windows-terminal) by @joukevandermaas
 - [Xresources](https://github.com/kepano/flexoki/tree/main/xresources) by @dmb2
 
+### System themes
+- [gtk](https://github.com/kepano/flexoki/tree/main/gtk) by @hydroakri
+- [qt5ct/qt6ct](https://github.com/kepano/flexoki/tree/main/qt6ct) by @hydroakri
+
 ### Frameworks
 
 - [Shadcn](https://gist.github.com/phenomen/affd8c346538378548febd20dccdbfcc) by @phenomen
 - [Tailwind](https://gist.github.com/martin-mael/4b50fa8e55da846f3f73399d84fa1848) by @martin-mael
 - [theme.sh](https://github.com/kepano/flexoki/tree/main/theme.sh) by @TheLastZombie
+- [pywal](https://github.com/kepano/flexoki/tree/main/pywal) by @hydroakri
 
 ### Other
 
