@@ -1,0 +1,2 @@
+* Oomox
+Import your chosen colorscheme into Oomox with Import -> Oomox Colors File
