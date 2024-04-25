@@ -1,26 +1,24 @@
 @import url('https://mwittrien.github.io/BetterDiscordAddons/Themes/DiscordRecolor/DiscordRecolor.css');
 
 :root {
-  --accentcolor: 36,131,123;
-  --accentcolor2: 160,47,111;
-  --linkcolor: 58,169,159;
-  --mentioncolor: 208,162,21;
-  --textbrightest: 255,252,240;
-  --textbrighter: 242,240,229;
-  --textbright: 230,228,217;
-  --textdark: 218,216,206;
-  --textdarker: 206,205,195;
-  --textdarkest: 183,181,172;
-  --font: gg sans;
-  --backgroundaccent: 64,62,60;
-  --backgroundprimary: 16,15,15;
-  --backgroundsecondary: 28,27,26;
-  --backgroundsecondaryalt: 28,27,26;
-  --backgroundtertiary: 16,15,15;
-  --backgroundfloating: 28,27,26;
-  --settingsicons: 0;
+	--accentcolor: 36, 131, 123;	/* cy-2 */
+	--accentcolor2: 206, 93, 151;	/* ma */
+	--linkcolor: 58, 169, 159;	/* cy */
+	--mentioncolor: 208, 162, 21;	/* ye */
+	--textbrightest: 255, 252, 240;/*206, 205, 195*/
+	--textbrighter: 242, 240, 229;
+	--textbright: 230, 228, 217;
+	--textdark: 218, 216, 206;/*135, 133, 128*/
+	--textdarker: 206, 205, 195;
+	--textdarkest: 183, 181, 172;/*87, 86, 83*/
+	--font: gg sans;
+	--backgroundaccent: 64, 62, 60;	/* ui-3 */
+	--backgroundprimary: 16, 15, 15;	/* bg */
+	--backgroundsecondary: 28, 27, 26;
+	--backgroundsecondaryalt: 28, 27, 26;
+	--backgroundtertiary: 16, 15, 15;
+	--backgroundfloating: 28, 27, 26;
+	--settingsicons: 0;
 }
 
 /* Any custom CSS below here */
-
-
