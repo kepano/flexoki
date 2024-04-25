@@ -12,3 +12,13 @@
         1. Select "Online Themes"
         2. In the text input labelled "Theme Links", paste the URL to the raw file
 5. Restart Vesktop
+
+# Screenshots
+
+## Flexoki Light
+
+![The `#general` channel of the Obsidian Members Group guild with the Flexoki Light theme applied](screenshots/flexoki-discord-light.png)
+
+## Flexoki Dark
+
+![The `#general` channel of the Obsidian Members Group guild with the Flexoki Dark theme applied](screenshots/flexoki-discord-dark.png)
