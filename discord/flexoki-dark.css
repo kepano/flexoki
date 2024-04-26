@@ -14,10 +14,10 @@
 	--font: gg sans;
 	--backgroundaccent: 64, 62, 60;	/* ui-3 */
 	--backgroundprimary: 16, 15, 15;	/* bg */
-	--backgroundsecondary: 28, 27, 26;
-	--backgroundsecondaryalt: 28, 27, 26;
-	--backgroundtertiary: 16, 15, 15;
-	--backgroundfloating: 28, 27, 26;
+	--backgroundsecondary: 28, 27, 26;	/* bg-2 */
+	--backgroundsecondaryalt: 28, 27, 26;	/* bg-2 */
+	--backgroundtertiary: 16, 15, 15;	/* bg */
+	--backgroundfloating: 28, 27, 26;	/* bg-2 */
 	--settingsicons: 0;
 }
 
