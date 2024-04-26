@@ -5,12 +5,12 @@
 	--accentcolor2: 206, 93, 151;	/* ma */
 	--linkcolor: 58, 169, 159;	/* cy */
 	--mentioncolor: 208, 162, 21;	/* ye */
-	--textbrightest: 255, 252, 240;/*206, 205, 195*/
-	--textbrighter: 242, 240, 229;
-	--textbright: 230, 228, 217;
-	--textdark: 218, 216, 206;/*135, 133, 128*/
-	--textdarker: 206, 205, 195;
-	--textdarkest: 183, 181, 172;/*87, 86, 83*/
+	--textbrightest: 218, 216, 206;			/* could have been `tx` if there were, just like in light theme, one more colour between it and `tx-2` */
+	--textbrighter: 206, 205, 195;	/* tx */
+	--textbright: 183, 181, 172;
+	--textdark: 135, 133, 128;	/*tx-2*/
+	--textdarker: 111, 110, 105;
+	--textdarkest: 87, 86, 83;	/* tx-3 */
 	--font: gg sans;
 	--backgroundaccent: 64, 62, 60;	/* ui-3 */
 	--backgroundprimary: 16, 15, 15;	/* bg */
