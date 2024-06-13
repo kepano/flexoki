@@ -1,0 +1,4 @@
+* How to convert to Telegram Desktop theme format:
+1. Compress into zip archive
+2. Change ~.zip~ extension to ~.tdesktop-theme~
+3. Send the file to a chat and open it
