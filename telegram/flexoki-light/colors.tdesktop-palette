@@ -482,4 +482,13 @@ importantTooltipFg: toastFg; //
 importantTooltipFgLink: mediaviewTextLinkFg; // 
 outdatedFg: flexokiTx; // 
 outdateSoonBg: flexokiOr; // 
-outdatedBg: flexokiRe; // 
+outdatedBg: flexokiRe; //
+sideBarBadgeBg: flexokiUi // filters side bar badge background
+sideBarBadgeBgMuted: flexokiUi2 // filters side bar unimportant badge background
+sideBarBg: flexokiBg2 // filters side bar background
+sideBarBgActive: flexokiAccent // filters side bar active background
+sideBarBgRipple: flexokiBg // filters side bar ripple effect
+sideBarIconFg: windowFg // filters side bar icon
+sideBarIconFgActive: windowFg // filters side bar active item icon
+sideBarTextFg: windowFg // filters side bar text
+sideBarTextFgActive: windowFg // filters side bar active item text
