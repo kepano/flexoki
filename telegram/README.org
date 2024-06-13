@@ -2,3 +2,8 @@
 1. Compress into zip archive
 2. Change ~.zip~ extension to ~.tdesktop-theme~
 3. Send the file to a chat and open it
+
+-- alternatively --
+
+1. For the Dark variant, go to [[https://themes.telegram.org/theme/R6LQ6I9PMDY8WgeN?format=tdesktop]]
+2. TODO hosted Light theme
