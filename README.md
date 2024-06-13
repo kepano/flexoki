@@ -31,6 +31,7 @@ Flexoki is available for the following apps and tools.
 - [Sublime Text](https://github.com/kepano/flexoki-sublime) by @kepano
 - [Tape](https://github.com/kepano/flexoki/tree/main/tape) by @TheLastZombie
 - [Tealdeer](https://github.com/kepano/flexoki/tree/main/tealdeer) by @Orest58008
+- [Telegram](https://github.com/kepano/flexoki/tree/main/telegram) by @Orest58008
 - [tmux](https://github.com/kepano/flexoki/tree/main/tmux) by @tklai
 - [Ulysses](https://github.com/kepano/flexoki/tree/main/ulysses) by @jasonekratz
 - [Visual Studio Code](https://github.com/kepano/flexoki/tree/main/vscode) by @Railly
