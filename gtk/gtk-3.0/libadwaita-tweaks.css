@@ -1,0 +1,9 @@
+/*
+  This file will fix some legacy widget styles that aren't styled in libadwaita
+*/
+
+/* add a bg color to notebook headers */
+notebook > header {
+  background-color: @headerbar_bg_color;
+  border-color: mix(currentColor,@window_bg_color,0.85);
+}
