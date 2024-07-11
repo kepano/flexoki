@@ -33,8 +33,8 @@ ForegroundPositive=39,174,96
 ForegroundVisited=139,126,200
 
 [Colors:Complementary]
-BackgroundAlternate=66,65,60
-BackgroundNormal=54,52,48
+BackgroundAlternate=40,39,38
+BackgroundNormal=28,27,26
 DecorationFocus=61,174,233
 DecorationHover=61,174,233
 ForegroundActive=61,174,233
@@ -47,16 +47,16 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [Colors:Header]
-BackgroundAlternate=66,65,60
-BackgroundNormal=54,52,48
+BackgroundAlternate=28,27,26
+BackgroundNormal=16,15,15
 DecorationFocus=61,174,233
 DecorationHover=61,174,233
 ForegroundActive=61,174,233
-ForegroundInactive=161,156,145
+ForegroundInactive=135,133,128
 ForegroundLink=29,153,243
 ForegroundNegative=218,68,83
 ForegroundNeutral=246,116,0
-ForegroundNormal=253,246,227
+ForegroundNormal=206,205,195
 ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
@@ -76,7 +76,7 @@ ForegroundVisited=155,89,182
 
 [Colors:Selection]
 BackgroundAlternate=66,65,60
-BackgroundNormal=61,174,233
+BackgroundNormal=67,133,190
 DecorationFocus=67,133,190
 DecorationHover=67,133,190
 ForegroundActive=252,252,252
@@ -89,8 +89,8 @@ ForegroundPositive=23,104,57
 ForegroundVisited=139,126,200
 
 [Colors:Tooltip]
-BackgroundAlternate=66,65,60
-BackgroundNormal=16,15,15
+BackgroundAlternate=40,39,38
+BackgroundNormal=28,27,26
 DecorationFocus=67,133,190
 DecorationHover=67,133,190
 ForegroundActive=61,174,233
@@ -132,7 +132,7 @@ ForegroundVisited=139,126,200
 
 [General]
 ColorScheme=FlexokiDark
-Name=Flexoki-Dark
+Name=Flexoki-Dark-new
 shadeSortColumn=true
 
 [KDE]
@@ -144,4 +144,4 @@ activeBlend=206,205,195
 activeForeground=206,205,195
 inactiveBackground=28,27,26
 inactiveBlend=111,110,105
-inactiveForeground=111,110,105
+inactiveForeground=135,133,128
