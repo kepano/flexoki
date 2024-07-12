@@ -44,6 +44,7 @@ Flexoki is available for the following apps and tools.
 ### System themes
 - [gtk](https://github.com/kepano/flexoki/tree/main/gtk) by @hydroakri
 - [qt5ct/qt6ct](https://github.com/kepano/flexoki/tree/main/qt6ct) by @hydroakri
+- [KDE color](https://github.com/kepano/flexoki/tree/main/kde) by @hydroakri
 
 ### Frameworks
 
