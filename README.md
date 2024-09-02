@@ -55,7 +55,7 @@ Flexoki is available for the following apps and tools.
 
 ### Other
 
-- [Wikipedia UserCSS](https://userstyles.world/style/17944/wikipedia-flexoki) (requires [Stylus](https://github.com/openstyles/stylus/#releases) browser extension) by @KraXen72
+- [Wikipedia UserCSS](https://userstyles.world/style/17944/wikipedia-flexoki) (requires [Stylus](https://github.com/openstyles/stylus/#releases)) by @KraXen72
 - [Figma](https://www.figma.com/community/file/1293274371462921490/flexoki) by @kepano
 - [GIMP palette](https://github.com/kepano/flexoki/tree/main/gimp) by @xTibor
 
