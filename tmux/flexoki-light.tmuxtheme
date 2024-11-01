@@ -54,3 +54,35 @@ color_cyan=$flexoki_cyan
 color_blue=$flexoki_blue
 color_purple=$flexoki_purple
 color_magenta=$flexoki_magenta
+
+# status
+set -g status "on"
+set -g status-bg $color_bg_2
+set -g status-justify "left"
+set -g status-left-length "100"
+set -g status-right-length "100"
+
+# messages
+set -g message-style "fg=$color_cyan,bg=$color_tx_1,align=centre"
+set -g message-command-style "fg=$color_cyan,bg=$color_ui_2,align=centre"
+
+# panes
+set -g pane-border-style fg=$color_ui_2
+set -g pane-active-border-style fg=$color_blue
+
+# windows
+setw -g window-status-activity-style fg=$color_tx_1,bg=$color_bg_1,none
+setw -g window-status-separator ""
+setw -g window-status-style fg=$color_tx_1,bg=$color_bg_1,none
+
+# statusline
+set -g status-left "#{?client_prefix,#[fg=#$color_bg_1#,bg=#$color_red],#[fg=#$color_bg_1#,bg=#$color_green]}  #S "
+set -g status-right "#[fg=#$color_bg_1,bg=#$color_orange]  #{b:pane_current_path} #[fg=#$color_bg_1,bg=#$color_purple]  %Y-%m-%d %H:%M "
+
+# window-status
+setw -g window-status-format "#[bg=#$color_bg_2,fg=#$color_tx_2] #I  #W "
+setw -g window-status-current-format "#[bg=#$color_bg_1,fg=#$color_tx_1] #I  #W "
+
+# Modes
+setw -g clock-mode-colour $color_blue
+setw -g mode-style fg=$color_orange,bg=$color_tx_1,bold
