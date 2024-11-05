@@ -56,6 +56,7 @@ color_purple=$flexoki_purple
 color_magenta=$flexoki_magenta
 
 # status
+set -g status-position bottom
 set -g status "on"
 set -g status-bg $color_bg_2
 set -g status-justify "left"
@@ -63,8 +64,8 @@ set -g status-left-length "100"
 set -g status-right-length "100"
 
 # messages
-set -g message-style "fg=$color_cyan,bg=$color_tx_1,align=centre"
-set -g message-command-style "fg=$color_cyan,bg=$color_ui_2,align=centre"
+set -g message-style "fg=$color_tx_1,bg=$color_bg_2,align=centre"
+set -g message-command-style "fg=$color_tx_1,bg=$color_ui_2,align=centre"
 
 # panes
 set -g pane-border-style fg=$color_ui_2
