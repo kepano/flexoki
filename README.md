@@ -24,7 +24,9 @@ Flexoki is available for the following apps and tools.
 - [Kitty](https://github.com/kepano/flexoki/tree/main/kitty) by @peterjbachman
 - [Lite XL](https://github.com/kepano/flexoki/tree/main/lite_xl) by @chambored
 - [macOS Terminal](https://github.com/kepano/flexoki/tree/main/terminal) by @getninjaN
-- [Neovim](https://github.com/kepano/flexoki-neovim) by @stevedylandev and @dinocosta
+- Neovim:
+  - [@stevedylandev and @dinocosta](https://github.com/kepano/flexoki-neovim)
+  - [@nuvic](https://github.com/nuvic/flexoki-nvim)
 - [NetNewsWire](https://github.com/frznv/NetNewsWire-Flexoki) by @frznv
 - [Obsidian](https://github.com/kepano/flexoki-obsidian) and part of [Minimal theme](https://github.com/kepano/obsidian-minimal) by @kepano
 - [Slack](https://github.com/kepano/flexoki/tree/main/slack) by @maxobat
