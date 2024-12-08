@@ -1,0 +1,26 @@
+# -*- conf -*-
+# Flexoki Dark
+
+[cursor]
+color=100F0F CECDC3
+
+[colors]
+background=100F0F 
+foreground=CECDC3 
+regular0=282726  # black
+regular1=AF3029  # red
+regular2=66800B  # green
+regular3=AD8301  # yellow
+regular4=205EA6  # blue
+regular5=A02F6F  # magenta
+regular6=24837B  # cyan
+regular7=CECDC3  # white
+
+bright0=878580 # bright black
+bright1=D14D41 # bright red
+bright2=879A39 # bright green
+bright3=D0A215 # bright yellow
+bright4=4385BE # bright blue
+bright5=CE5D97 # bright magenta
+bright6=3AA99F # bright cyan
+bright7=CECDC3 # bright white
