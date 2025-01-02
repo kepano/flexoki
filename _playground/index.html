@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexoki Color Playground</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Flexoki Color Playground</h1>
+    
+    <div class="controls">
+        <label>
+            Base Color:
+            <select id="baseColor">
+                <option value="red">Red</option>
+                <option value="orange">Orange</option>
+                <option value="yellow">Yellow</option>
+                <option value="green">Green</option>
+                <option value="cyan">Cyan</option>
+                <option value="blue">Blue</option>
+                <option value="purple">Purple</option>
+                <option value="magenta">Magenta</option>
+            </select>
+        </label>
+
+        <label>
+            Lightness (0-100):
+            <input type="range" id="lightnessRange" min="0" max="100" value="60">
+            <span id="lightnessValue">60</span>
+        </label>
+
+        <label>
+            Chroma (0-150):
+            <input type="range" id="chromaRange" min="0" max="150" value="80">
+            <span id="chromaValue">80</span>
+        </label>
+
+        <label>
+            Hue Adjustment (-180 to 180):
+            <input type="range" id="hueAdjust" min="-180" max="180" value="0">
+            <span id="hueValue">0</span>
+        </label>
+    </div>
+
+    <div class="color-grid" id="colorGrid"></div>
+
+    <script src="playground.js"></script>
+</body>
+</html> 

@@ -1,0 +1,57 @@
+:root {
+    --flexoki-paper: #FFFCF0;
+    --flexoki-black: #100F0F;
+}
+
+body {
+    background: var(--flexoki-paper);
+    font-family: system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.color-swatch {
+    aspect-ratio: 1;
+    border-radius: 8px;
+    position: relative;
+}
+
+.color-swatch span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 8px;
+    font-size: 12px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    line-height: 1.4;
+}
+
+.controls {
+    display: grid;
+    gap: 1rem;
+    margin: 2rem 0;
+    background: var(--flexoki-50, #f5f5f5);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.controls label {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.controls input[type="range"] {
+    width: 100%;
+} 
