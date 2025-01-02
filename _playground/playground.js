@@ -125,7 +125,6 @@ function blendWithPaper(color, paperColor) {
 	return RGBToHex(...blended);
 }
 
-// Known values from Flexoki
 const KNOWN_VALUES = {
 	paper: '#FFFCF0',
 	black: '#100F0F',

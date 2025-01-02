@@ -32,6 +32,7 @@ body {
     display: flex;
     flex-direction: row;
     gap: 1rem;
+    align-items: center;
 }
 
 .color-scale {
@@ -42,7 +43,7 @@ body {
 
 .color-scale-label {
     font-weight: bold;
-    width: 200px;
+    width: 100px;
     margin-bottom: 0.5rem;
 }
 
