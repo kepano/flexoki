@@ -53,58 +53,148 @@ function LCHToHex(l, c, h) {
     return RGBToHex(r, g, b);
 }
 
-// Generate color scale
-function generateColorScale(baseColor) {
-    const baseL = parseFloat(document.getElementById('lightnessRange').value);
-    const baseC = parseFloat(document.getElementById('chromaRange').value);
-    const hueAdjust = parseFloat(document.getElementById('hueAdjust').value);
+// Add new functions for hex to RGB and RGB to LCH
+function hexToRGB(hex) {
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+    return [r, g, b];
+}
 
-    // Update the display values
-    document.getElementById('lightnessValue').textContent = baseL;
-    document.getElementById('chromaValue').textContent = baseC;
-    document.getElementById('hueValue').textContent = hueAdjust;
+function RGBToXYZ(r, g, b) {
+    // Normalize RGB values
+    r = r / 255;
+    g = g / 255;
+    b = b / 255;
 
-    const baseValues = getBaseColorValues(baseColor);
-    const steps = [50, 100, 150, 200, 300, 400, 500, 600, 700, 800, 850, 900, 950];
+    // Convert to linear RGB
+    r = r > 0.04045 ? Math.pow((r + 0.055) / 1.055, 2.4) : r / 12.92;
+    g = g > 0.04045 ? Math.pow((g + 0.055) / 1.055, 2.4) : g / 12.92;
+    b = b > 0.04045 ? Math.pow((b + 0.055) / 1.055, 2.4) : b / 12.92;
+
+    // Convert to XYZ
+    return [
+        r * 0.4124564 + g * 0.3575761 + b * 0.1804375,
+        r * 0.2126729 + g * 0.7151522 + b * 0.0721750,
+        r * 0.0193339 + g * 0.1191920 + b * 0.9503041
+    ];
+}
+
+function XYZToLAB(x, y, z) {
+    // Normalize XYZ values
+    x = x / 0.95047;
+    y = y / 1.00000;
+    z = z / 1.08883;
+
+    // Convert to LAB
+    x = x > 0.008856 ? Math.pow(x, 1/3) : (7.787 * x) + 16/116;
+    y = y > 0.008856 ? Math.pow(y, 1/3) : (7.787 * y) + 16/116;
+    z = z > 0.008856 ? Math.pow(z, 1/3) : (7.787 * z) + 16/116;
+
+    return [
+        (116 * y) - 16,
+        500 * (x - y),
+        200 * (y - z)
+    ];
+}
+
+function LABToLCH(l, a, b) {
+    const c = Math.sqrt(a * a + b * b);
+    let h = Math.atan2(b, a) * 180 / Math.PI;
+    if (h < 0) h += 360;
+    return [l, c, h];
+}
+
+function hexToLCH(hex) {
+    const rgb = hexToRGB(hex);
+    const xyz = RGBToXYZ(...rgb);
+    const lab = XYZToLAB(...xyz);
+    return LABToLCH(...lab);
+}
+
+// Function to blend colors as if on paper
+function blendWithPaper(color, paperColor) {
+    const paperRGB = hexToRGB(paperColor);
+    const colorRGB = hexToRGB(color);
     
+    // Simulate multiplicative blending
+    const blended = colorRGB.map((c, i) => {
+        return Math.round((c * paperRGB[i]) / 255);
+    });
+    
+    return RGBToHex(...blended);
+}
+
+// Known values from Flexoki
+const KNOWN_VALUES = {
+    paper: '#FFFCF0',
+    red: {
+        400: '#D14D41',
+        600: '#AF3029'
+    },
+    // Add other colors...
+};
+
+function generateColorScale(baseColor) {
+    const color400 = hexToLCH(KNOWN_VALUES[baseColor][400]);
+    const color600 = hexToLCH(KNOWN_VALUES[baseColor][600]);
+    const paperLCH = hexToLCH(KNOWN_VALUES.paper);
+    
+    const steps = [50, 100, 150, 200, 300, 400, 500, 600, 700, 800, 850, 900, 950];
     const grid = document.getElementById('colorGrid');
     grid.innerHTML = '';
 
     steps.forEach(step => {
-        // Adjust how we calculate lightness and chroma
-        const stepL = Math.max(0, Math.min(100, baseL * (1 - step/1000)));
-        const stepC = Math.max(0, Math.min(150, baseC * (1 - step/2000)));
-        const hue = baseValues.hue + hueAdjust;
+        let color;
+        if (step === 400) {
+            color = KNOWN_VALUES[baseColor][400];
+        } else if (step === 600) {
+            color = KNOWN_VALUES[baseColor][600];
+        } else {
+            // Interpolate between known values
+            let lch;
+            if (step < 400) {
+                // Interpolate between paper and 400
+                const t = step / 400;
+                lch = [
+                    paperLCH[0] + (color400[0] - paperLCH[0]) * t,
+                    color400[1] * t,
+                    color400[2]
+                ];
+            } else if (step > 600) {
+                // Interpolate between 600 and black
+                const t = (step - 600) / (950 - 600);
+                lch = [
+                    color600[0] * (1 - t),
+                    color600[1] * (1 - t),
+                    color600[2]
+                ];
+            } else {
+                // Interpolate between 400 and 600
+                const t = (step - 400) / 200;
+                lch = [
+                    color400[0] + (color600[0] - color400[0]) * t,
+                    color400[1] + (color600[1] - color400[1]) * t,
+                    color400[2] + (color600[2] - color400[2]) * t
+                ];
+            }
+            color = LCHToHex(...lch);
+        }
 
-        const color = LCHToHex(stepL, stepC, hue);
+        // Blend with paper color
+        const blendedColor = blendWithPaper(color, KNOWN_VALUES.paper);
 
         const swatch = document.createElement('div');
         swatch.className = 'color-swatch';
-        swatch.style.backgroundColor = color;
+        swatch.style.backgroundColor = blendedColor;
         swatch.innerHTML = `
             <span>
                 ${baseColor}-${step}<br>
-                ${color}<br>
-                L:${Math.round(stepL)} C:${Math.round(stepC)} H:${Math.round(hue)}
+                ${blendedColor}
             </span>
         `;
         grid.appendChild(swatch);
     });
-}
-
-// Get base color LCH values
-function getBaseColorValues(color) {
-    const values = {
-        red: { hue: 20, chroma: 50 },
-        orange: { hue: 40, chroma: 60 },
-        yellow: { hue: 85, chroma: 80 },
-        green: { hue: 120, chroma: 40 },
-        cyan: { hue: 190, chroma: 40 },
-        blue: { hue: 250, chroma: 50 },
-        purple: { hue: 280, chroma: 45 },
-        magenta: { hue: 320, chroma: 50 }
-    };
-    return values[color];
 }
 
 // Event handling
