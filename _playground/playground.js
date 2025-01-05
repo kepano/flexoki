@@ -128,6 +128,21 @@ function blendWithPaper(color, paperColor) {
 const KNOWN_VALUES = {
 	paper: '#FFFCF0',
 	black: '#100F0F',
+	gray: {
+		50: '#F2F0E5',
+		100: '#E6E4D9',
+		150: '#DAD8CE',
+		200: '#CECDC3',
+		300: '#B7B5AC',
+		400: '#9F9D96',
+		500: '#878580',
+		600: '#6F6E69',
+		700: '#575653',
+		800: '#403E3C',
+		850: '#343331',
+		900: '#282726',
+		950: '#1C1B1A'
+	},
 	red: {
 		400: '#D14D41',
 		600: '#AF3029'
@@ -180,11 +195,6 @@ function generateColorScale(baseColor) {
 	const swatches = document.createElement('div');
 	swatches.className = 'color-scale';
 
-	const blendStrength = parseFloat(document.getElementById('blendStrength').value) / 100;
-	const pre400Curve = parseFloat(document.getElementById('pre400Curve').value) / 100;
-	const midCurve = parseFloat(document.getElementById('midCurve').value) / 100;
-	const post600Curve = parseFloat(document.getElementById('post600Curve').value) / 100;
-
 	steps.forEach(step => {
 		let color;
 		if (step === 400) {
@@ -194,37 +204,40 @@ function generateColorScale(baseColor) {
 		} else {
 			let lch;
 			if (step < 400) {
-				// Interpolate between paper and 400
-				const t = Math.pow(step / 400, pre400Curve);
+				const t = step / 400;
+				const curvePos = window.pre400Curve(t);
+				const chromaPos = window.pre400ChromaCurve(t);
+				
 				lch = [
-					paperLCH[0] + (color400[0] - paperLCH[0]) * t,
-					color400[1] * t,
+					paperLCH[0] + (color400[0] - paperLCH[0]) * curvePos.y,
+					color400[1] * chromaPos.y,
 					color400[2]
 				];
 			} else if (step > 600) {
-				// Interpolate between 600 and Flexoki black, treating black as step 1000
-				const t = Math.pow((step - 600) / (1000 - 600), post600Curve);
+				const t = (step - 600) / 400;
+				const curvePos = window.post600Curve(t);
+				const chromaPos = window.post600ChromaCurve(t);
+				
 				lch = [
-					color600[0] + (blackLCH[0] - color600[0]) * t,
-					color600[1] * (1 - t),
+					color600[0] + (blackLCH[0] - color600[0]) * (1 - curvePos.y),
+					color600[1] * chromaPos.y,
 					color600[2]
 				];
 			} else {
-				// Interpolate between 400 and 600
-				const t = Math.pow((step - 400) / 200, midCurve);
+				const t = (step - 400) / 200;
+				const curvePos = window.midCurve(t);
+				
 				lch = [
-					color400[0] + (color600[0] - color400[0]) * t,
-					color400[1] + (color600[1] - color400[1]) * t,
-					color400[2] + (color600[2] - color400[2]) * t
+					color400[0] + (color600[0] - color400[0]) * curvePos.y,
+					color400[1] + (color600[1] - color400[1]) * curvePos.y,
+					color400[2] + (color600[2] - color400[2]) * curvePos.y
 				];
 			}
 			color = LCHToHex(...lch);
 		}
 
-		// Blend with paper color based on blend strength
-		const blendedColor = blendStrength === 1 ? 
-			blendWithPaper(color, KNOWN_VALUES.paper) :
-			blendColors(color, KNOWN_VALUES.paper, blendStrength);
+		// Always blend with paper color
+		const blendedColor = blendWithPaper(color, KNOWN_VALUES.paper);
 
 		const swatch = document.createElement('div');
 		swatch.className = 'color-swatch';
@@ -254,30 +267,281 @@ function blendColors(color1, color2, amount) {
 	return RGBToHex(...blended);
 }
 
+function generateGrayScale() {
+	const scale = document.createElement('div');
+	scale.className = 'color-scale-container';
+	
+	const label = document.createElement('div');
+	label.className = 'color-scale-label';
+	label.textContent = 'Gray';
+	
+	const swatches = document.createElement('div');
+	swatches.className = 'color-scale';
+
+	const steps = [50, 100, 150, 200, 300, 400, 500, 600, 700, 800, 850, 900, 950];
+	
+	steps.forEach(step => {
+		const color = KNOWN_VALUES.gray[step];
+		const swatch = document.createElement('div');
+		swatch.className = 'color-swatch';
+		swatch.style.backgroundColor = color;
+		swatch.innerHTML = `
+			<span>
+				gray-${step}<br>
+				${color}
+			</span>
+		`;
+		swatches.appendChild(swatch);
+	});
+
+	scale.appendChild(label);
+	scale.appendChild(swatches);
+	return scale;
+}
+
 function generateAllScales() {
 	const container = document.getElementById('colorScales');
 	container.innerHTML = '';
 	
+	// Add grayscale first
+	container.appendChild(generateGrayScale());
+	
+	// Then add color scales
 	Object.keys(KNOWN_VALUES).forEach(color => {
-		// Skip paper and black when generating scales
-		if (color !== 'paper' && color !== 'black') {
+		if (color !== 'paper' && color !== 'black' && color !== 'gray') {
 			container.appendChild(generateColorScale(color));
 		}
 	});
 }
 
-// Event handling
-document.addEventListener('DOMContentLoaded', () => {
-	const controls = ['blendStrength', 'pre400Curve', 'midCurve', 'post600Curve'];
-	
-	controls.forEach(id => {
-		const element = document.getElementById(id);
-		element.addEventListener('input', (e) => {
-			document.getElementById(id + 'Value').textContent = e.target.value;
-			generateAllScales();
-		});
-	});
+// Add curve editor class
+class CurveEditor {
+	constructor(canvasId, onChange) {
+		this.canvas = document.getElementById(canvasId);
+		this.ctx = this.canvas.getContext('2d');
+		
+		// Default curve points based on curve type
+		const defaultPoints = {
+			pre400: [
+				{ x: 0, y: 0 },
+				{ x: 0.5, y: 0.3 },
+				{ x: 0.5, y: 0.7 },
+				{ x: 1, y: 1 }
+			],
+			pre400Chroma: [
+				{ x: 0, y: 0 },
+				{ x: 0.1, y: 0.5 },
+				{ x: 0.5, y: 0.9 },
+				{ x: 1, y: 1 }
+			],
+			mid: [
+				{ x: 0, y: 1 },
+				{ x: 0.3, y: 0.5 },
+				{ x: 0.7, y: 0.5 },
+				{ x: 1, y: 0 }
+			],
+			post600: [
+				{ x: 0, y: 1 },
+				{ x: 0.5, y: 0.7 },
+				{ x: 0.5, y: 0.3 },
+				{ x: 1, y: 0 }
+			],
+			post600Chroma: [
+				{ x: 0, y: 1 },
+				{ x: 0.5, y: 0.9 },
+				{ x: 0.9, y: 0.5 },
+				{ x: 1, y: 0 }
+			]
+		};
+		
+		// Get curve type from canvas ID
+		const curveType = Object.keys(defaultPoints).find(type => canvasId.includes(type));
+		this.points = defaultPoints[curveType];
+		
+		this.activePoint = null;
+		this.onChange = onChange;
+		
+		this.setupListeners();
+		this.draw();
+	}
 
-	// Initial generation
+	setupListeners() {
+		this.canvas.addEventListener('mousedown', this.onMouseDown.bind(this));
+		this.canvas.addEventListener('mousemove', this.onMouseMove.bind(this));
+		this.canvas.addEventListener('mouseup', this.onMouseUp.bind(this));
+	}
+
+	getMousePos(e) {
+		const rect = this.canvas.getBoundingClientRect();
+		return {
+			x: (e.clientX - rect.left) / rect.width,
+			y: 1 - (e.clientY - rect.top) / rect.height
+		};
+	}
+
+	onMouseDown(e) {
+		const pos = this.getMousePos(e);
+		this.activePoint = this.points.findIndex(p => 
+			Math.hypot(p.x - pos.x, p.y - pos.y) < 0.05
+		);
+	}
+
+	onMouseMove(e) {
+		if (this.activePoint === null || this.activePoint === 0 || this.activePoint === 3) return;
+		
+		const pos = this.getMousePos(e);
+		this.points[this.activePoint] = {
+			x: Math.max(0, Math.min(1, pos.x)),
+			y: Math.max(0, Math.min(1, pos.y))
+		};
+		
+		this.draw();
+		updateCurveData();
+		if (this.onChange) this.onChange(this.evaluate.bind(this));
+	}
+
+	onMouseUp() {
+		this.activePoint = null;
+	}
+
+	draw() {
+		const { ctx, canvas } = this;
+		const w = canvas.width;
+		const h = canvas.height;
+		
+		// Clear canvas
+		ctx.clearRect(0, 0, w, h);
+		
+		// Draw grid
+		ctx.strokeStyle = '#eee';
+		ctx.beginPath();
+		for (let i = 0; i <= 10; i++) {
+			ctx.moveTo(i * w/10, 0);
+			ctx.lineTo(i * w/10, h);
+			ctx.moveTo(0, i * h/10);
+			ctx.lineTo(w, i * h/10);
+		}
+		ctx.stroke();
+		
+		// Draw curve
+		ctx.strokeStyle = '#000';
+		ctx.beginPath();
+		ctx.moveTo(this.points[0].x * w, (1 - this.points[0].y) * h);
+		ctx.bezierCurveTo(
+			this.points[1].x * w, (1 - this.points[1].y) * h,
+			this.points[2].x * w, (1 - this.points[2].y) * h,
+			this.points[3].x * w, (1 - this.points[3].y) * h
+		);
+		ctx.stroke();
+		
+		// Draw points
+		this.points.forEach(p => {
+			ctx.beginPath();
+			ctx.arc(p.x * w, (1 - p.y) * h, 4, 0, Math.PI * 2);
+			ctx.fill();
+		});
+	}
+
+	evaluate(t) {
+		const [p0, p1, p2, p3] = this.points;
+		const t1 = 1 - t;
+		
+		return {
+			x: Math.pow(t1, 3) * p0.x + 3 * Math.pow(t1, 2) * t * p1.x + 3 * t1 * Math.pow(t, 2) * p2.x + Math.pow(t, 3) * p3.x,
+			y: Math.pow(t1, 3) * p0.y + 3 * Math.pow(t1, 2) * t * p1.y + 3 * t1 * Math.pow(t, 2) * p2.y + Math.pow(t, 3) * p3.y
+		};
+	}
+}
+
+function updateCurveData() {
+	const curveData = {
+		pre400: window.curves.pre400.points,
+		pre400Chroma: window.curves.pre400Chroma.points,
+		mid: window.curves.mid.points,
+		post600: window.curves.post600.points,
+		post600Chroma: window.curves.post600Chroma.points
+	};
+	
+	const jsonData = JSON.stringify(curveData, null, 2);
+	document.getElementById('curveOutput').value = jsonData;
+	
+	// Save to localStorage
+	localStorage.setItem('flexoki-curves', jsonData);
+}
+
+// Add this function to handle textarea updates
+function loadCurveDataFromTextarea() {
+	try {
+		const curveData = JSON.parse(document.getElementById('curveOutput').value);
+		Object.entries(curveData).forEach(([key, points]) => {
+			if (window.curves[key]) {
+				window.curves[key].points = points;
+				window.curves[key].draw();
+			}
+		});
+		generateAllScales();
+	} catch (error) {
+		console.error('Error parsing curve data:', error);
+	}
+}
+
+// Modify the DOMContentLoaded event handler
+document.addEventListener('DOMContentLoaded', () => {
+	// Store curves globally for access
+	window.curves = {
+		pre400: new CurveEditor('pre400CurveEditor', curve => {
+			window.pre400Curve = curve;
+			generateAllScales();
+		}),
+		pre400Chroma: new CurveEditor('pre400ChromaEditor', curve => {
+			window.pre400ChromaCurve = curve;
+			generateAllScales();
+		}),
+		mid: new CurveEditor('midCurveEditor', curve => {
+			window.midCurve = curve;
+			generateAllScales();
+		}),
+		post600: new CurveEditor('post600CurveEditor', curve => {
+			window.post600Curve = curve;
+			generateAllScales();
+		}),
+		post600Chroma: new CurveEditor('post600ChromaEditor', curve => {
+			window.post600ChromaCurve = curve;
+			generateAllScales();
+		})
+	};
+
+	// Update color generation to use curves
+	window.pre400Curve = window.curves.pre400.evaluate.bind(window.curves.pre400);
+	window.pre400ChromaCurve = window.curves.pre400Chroma.evaluate.bind(window.curves.pre400Chroma);
+	window.midCurve = window.curves.mid.evaluate.bind(window.curves.mid);
+	window.post600Curve = window.curves.post600.evaluate.bind(window.curves.post600);
+	window.post600ChromaCurve = window.curves.post600Chroma.evaluate.bind(window.curves.post600Chroma);
+
+	// Try to load saved curves
+	const savedCurves = localStorage.getItem('flexoki-curves');
+	if (savedCurves) {
+		try {
+			const curveData = JSON.parse(savedCurves);
+			Object.entries(curveData).forEach(([key, points]) => {
+				if (window.curves[key]) {
+					window.curves[key].points = points;
+					window.curves[key].draw();
+				}
+			});
+			generateAllScales();
+		} catch (error) {
+			console.error('Error loading saved curves:', error);
+		}
+	}
+
+	// Initial generation if no saved curves
 	generateAllScales();
+
+	// Add input handler for textarea
+	document.getElementById('curveOutput').addEventListener('input', () => {
+		// Use a debounced version to avoid too frequent updates
+		clearTimeout(window.curveUpdateTimeout);
+		window.curveUpdateTimeout = setTimeout(loadCurveDataFromTextarea, 500);
+	});
 }); 

@@ -9,29 +9,35 @@
 	<h1>Flexoki playground</h1>
 	
 	<div class="controls">
-		<label>
-			Paper Blend Strength:
-			<input type="range" id="blendStrength" min="0" max="100" value="100">
-			<span id="blendStrengthValue">100</span>
-		</label>
+		<div class="curve-data">
+			<h3>Curve data</h3>
+			<textarea id="curveOutput"></textarea>
+		</div>
+		
+		<div class="curve-editor">
+			<h3>50-400 curve</h3>
+			<canvas id="pre400CurveEditor" width="200" height="200"></canvas>
+		</div>
+		
+		<div class="curve-editor">
+			<h3>50-400 chroma</h3>
+			<canvas id="pre400ChromaEditor" width="200" height="200"></canvas>
+		</div>
+		
+		<div class="curve-editor">
+			<h3>400-600 curve</h3>
+			<canvas id="midCurveEditor" width="200" height="200"></canvas>
+		</div>
+		
+		<div class="curve-editor">
+			<h3>600-950 curve</h3>
+			<canvas id="post600CurveEditor" width="200" height="200"></canvas>
+		</div>
 
-		<label>
-			Pre-400 Curve:
-			<input type="range" id="pre400Curve" min="0" max="200" value="100">
-			<span id="pre400CurveValue">100</span>
-		</label>
-
-		<label>
-			400-600 Curve:
-			<input type="range" id="midCurve" min="0" max="200" value="100">
-			<span id="midCurveValue">100</span>
-		</label>
-
-		<label>
-			Post-600 Curve:
-			<input type="range" id="post600Curve" min="0" max="200" value="100">
-			<span id="post600CurveValue">100</span>
-		</label>
+		<div class="curve-editor">
+			<h3>600-950 chroma</h3>
+			<canvas id="post600ChromaEditor" width="200" height="200"></canvas>
+		</div>
 	</div>
 
 	<div class="color-scales" id="colorScales"></div>
