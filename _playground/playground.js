@@ -1,3 +1,36 @@
+const defaultPoints = {
+	pre400: [
+		{ x: 0, y: 0 },
+		{ x: 0.5, y: 0.3 },
+		{ x: 0.5, y: 0.7 },
+		{ x: 1, y: 1 }
+	],
+	pre400Chroma: [
+		{ x: 0, y: 0 },
+		{ x: 0.1, y: 0.5 },
+		{ x: 0.5, y: 0.9 },
+		{ x: 1, y: 1 }
+	],
+	mid: [
+		{ x: 0, y: 1 },
+		{ x: 0.3, y: 0.5 },
+		{ x: 0.7, y: 0.5 },
+		{ x: 1, y: 0 }
+	],
+	post600: [
+		{ x: 0, y: 1 },
+		{ x: 0.5, y: 0.8 },
+		{ x: 0.5, y: 0.4 },
+		{ x: 1, y: 0 }
+	],
+	post600Chroma: [
+		{ x: 0, y: 1 },
+		{ x: 0.5, y: 0.9 },
+		{ x: 0.9, y: 0.5 },
+		{ x: 1, y: 0 }
+	]
+};
+
 // LCH to RGB conversion functions
 function LCHToLAB(l, c, h) {
 	const hRad = (h * Math.PI) / 180;
@@ -177,6 +210,9 @@ const KNOWN_VALUES = {
 	}
 };
 
+// Add color order constant at the top of the file
+const COLOR_ORDER = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple', 'magenta'];
+
 function generateColorScale(baseColor) {
 	const color400 = hexToLCH(KNOWN_VALUES[baseColor][400]);
 	const color600 = hexToLCH(KNOWN_VALUES[baseColor][600]);
@@ -240,14 +276,21 @@ function generateColorScale(baseColor) {
 		const blendedColor = blendWithPaper(color, KNOWN_VALUES.paper);
 
 		const swatch = document.createElement('div');
-		swatch.className = 'color-swatch';
-		swatch.style.backgroundColor = blendedColor;
-		swatch.innerHTML = `
-			<span>
-				${baseColor}-${step}<br>
-				${blendedColor}
-			</span>
+		swatch.className = 'color-swatch-container';
+
+		const swatchColor = document.createElement('div');
+		swatchColor.className = 'color-swatch';
+		swatchColor.style.backgroundColor = blendedColor;
+
+		const swatchLabel = document.createElement('div');
+		swatchLabel.className = 'color-swatch-label';
+		swatchLabel.innerHTML = `
+			<div class="color-swatch-label-name">${step}</div>
+			<div class="color-swatch-label-hex">${blendedColor.toUpperCase()}</div>
 		`;
+
+		swatch.appendChild(swatchColor);
+		swatch.appendChild(swatchLabel);
 		swatches.appendChild(swatch);
 	});
 
@@ -273,7 +316,7 @@ function generateGrayScale() {
 	
 	const label = document.createElement('div');
 	label.className = 'color-scale-label';
-	label.textContent = 'Gray';
+	label.textContent = 'Base';
 	
 	const swatches = document.createElement('div');
 	swatches.className = 'color-scale';
@@ -282,15 +325,23 @@ function generateGrayScale() {
 	
 	steps.forEach(step => {
 		const color = KNOWN_VALUES.gray[step];
+		
 		const swatch = document.createElement('div');
-		swatch.className = 'color-swatch';
-		swatch.style.backgroundColor = color;
-		swatch.innerHTML = `
-			<span>
-				gray-${step}<br>
-				${color}
-			</span>
+		swatch.className = 'color-swatch-container';
+
+		const swatchColor = document.createElement('div');
+		swatchColor.className = 'color-swatch';
+		swatchColor.style.backgroundColor = color;
+
+		const swatchLabel = document.createElement('div');
+		swatchLabel.className = 'color-swatch-label';
+		swatchLabel.innerHTML = `
+			<div class="color-swatch-label-name">${step}</div>
+			<div class="color-swatch-label-hex">${color}</div>
 		`;
+
+		swatch.appendChild(swatchColor);
+		swatch.appendChild(swatchLabel);
 		swatches.appendChild(swatch);
 	});
 
@@ -312,51 +363,35 @@ function generateAllScales() {
 			container.appendChild(generateColorScale(color));
 		}
 	});
+
+	updateCSSOutput();
 }
 
-// Add curve editor class
 class CurveEditor {
 	constructor(canvasId, onChange) {
 		this.canvas = document.getElementById(canvasId);
 		this.ctx = this.canvas.getContext('2d');
 		
-		// Default curve points based on curve type
-		const defaultPoints = {
-			pre400: [
-				{ x: 0, y: 0 },
-				{ x: 0.5, y: 0.3 },
-				{ x: 0.5, y: 0.7 },
-				{ x: 1, y: 1 }
-			],
-			pre400Chroma: [
-				{ x: 0, y: 0 },
-				{ x: 0.1, y: 0.5 },
-				{ x: 0.5, y: 0.9 },
-				{ x: 1, y: 1 }
-			],
-			mid: [
-				{ x: 0, y: 1 },
-				{ x: 0.3, y: 0.5 },
-				{ x: 0.7, y: 0.5 },
-				{ x: 1, y: 0 }
-			],
-			post600: [
-				{ x: 0, y: 1 },
-				{ x: 0.5, y: 0.7 },
-				{ x: 0.5, y: 0.3 },
-				{ x: 1, y: 0 }
-			],
-			post600Chroma: [
-				{ x: 0, y: 1 },
-				{ x: 0.5, y: 0.9 },
-				{ x: 0.9, y: 0.5 },
-				{ x: 1, y: 0 }
-			]
-		};
+		// Get curve type from canvas ID - more precise matching
+		let curveType;
+		if (canvasId.includes('Chroma')) {
+			// Check for specific Chroma type instead of finding first match
+			if (canvasId.includes('pre400')) {
+				curveType = 'pre400Chroma';
+			} else if (canvasId.includes('post600')) {
+				curveType = 'post600Chroma';
+			}
+		} else {
+			if (canvasId.includes('pre400')) {
+				curveType = 'pre400';
+			} else if (canvasId.includes('mid')) {
+				curveType = 'mid';
+			} else if (canvasId.includes('post600')) {
+				curveType = 'post600';
+			}
+		}
 		
-		// Get curve type from canvas ID
-		const curveType = Object.keys(defaultPoints).find(type => canvasId.includes(type));
-		this.points = defaultPoints[curveType];
+		this.points = JSON.parse(JSON.stringify(defaultPoints[curveType]));
 		
 		this.activePoint = null;
 		this.onChange = onChange;
@@ -406,14 +441,24 @@ class CurveEditor {
 
 	draw() {
 		const { ctx, canvas } = this;
-		const w = canvas.width;
-		const h = canvas.height;
+		const dpr = window.devicePixelRatio || 1;
+		
+		// Set canvas size accounting for device pixel ratio
+		canvas.width = canvas.clientWidth * dpr;
+		canvas.height = canvas.clientHeight * dpr;
+		
+		// Scale context to match device pixel ratio
+		ctx.scale(dpr, dpr);
+		
+		const w = canvas.clientWidth;
+		const h = canvas.clientHeight;
 		
 		// Clear canvas
 		ctx.clearRect(0, 0, w, h);
 		
 		// Draw grid
 		ctx.strokeStyle = '#eee';
+		ctx.lineWidth = 1;
 		ctx.beginPath();
 		for (let i = 0; i <= 10; i++) {
 			ctx.moveTo(i * w/10, 0);
@@ -423,23 +468,37 @@ class CurveEditor {
 		}
 		ctx.stroke();
 		
-		// Draw curve
+		// Draw curve with more points for smoothness
 		ctx.strokeStyle = '#000';
+		ctx.lineWidth = 2;
 		ctx.beginPath();
 		ctx.moveTo(this.points[0].x * w, (1 - this.points[0].y) * h);
-		ctx.bezierCurveTo(
-			this.points[1].x * w, (1 - this.points[1].y) * h,
-			this.points[2].x * w, (1 - this.points[2].y) * h,
-			this.points[3].x * w, (1 - this.points[3].y) * h
-		);
+		
+		// Draw curve with many small segments
+		for (let t = 0; t <= 1; t += 0.01) {
+			const pos = this.evaluate(t);
+			ctx.lineTo(pos.x * w, (1 - pos.y) * h);
+		}
+		
 		ctx.stroke();
 		
-		// Draw points
+		// Draw control points
+		ctx.fillStyle = '#000';
 		this.points.forEach(p => {
 			ctx.beginPath();
 			ctx.arc(p.x * w, (1 - p.y) * h, 4, 0, Math.PI * 2);
 			ctx.fill();
 		});
+		
+		// Draw control lines
+		ctx.strokeStyle = '#0002';
+		ctx.lineWidth = 1;
+		ctx.beginPath();
+		ctx.moveTo(this.points[0].x * w, (1 - this.points[0].y) * h);
+		ctx.lineTo(this.points[1].x * w, (1 - this.points[1].y) * h);
+		ctx.moveTo(this.points[2].x * w, (1 - this.points[2].y) * h);
+		ctx.lineTo(this.points[3].x * w, (1 - this.points[3].y) * h);
+		ctx.stroke();
 	}
 
 	evaluate(t) {
@@ -454,6 +513,13 @@ class CurveEditor {
 }
 
 function updateCurveData() {
+	// On first load, use the default points
+	if (!window.curves) {
+		document.getElementById('curveOutput').value = JSON.stringify(defaultPoints, null, 2);
+		return;
+	}
+
+	// Otherwise use the current curve points
 	const curveData = {
 		pre400: window.curves.pre400.points,
 		pre400Chroma: window.curves.pre400Chroma.points,
@@ -462,11 +528,7 @@ function updateCurveData() {
 		post600Chroma: window.curves.post600Chroma.points
 	};
 	
-	const jsonData = JSON.stringify(curveData, null, 2);
-	document.getElementById('curveOutput').value = jsonData;
-	
-	// Save to localStorage
-	localStorage.setItem('flexoki-curves', jsonData);
+	document.getElementById('curveOutput').value = JSON.stringify(curveData, null, 2);
 }
 
 // Add this function to handle textarea updates
@@ -518,30 +580,123 @@ document.addEventListener('DOMContentLoaded', () => {
 	window.post600Curve = window.curves.post600.evaluate.bind(window.curves.post600);
 	window.post600ChromaCurve = window.curves.post600Chroma.evaluate.bind(window.curves.post600Chroma);
 
-	// Try to load saved curves
-	const savedCurves = localStorage.getItem('flexoki-curves');
-	if (savedCurves) {
-		try {
-			const curveData = JSON.parse(savedCurves);
-			Object.entries(curveData).forEach(([key, points]) => {
-				if (window.curves[key]) {
-					window.curves[key].points = points;
-					window.curves[key].draw();
-				}
-			});
-			generateAllScales();
-		} catch (error) {
-			console.error('Error loading saved curves:', error);
-		}
-	}
-
-	// Initial generation if no saved curves
+	// Initial generation
 	generateAllScales();
+	updateCurveData();
 
 	// Add input handler for textarea
 	document.getElementById('curveOutput').addEventListener('input', () => {
-		// Use a debounced version to avoid too frequent updates
 		clearTimeout(window.curveUpdateTimeout);
 		window.curveUpdateTimeout = setTimeout(loadCurveDataFromTextarea, 500);
 	});
-}); 
+});
+
+function updateCSSOutput() {
+	const colors = {};
+	
+	// Add paper and black
+	colors['paper'] = KNOWN_VALUES.paper;
+	colors['black'] = KNOWN_VALUES.black;
+	
+	// Add grayscale
+	const graySteps = [50, 100, 150, 200, 300, 400, 500, 600, 700, 800, 850, 900, 950];
+	graySteps.forEach(step => {
+		colors[`${step}`] = KNOWN_VALUES.gray[step];
+	});
+	
+	// Add color scales
+	Object.keys(KNOWN_VALUES).forEach(color => {
+		if (color !== 'paper' && color !== 'black' && color !== 'gray') {
+			const steps = [50, 100, 150, 200, 300, 400, 500, 600, 700, 800, 850, 900, 950];
+			steps.forEach(step => {
+				let colorHex;
+				if (step === 400 || step === 600) {
+					colorHex = KNOWN_VALUES[color][step];
+				} else {
+					const t = step < 400 ? step / 400 : 
+							step > 600 ? (step - 600) / 400 : 
+							(step - 400) / 200;
+					
+					const curvePos = step < 400 ? window.pre400Curve(t) :
+									step > 600 ? window.post600Curve(t) :
+									window.midCurve(t);
+					
+					const chromaPos = step < 400 ? window.pre400ChromaCurve(t) :
+										step > 600 ? window.post600ChromaCurve(t) :
+										{ y: curvePos.y };
+					
+					const color400 = hexToLCH(KNOWN_VALUES[color][400]);
+					const color600 = hexToLCH(KNOWN_VALUES[color][600]);
+					const paperLCH = hexToLCH(KNOWN_VALUES.paper);
+					const blackLCH = hexToLCH(KNOWN_VALUES.black);
+					
+					let lch;
+					if (step < 400) {
+						lch = [
+							paperLCH[0] + (color400[0] - paperLCH[0]) * curvePos.y,
+							color400[1] * chromaPos.y,
+							color400[2]
+						];
+					} else if (step > 600) {
+						lch = [
+							color600[0] + (blackLCH[0] - color600[0]) * (1 - curvePos.y),
+							color600[1] * chromaPos.y,
+							color600[2]
+						];
+					} else {
+						lch = [
+							color400[0] + (color600[0] - color400[0]) * curvePos.y,
+							color400[1] + (color600[1] - color400[1]) * curvePos.y,
+							color400[2] + (color600[2] - color400[2]) * curvePos.y
+						];
+					}
+					colorHex = LCHToHex(...lch);
+				}
+				colors[`${color}-${step}`] = colorHex;
+			});
+		}
+	});
+	
+	// Generate CSS
+	let css = ':root {\n';
+	css += `  --flexoki-black:           ${colors.black};\n`;
+	css += `  --flexoki-paper:           ${colors.paper};\n\n`;
+	
+	// Add grayscale
+	graySteps.forEach(step => {
+		const spacing = step === 50 ? '              ' : '             ';
+		css += `  --flexoki-${step}:${spacing}${colors[step].toUpperCase()};\n`;
+	});
+	css += '\n';
+	
+	// Group colors by base color
+	const colorGroups = {};
+	Object.keys(colors).forEach(key => {
+		if (key.includes('-')) {
+			const [color, step] = key.split('-');
+			if (!colorGroups[color]) {
+				colorGroups[color] = [];
+			}
+			colorGroups[color].push([step, colors[key]]);
+		}
+	});
+	
+	// Add each color group with spacing
+	Object.keys(colorGroups)
+		.sort((a, b) => COLOR_ORDER.indexOf(a) - COLOR_ORDER.indexOf(b))
+		.forEach(color => {
+			colorGroups[color].sort((a, b) => parseInt(a[0]) - parseInt(b[0])).forEach(([step, hex]) => {
+				const paddingLength = 'magenta'.length - color.length;
+				const basePadding = step === '50' ? '      ' : '     ';
+				const extraPadding = ' '.repeat(paddingLength);
+				const spacing = basePadding + extraPadding;
+				
+				css += `  --flexoki-${color}-${step}:${spacing}${hex.toUpperCase()};\n`;
+			});
+			css += '\n';
+		});
+	
+	css += '}';
+	
+	document.getElementById('cssOutput').value = css;
+} 

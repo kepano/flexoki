@@ -13,6 +13,8 @@
     --flexoki-150:         #DAD8CE;
     --flexoki-100:         #E6E4D9;
     --flexoki-50:          #F2F0E5;
+
+    --font-mono:  ui-monospace, SFMono-Regular, "Cascadia Code", "IBM Plex Mono", "Roboto Mono", "DejaVu Sans Mono", "Liberation Mono", Menlo, Monaco, "Consolas", "Source Code Pro", monospace;
 }
 
 body {
@@ -21,11 +23,18 @@ body {
     max-width: 1400px;
     margin: 0 auto;
     padding: 2rem;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+h1 {
+    font-weight: 500;
 }
 
 .color-scales {
     display: grid;
     margin: 2rem 0;
+    gap: 1rem;
 }
 
 .color-scale-container {
@@ -38,37 +47,44 @@ body {
 .color-scale {
     display: grid;
     flex-grow: 1;
-    grid-template-columns: repeat(13,minmax(0, 1fr));
+    grid-template-columns: repeat(13, minmax(0, 1fr));
+    gap: 0.5rem;
 }
 
 .color-scale-label {
-    font-weight: bold;
+    font-weight: 500;
     width: 100px;
-    margin-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.color-swatch-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .color-swatch {
-    aspect-ratio: 1;
-    border-radius: 0;
-    position: relative;
+    aspect-ratio: 0.8;
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
 }
 
-.color-swatch span {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0,0,0,0.8);
-    color: white;
-    padding: 8px;
-    font-size: 12px;
+.color-swatch-label-name {
+    font-size: 13px;
     line-height: 1.4;
-    opacity: 0;
+    font-weight: 500;
+}
+
+.color-swatch-label-hex {
+    font-size: 11px;
+    line-height: 1.4;
+    color: var(--flexoki-600);
+    font-family: var(--font-mono);
 }
 
 .controls {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
     margin: 2rem 0;
     background: var(--flexoki-50);
@@ -86,8 +102,7 @@ body {
 }
 
 .curve-editor {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 1rem;
 }
 
@@ -97,6 +112,8 @@ body {
 }
 
 .curve-editor canvas {
+    width: 100%;
+    aspect-ratio: 1;
     background: white;
     border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
@@ -122,9 +139,6 @@ body {
 
 .curve-data {
     grid-column: 1 / -1;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
 }
 
 .curve-data textarea {
@@ -137,4 +151,8 @@ body {
     border: 1px solid var(--flexoki-600);
     border-radius: 4px;
     resize: vertical;
+}
+
+.curve-data + .curve-data {
+    margin-top: 2rem;
 } 
