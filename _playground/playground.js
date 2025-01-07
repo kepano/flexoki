@@ -548,22 +548,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function hexToRGBString(hex) {
 	const rgb = hexToRGB(hex);
-	return `${Math.round(rgb[0] * 255)}, ${Math.round(rgb[1] * 255)}, ${Math.round(rgb[2] * 255)}`;
+	return [
+		Math.round(rgb[0] * 255),
+		Math.round(rgb[1] * 255),
+		Math.round(rgb[2] * 255)
+	].join(', ');  // Just join with commas and spaces, no padding
 }
 
 function updateMarkdownOutput() {
 	let markdown = '';
 	
+	// Helper function to pad strings to a specific length
+	const pad = (str, len) => str.padEnd(len);
+	
+	// Define column widths
+	const nameWidth = 12;
+	const hexWidth = 10;    // #XXXXXX is 7 chars + backticks
+	const rgbWidth = 15;   // "255, 255, 255" + backticks
+	
+	// Format table headers consistently
+	const tableHeader = 
+		`| ${pad('Name', nameWidth)} | ${pad('Hex', hexWidth)} | ${pad('RGB', rgbWidth)} |\n` +
+		`| ${'-'.repeat(nameWidth)} | ${'-'.repeat(hexWidth)} | ${'-'.repeat(rgbWidth)} |\n`;
+	
 	// Base colors
-	markdown += '## Base\n\n';
-	markdown += '| Name | Hex | RGB |\n';
-	markdown += '| - | - | - |\n';
-	markdown += `| paper | \`${KNOWN_VALUES.paper}\` | \`${hexToRGBString(KNOWN_VALUES.paper)}\` |\n`;
-	markdown += `| black | \`${KNOWN_VALUES.black}\` | \`${hexToRGBString(KNOWN_VALUES.black)}\` |\n`;
+	markdown += '### Base\n\n';
+	markdown += tableHeader;
+	markdown += `| ${pad('paper', nameWidth)} | \`${KNOWN_VALUES.paper}\` ${pad('', hexWidth - 10)} | \`${hexToRGBString(KNOWN_VALUES.paper)}\`${pad('', rgbWidth - hexToRGBString(KNOWN_VALUES.paper).length - 2)} |\n`;
 	[50, 100, 150, 200, 300, 400, 500, 600, 700, 800, 850, 900, 950].forEach(step => {
 		const hex = KNOWN_VALUES.gray[step];
-		markdown += `| base-${step} | \`${hex}\` | \`${hexToRGBString(hex)}\` |\n`;
+		const rgb = hexToRGBString(hex);
+		markdown += `| ${pad(`base-${step}`, nameWidth)} | \`${hex}\` ${pad('', hexWidth - 10)} | \`${rgb}\`${pad('', rgbWidth - rgb.length - 2)} |\n`;
 	});
+	markdown += `| ${pad('black', nameWidth)} | \`${KNOWN_VALUES.black}\` ${pad('', hexWidth - 10)} | \`${hexToRGBString(KNOWN_VALUES.black)}\`${pad('', rgbWidth - hexToRGBString(KNOWN_VALUES.black).length - 2)} |\n`;
 	markdown += '\n';
 	
 	// Get the current colors from the CSS variables
@@ -578,12 +595,12 @@ function updateMarkdownOutput() {
 	
 	// Color scales
 	COLOR_ORDER.forEach(color => {
-		markdown += `## ${color.charAt(0).toUpperCase() + color.slice(1)}\n\n`;
-		markdown += '| Name | Hex | RGB |\n';
-		markdown += '| - | - | - |\n';
+		markdown += `### ${color.charAt(0).toUpperCase() + color.slice(1)}\n\n`;
+		markdown += tableHeader;
 		[50, 100, 150, 200, 300, 400, 500, 600, 700, 800, 850, 900, 950].forEach(step => {
 			const hex = colorMap[`${color}-${step}`];
-			markdown += `| ${color}-${step} | \`${hex}\` | \`${hexToRGBString(hex)}\` |\n`;
+			const rgb = hexToRGBString(hex);
+			markdown += `| ${pad(`${color}-${step}`, nameWidth)} | \`${hex}\` ${pad('', hexWidth - 10)} | \`${rgb}\`${pad('', rgbWidth - rgb.length - 2)} |\n`;
 		});
 		markdown += '\n';
 	});
