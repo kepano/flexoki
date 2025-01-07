@@ -175,14 +175,14 @@ function generateColorScale(baseColor) {
 	const steps = [50, 100, 150, 200, 300, 400, 500, 600, 700, 800, 850, 900, 950];
 	
 	const scale = document.createElement('div');
-	scale.className = 'color-scale-container';
+	scale.classList = 'color-scale-container flex flex-row';
 	
 	const label = document.createElement('div');
 	label.className = 'color-scale-label';
 	label.textContent = baseColor.charAt(0).toUpperCase() + baseColor.slice(1);
 	
 	const swatches = document.createElement('div');
-	swatches.className = 'color-scale';
+	swatches.classList = 'color-scale grid grid-columns flex-grow';
 
 	steps.forEach(step => {
 		let color;
@@ -229,17 +229,17 @@ function generateColorScale(baseColor) {
 		}
 
 		const swatch = document.createElement('div');
-		swatch.className = 'color-swatch-container';
+		swatch.className = 'swatch-container';
 
 		const swatchColor = document.createElement('div');
-		swatchColor.className = 'color-swatch';
+		swatchColor.className = 'swatch';
 		swatchColor.style.backgroundColor = `var(--flexoki-${baseColor}-${step})`;
 
 		const swatchLabel = document.createElement('div');
-		swatchLabel.className = 'color-swatch-label';
+		swatchLabel.className = 'swatch-label';
 		swatchLabel.innerHTML = `
-			<div class="color-swatch-label-name">${step}</div>
-			<div class="color-swatch-label-hex">
+			<div class="swatch-label-name">${step}</div>
+			<div class="swatch-label-hex">
 				${color.toUpperCase()}
 			</div>
 		`;
@@ -267,14 +267,14 @@ function blendColors(color1, color2, amount) {
 
 function generateGrayScale() {
 	const scale = document.createElement('div');
-	scale.className = 'color-scale-container';
+	scale.classList = 'color-scale-container flex flex-row';
 	
 	const label = document.createElement('div');
 	label.className = 'color-scale-label';
 	label.textContent = 'Base';
 	
 	const swatches = document.createElement('div');
-	swatches.className = 'color-scale';
+	swatches.classList = 'color-scale grid grid-columns flex-grow';
 
 	const steps = [50, 100, 150, 200, 300, 400, 500, 600, 700, 800, 850, 900, 950];
 	
@@ -282,17 +282,17 @@ function generateGrayScale() {
 		const color = KNOWN_VALUES.gray[step];  // Already blended, use directly
 
 		const swatch = document.createElement('div');
-		swatch.className = 'color-swatch-container';
+		swatch.className = 'swatch-container';
 
 		const swatchColor = document.createElement('div');
-		swatchColor.className = 'color-swatch';
+		swatchColor.className = 'swatch';
 		swatchColor.style.backgroundColor = `var(--flexoki-${step})`;
 
 		const swatchLabel = document.createElement('div');
-		swatchLabel.className = 'color-swatch-label';
+		swatchLabel.className = 'swatch-label';
 		swatchLabel.innerHTML = `
-			<div class="color-swatch-label-name">${step}</div>
-			<div class="color-swatch-label-hex">
+			<div class="swatch-label-name">${step}</div>
+			<div class="swatch-label-hex">
 				${color.toUpperCase()}
 			</div>
 		`;
