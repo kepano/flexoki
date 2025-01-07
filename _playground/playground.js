@@ -11,12 +11,6 @@ const defaultPoints = {
 		{ x: 0.5, y: 0.9 },
 		{ x: 1, y: 1 }
 	],
-	mid: [
-		{ x: 0, y: 1 },
-		{ x: 0.3, y: 0.5 },
-		{ x: 0.7, y: 0.5 },
-		{ x: 1, y: 0 }
-	],
 	post600: [
 		{ x: 0, y: 1 },
 		{ x: 0.5, y: 0.8 },
@@ -31,128 +25,87 @@ const defaultPoints = {
 	]
 };
 
-// LCH to RGB conversion functions
-function LCHToLAB(l, c, h) {
-	const hRad = (h * Math.PI) / 180;
+// OKLCH conversion functions
+function sRGBToLinear(x) {
+	if (x <= 0.0031308) return x * 12.92;
+	return 1.055 * Math.pow(x, 1/2.4) - 0.055;
+}
+
+function linearTosRGB(x) {
+	if (x <= 0.04045) return x / 12.92;
+	return Math.pow((x + 0.055) / 1.055, 2.4);
+}
+
+function OKLABToLRGB(L, a, b) {
+	const l = L + 0.3963377774 * a + 0.2158037573 * b;
+	const m = L - 0.1055613458 * a - 0.0638541728 * b;
+	const s = L - 0.0894841775 * a - 1.2914855480 * b;
+
 	return [
-		l,
-		c * Math.cos(hRad),
-		c * Math.sin(hRad)
+		Math.pow(l, 3),
+		Math.pow(m, 3),
+		Math.pow(s, 3)
 	];
 }
 
-function LABToXYZ(l, a, b) {
-	const y = (l + 16) / 116;
-	const x = a / 500 + y;
-	const z = y - b / 200;
+function LRGBToOKLAB(L, M, S) {
+	const l = Math.cbrt(L);
+	const m = Math.cbrt(M);
+	const s = Math.cbrt(S);
 
 	return [
-		x * x * x > 0.008856 ? x * x * x : (x - 16/116) / 7.787,
-		y * y * y > 0.008856 ? y * y * y : (y - 16/116) / 7.787,
-		z * z * z > 0.008856 ? z * z * z : (z - 16/116) / 7.787
-	].map((n, i) => n * [0.95047, 1, 1.08883][i]);
-}
-
-function XYZToRGB(x, y, z) {
-	const r = x *  3.2406 + y * -1.5372 + z * -0.4986;
-	const g = x * -0.9689 + y *  1.8758 + z *  0.0415;
-	const b = x *  0.0557 + y * -0.2040 + z *  1.0570;
-
-	return [r, g, b].map(n => {
-		n = n > 0.0031308 ? 1.055 * Math.pow(n, 1/2.4) - 0.055 : 12.92 * n;
-		return Math.max(0, Math.min(1, n));
-	});
-}
-
-function LCHToRGB(l, c, h) {
-	const [L, a, b] = LCHToLAB(l, c, h);
-	const [x, y, z] = LABToXYZ(L, a, b);
-	const [r, g, b_] = XYZToRGB(x, y, z);
-	return [
-		Math.round(r * 255),
-		Math.round(g * 255),
-		Math.round(b_ * 255)
+		0.2104542553 * l + 0.7936177850 * m - 0.0040720468 * s,
+		1.9779984951 * l - 2.4285922050 * m + 0.4505937099 * s,
+		0.0259040371 * l + 0.7827717662 * m - 0.8086757660 * s
 	];
 }
 
-function RGBToHex(r, g, b) {
-	return '#' + [r, g, b]
-		.map(x => x.toString(16).padStart(2, '0'))
-		.join('');
+function OKLCHToOKLAB(L, C, h) {
+	const hRad = h * Math.PI / 180;
+	return [L, C * Math.cos(hRad), C * Math.sin(hRad)];
 }
 
-function LCHToHex(l, c, h) {
-	const [r, g, b] = LCHToRGB(l, c, h);
-	return RGBToHex(r, g, b);
+function OKLABToOKLCH(L, a, b) {
+	const C = Math.sqrt(a * a + b * b);
+	let h = Math.atan2(b, a) * 180 / Math.PI;
+	if (h < 0) h += 360;
+	return [L, C, h];
 }
 
-// Add new functions for hex to RGB and RGB to LCH
 function hexToRGB(hex) {
-	const r = parseInt(hex.slice(1, 3), 16);
-	const g = parseInt(hex.slice(3, 5), 16);
-	const b = parseInt(hex.slice(5, 7), 16);
+	const r = parseInt(hex.slice(1, 3), 16) / 255;
+	const g = parseInt(hex.slice(3, 5), 16) / 255;
+	const b = parseInt(hex.slice(5, 7), 16) / 255;
 	return [r, g, b];
 }
 
-function RGBToXYZ(r, g, b) {
-	// Normalize RGB values
-	r = r / 255;
-	g = g / 255;
-	b = b / 255;
-
-	// Convert to linear RGB
-	r = r > 0.04045 ? Math.pow((r + 0.055) / 1.055, 2.4) : r / 12.92;
-	g = g > 0.04045 ? Math.pow((g + 0.055) / 1.055, 2.4) : g / 12.92;
-	b = b > 0.04045 ? Math.pow((b + 0.055) / 1.055, 2.4) : b / 12.92;
-
-	// Convert to XYZ
-	return [
-		r * 0.4124564 + g * 0.3575761 + b * 0.1804375,
-		r * 0.2126729 + g * 0.7151522 + b * 0.0721750,
-		r * 0.0193339 + g * 0.1191920 + b * 0.9503041
-	];
+function RGBToHex(r, g, b) {
+	const toHex = x => Math.round(x * 255).toString(16).padStart(2, '0');
+	return '#' + toHex(r) + toHex(g) + toHex(b);
 }
 
-function XYZToLAB(x, y, z) {
-	// Normalize XYZ values
-	x = x / 0.95047;
-	y = y / 1.00000;
-	z = z / 1.08883;
-
-	// Convert to LAB
-	x = x > 0.008856 ? Math.pow(x, 1/3) : (7.787 * x) + 16/116;
-	y = y > 0.008856 ? Math.pow(y, 1/3) : (7.787 * y) + 16/116;
-	z = z > 0.008856 ? Math.pow(z, 1/3) : (7.787 * z) + 16/116;
-
-	return [
-		(116 * y) - 16,
-		500 * (x - y),
-		200 * (y - z)
-	];
+function hexToOKLCH(hex) {
+	const [r, g, b] = hexToRGB(hex).map(linearTosRGB);
+	const [L, a, b_] = LRGBToOKLAB(r, g, b);
+	return OKLABToOKLCH(L, a, b_);
 }
 
-function LABToLCH(l, a, b) {
-	const c = Math.sqrt(a * a + b * b);
-	let h = Math.atan2(b, a) * 180 / Math.PI;
-	if (h < 0) h += 360;
-	return [l, c, h];
+function OKLCHToHex(L, C, h) {
+	const [l, a, b] = OKLCHToOKLAB(L, C, h);
+	const [r, g, b_] = OKLABToLRGB(l, a, b);
+	const rgb = [r, g, b_].map(sRGBToLinear);
+	return RGBToHex(...rgb);
 }
 
-function hexToLCH(hex) {
-	const rgb = hexToRGB(hex);
-	const xyz = RGBToXYZ(...rgb);
-	const lab = XYZToLAB(...xyz);
-	return LABToLCH(...lab);
-}
-
-// Function to blend colors as if on paper
-function blendWithPaper(color, paperColor) {
-	const paperRGB = hexToRGB(paperColor);
-	const colorRGB = hexToRGB(color);
+// Add this function for multiply-like blending in RGB space
+function multiplyColors(color1, color2) {
+	const rgb1 = hexToRGB(color1);
+	const rgb2 = hexToRGB(color2);
 	
-	// Simulate multiplicative blending
-	const blended = colorRGB.map((c, i) => {
-		return Math.round((c * paperRGB[i]) / 255);
+	// Multiply RGB channels and handle the 0-1 range properly
+	const blended = rgb1.map((c, i) => {
+		// Since hexToRGB already gives us 0-1 values, we just multiply
+		return c * rgb2[i];
 	});
 	
 	return RGBToHex(...blended);
@@ -214,10 +167,10 @@ const KNOWN_VALUES = {
 const COLOR_ORDER = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple', 'magenta'];
 
 function generateColorScale(baseColor) {
-	const color400 = hexToLCH(KNOWN_VALUES[baseColor][400]);
-	const color600 = hexToLCH(KNOWN_VALUES[baseColor][600]);
-	const paperLCH = hexToLCH(KNOWN_VALUES.paper);
-	const blackLCH = hexToLCH(KNOWN_VALUES.black);
+	const color400 = hexToOKLCH(KNOWN_VALUES[baseColor][400]);
+	const color600 = hexToOKLCH(KNOWN_VALUES[baseColor][600]);
+	const paperLCH = hexToOKLCH(KNOWN_VALUES.paper);
+	const blackLCH = hexToOKLCH(KNOWN_VALUES.black);
 	
 	const steps = [50, 100, 150, 200, 300, 400, 500, 600, 700, 800, 850, 900, 950];
 	
@@ -249,6 +202,9 @@ function generateColorScale(baseColor) {
 					color400[1] * chromaPos.y,
 					color400[2]
 				];
+				color = OKLCHToHex(...lch);
+				// Add paper multiplication for pre-400 colors
+				color = multiplyColors(color, KNOWN_VALUES.paper);
 			} else if (step > 600) {
 				const t = (step - 600) / 400;
 				const curvePos = window.post600Curve(t);
@@ -259,34 +215,33 @@ function generateColorScale(baseColor) {
 					color600[1] * chromaPos.y,
 					color600[2]
 				];
+				color = OKLCHToHex(...lch);
 			} else {
-				const t = (step - 400) / 200;
-				const curvePos = window.midCurve(t);
+				const t = (step - 400) / 200;  // Linear t from 0 to 1
 				
 				lch = [
-					color400[0] + (color600[0] - color400[0]) * curvePos.y,
-					color400[1] + (color600[1] - color400[1]) * curvePos.y,
-					color400[2] + (color600[2] - color400[2]) * curvePos.y
+					color400[0] + (color600[0] - color400[0]) * t,
+					color400[1] + (color600[1] - color400[1]) * t,
+					color400[2] + (color600[2] - color400[2]) * t
 				];
+				color = OKLCHToHex(...lch);
 			}
-			color = LCHToHex(...lch);
 		}
-
-		// Always blend with paper color
-		const blendedColor = blendWithPaper(color, KNOWN_VALUES.paper);
 
 		const swatch = document.createElement('div');
 		swatch.className = 'color-swatch-container';
 
 		const swatchColor = document.createElement('div');
 		swatchColor.className = 'color-swatch';
-		swatchColor.style.backgroundColor = blendedColor;
+		swatchColor.style.backgroundColor = `var(--flexoki-${baseColor}-${step})`;
 
 		const swatchLabel = document.createElement('div');
 		swatchLabel.className = 'color-swatch-label';
 		swatchLabel.innerHTML = `
 			<div class="color-swatch-label-name">${step}</div>
-			<div class="color-swatch-label-hex">${blendedColor.toUpperCase()}</div>
+			<div class="color-swatch-label-hex">
+				${color.toUpperCase()}
+			</div>
 		`;
 
 		swatch.appendChild(swatchColor);
@@ -324,20 +279,22 @@ function generateGrayScale() {
 	const steps = [50, 100, 150, 200, 300, 400, 500, 600, 700, 800, 850, 900, 950];
 	
 	steps.forEach(step => {
-		const color = KNOWN_VALUES.gray[step];
-		
+		const color = KNOWN_VALUES.gray[step];  // Already blended, use directly
+
 		const swatch = document.createElement('div');
 		swatch.className = 'color-swatch-container';
 
 		const swatchColor = document.createElement('div');
 		swatchColor.className = 'color-swatch';
-		swatchColor.style.backgroundColor = color;
+		swatchColor.style.backgroundColor = `var(--flexoki-${step})`;
 
 		const swatchLabel = document.createElement('div');
 		swatchLabel.className = 'color-swatch-label';
 		swatchLabel.innerHTML = `
 			<div class="color-swatch-label-name">${step}</div>
-			<div class="color-swatch-label-hex">${color}</div>
+			<div class="color-swatch-label-hex">
+				${color.toUpperCase()}
+			</div>
 		`;
 
 		swatch.appendChild(swatchColor);
@@ -515,7 +472,10 @@ class CurveEditor {
 function updateCurveData() {
 	// On first load, use the default points
 	if (!window.curves) {
-		document.getElementById('curveOutput').value = JSON.stringify(defaultPoints, null, 2);
+		// Remove mid curve from default points when displaying
+		const displayPoints = { ...defaultPoints };
+		delete displayPoints.mid;
+		document.getElementById('curveOutput').value = JSON.stringify(displayPoints, null, 2);
 		return;
 	}
 
@@ -523,7 +483,6 @@ function updateCurveData() {
 	const curveData = {
 		pre400: window.curves.pre400.points,
 		pre400Chroma: window.curves.pre400Chroma.points,
-		mid: window.curves.mid.points,
 		post600: window.curves.post600.points,
 		post600Chroma: window.curves.post600Chroma.points
 	};
@@ -559,14 +518,11 @@ document.addEventListener('DOMContentLoaded', () => {
 			window.pre400ChromaCurve = curve;
 			generateAllScales();
 		}),
-		mid: new CurveEditor('midCurveEditor', curve => {
-			window.midCurve = curve;
-			generateAllScales();
-		}),
 		post600: new CurveEditor('post600CurveEditor', curve => {
 			window.post600Curve = curve;
 			generateAllScales();
 		}),
+		
 		post600Chroma: new CurveEditor('post600ChromaEditor', curve => {
 			window.post600ChromaCurve = curve;
 			generateAllScales();
@@ -576,7 +532,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Update color generation to use curves
 	window.pre400Curve = window.curves.pre400.evaluate.bind(window.curves.pre400);
 	window.pre400ChromaCurve = window.curves.pre400Chroma.evaluate.bind(window.curves.pre400Chroma);
-	window.midCurve = window.curves.mid.evaluate.bind(window.curves.mid);
 	window.post600Curve = window.curves.post600.evaluate.bind(window.curves.post600);
 	window.post600ChromaCurve = window.curves.post600Chroma.evaluate.bind(window.curves.post600Chroma);
 
@@ -598,7 +553,7 @@ function updateCSSOutput() {
 	colors['paper'] = KNOWN_VALUES.paper;
 	colors['black'] = KNOWN_VALUES.black;
 	
-	// Add grayscale
+	// Add grayscale - use values directly
 	const graySteps = [50, 100, 150, 200, 300, 400, 500, 600, 700, 800, 850, 900, 950];
 	graySteps.forEach(step => {
 		colors[`${step}`] = KNOWN_VALUES.gray[step];
@@ -611,6 +566,7 @@ function updateCSSOutput() {
 			steps.forEach(step => {
 				let colorHex;
 				if (step === 400 || step === 600) {
+					// Use known values directly since they're already multiplied
 					colorHex = KNOWN_VALUES[color][step];
 				} else {
 					const t = step < 400 ? step / 400 : 
@@ -619,16 +575,16 @@ function updateCSSOutput() {
 					
 					const curvePos = step < 400 ? window.pre400Curve(t) :
 									step > 600 ? window.post600Curve(t) :
-									window.midCurve(t);
+									{ y: t };
 					
 					const chromaPos = step < 400 ? window.pre400ChromaCurve(t) :
 										step > 600 ? window.post600ChromaCurve(t) :
-										{ y: curvePos.y };
+										{ y: t };
 					
-					const color400 = hexToLCH(KNOWN_VALUES[color][400]);
-					const color600 = hexToLCH(KNOWN_VALUES[color][600]);
-					const paperLCH = hexToLCH(KNOWN_VALUES.paper);
-					const blackLCH = hexToLCH(KNOWN_VALUES.black);
+					const color400 = hexToOKLCH(KNOWN_VALUES[color][400]);
+					const color600 = hexToOKLCH(KNOWN_VALUES[color][600]);
+					const paperLCH = hexToOKLCH(KNOWN_VALUES.paper);
+					const blackLCH = hexToOKLCH(KNOWN_VALUES.black);
 					
 					let lch;
 					if (step < 400) {
@@ -637,27 +593,31 @@ function updateCSSOutput() {
 							color400[1] * chromaPos.y,
 							color400[2]
 						];
+						colorHex = OKLCHToHex(...lch);
+						// Add paper multiplication for pre-400 colors
+						colorHex = multiplyColors(colorHex, KNOWN_VALUES.paper);
 					} else if (step > 600) {
 						lch = [
 							color600[0] + (blackLCH[0] - color600[0]) * (1 - curvePos.y),
 							color600[1] * chromaPos.y,
 							color600[2]
 						];
+						colorHex = OKLCHToHex(...lch);
 					} else {
 						lch = [
-							color400[0] + (color600[0] - color400[0]) * curvePos.y,
-							color400[1] + (color600[1] - color400[1]) * curvePos.y,
-							color400[2] + (color600[2] - color400[2]) * curvePos.y
+							color400[0] + (color600[0] - color400[0]) * t,
+							color400[1] + (color600[1] - color400[1]) * t,
+							color400[2] + (color600[2] - color400[2]) * t
 						];
+						colorHex = OKLCHToHex(...lch);
 					}
-					colorHex = LCHToHex(...lch);
 				}
 				colors[`${color}-${step}`] = colorHex;
 			});
 		}
 	});
 	
-	// Generate CSS
+	// Generate CSS with multiplied colors
 	let css = ':root {\n';
 	css += `  --flexoki-black:           ${colors.black};\n`;
 	css += `  --flexoki-paper:           ${colors.paper};\n\n`;
@@ -698,5 +658,15 @@ function updateCSSOutput() {
 	
 	css += '}';
 	
+	// Update textarea
 	document.getElementById('cssOutput').value = css;
+	
+	// Update or create style element
+	let styleEl = document.getElementById('flexoki-variables');
+	if (!styleEl) {
+		styleEl = document.createElement('style');
+		styleEl.id = 'flexoki-variables';
+		document.head.appendChild(styleEl);
+	}
+	styleEl.textContent = css;
 } 
