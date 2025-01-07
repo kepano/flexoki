@@ -546,6 +546,52 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 });
 
+function hexToRGBString(hex) {
+	const rgb = hexToRGB(hex);
+	return `${Math.round(rgb[0] * 255)}, ${Math.round(rgb[1] * 255)}, ${Math.round(rgb[2] * 255)}`;
+}
+
+function updateMarkdownOutput() {
+	let markdown = '';
+	
+	// Base colors
+	markdown += '## Base\n\n';
+	markdown += '| Name | Hex | RGB |\n';
+	markdown += '| - | - | - |\n';
+	markdown += `| paper | \`${KNOWN_VALUES.paper}\` | \`${hexToRGBString(KNOWN_VALUES.paper)}\` |\n`;
+	markdown += `| black | \`${KNOWN_VALUES.black}\` | \`${hexToRGBString(KNOWN_VALUES.black)}\` |\n`;
+	[50, 100, 150, 200, 300, 400, 500, 600, 700, 800, 850, 900, 950].forEach(step => {
+		const hex = KNOWN_VALUES.gray[step];
+		markdown += `| base-${step} | \`${hex}\` | \`${hexToRGBString(hex)}\` |\n`;
+	});
+	markdown += '\n';
+	
+	// Get the current colors from the CSS variables
+	const styleEl = document.getElementById('flexoki-variables');
+	const cssText = styleEl.textContent;
+	const colorMap = {};
+	
+	cssText.match(/--flexoki-[^:]+:\s+([^;]+)/g)?.forEach(match => {
+		const [variable, color] = match.split(/:\s+/);
+		colorMap[variable.replace('--flexoki-', '')] = color.trim();
+	});
+	
+	// Color scales
+	COLOR_ORDER.forEach(color => {
+		markdown += `## ${color.charAt(0).toUpperCase() + color.slice(1)}\n\n`;
+		markdown += '| Name | Hex | RGB |\n';
+		markdown += '| - | - | - |\n';
+		[50, 100, 150, 200, 300, 400, 500, 600, 700, 800, 850, 900, 950].forEach(step => {
+			const hex = colorMap[`${color}-${step}`];
+			markdown += `| ${color}-${step} | \`${hex}\` | \`${hexToRGBString(hex)}\` |\n`;
+		});
+		markdown += '\n';
+	});
+	
+	document.getElementById('markdownOutput').value = markdown;
+}
+
+// Update the updateCSSOutput function to also update markdown:
 function updateCSSOutput() {
 	const colors = {};
 	
@@ -669,4 +715,7 @@ function updateCSSOutput() {
 		document.head.appendChild(styleEl);
 	}
 	styleEl.textContent = css;
+
+	// Update markdown after CSS is updated
+	updateMarkdownOutput();
 } 
