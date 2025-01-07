@@ -1,0 +1,34 @@
+Flexoki is an inky color scheme for prose and code. Flexoki is designed for reading and writing on digital screens. It is inspired by analog printing inks and warm shades of paper.
+
+Flexoki is minimalistic and high-contrast. The colors are calibrated for legibility and perceptual balance across devices and when switching between light and dark modes.
+
+Flexoki is open-source under the MIT license. Flexoki is available for many popular apps listed below.
+
+I created Flexoki for my personal site, I wanted the colors to feel distinctive yet familiar. Like ink on paper.
+
+The name Flexoki comes from flexography — a common printing process for paper and cardboard. I wanted to bring the comfort of analog color to emissive digital screens.
+
+One challenge is that ink on paper is a subtractive process whereas LCD and OLED screens use additive color. Replicating the effect of mixing pigments digitally is difficult.
+
+Mixing blue and yellow paint creates green, whereas digital color mixing results in a brownish hue. Watercolors retain their saturation when you dilute them, whereas reducing the opacity of digital colors makes them look desaturated.
+
+Another challenge with digital color is human perception across color spaces. For example, yellow appears much brighter than blue. Ethan Schoonover’s color scheme Solarized (2011) was an important inspiration for Flexoki. His emphasis on CIELAB lightness relationships helped me understand how to find colors that appear cohesive.
+
+I found that choosing colors with perfect perceptual consistency can be at odds with the distinctiveness of colors in practical applications like syntax highlighting. If you adhere too closely to evenness in perceptual lightness you can end up with a palette that looks washed out and difficult to parse.
+
+Solving for all these problems is how I arrived at Flexoki. I wish it could have been more science than art, but it wasn’t. Someday I hope to arrive at a more reliable way to generate digital color palettes that respect the constraints I laid out. In the meantime, I hope you find this iteration of Flexoki useful.
+
+## Base tones
+
+Flexoki uses warm monochromatic base tones that blend the black ink tone with the base paper tone. 8 colors are used in light and dark mode:
+
+3 text colors: normal, muted, faint
+3 interface colors: normal, hover, active
+2 background colors: primary, secondary
+Incremental values can be derived using opacity. For example, you can use a 60% opacity black tone on top of the paper tone to create the 600 value.
+
+## Accent colors
+
+8 accent colors are available for accents and syntax highlighting. Each color is available in two tones calibrated for light and dark modes.
+
+In the future, a full range of tones from 50 to 950 will be added. Unlike the base tones, colors cannot be blended using opacity because this desaturates the pigment effect.

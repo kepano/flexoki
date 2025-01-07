@@ -1,0 +1,158 @@
+:root {
+    --flexoki-paper:       #FFFCF0;
+    --flexoki-black:       #100F0F;
+    --flexoki-950:         #1C1B1A;
+    --flexoki-900:         #282726;
+    --flexoki-850:         #343331;
+    --flexoki-800:         #403E3C;
+    --flexoki-700:         #575653;
+    --flexoki-600:         #6F6E69;
+    --flexoki-500:         #878580;
+    --flexoki-300:         #B7B5AC;
+    --flexoki-200:         #CECDC3;
+    --flexoki-150:         #DAD8CE;
+    --flexoki-100:         #E6E4D9;
+    --flexoki-50:          #F2F0E5;
+
+    --font-mono:  ui-monospace, SFMono-Regular, "Cascadia Code", "IBM Plex Mono", "Roboto Mono", "DejaVu Sans Mono", "Liberation Mono", Menlo, Monaco, "Consolas", "Source Code Pro", monospace;
+}
+
+body {
+    background: var(--flexoki-paper);
+    font-family: system-ui, -apple-system, sans-serif;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+h1 {
+    font-weight: 500;
+}
+
+.color-scales {
+    display: grid;
+    margin: 2rem 0;
+    gap: 1rem;
+}
+
+.color-scale-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
+.color-scale {
+    display: grid;
+    flex-grow: 1;
+    grid-template-columns: repeat(13, minmax(0, 1fr));
+    gap: 0.5rem;
+}
+
+.color-scale-label {
+    font-weight: 500;
+    width: 100px;
+    margin-bottom: 2rem;
+}
+
+.swatch-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.swatch {
+    aspect-ratio: 0.8;
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+}
+
+.swatch-label-name {
+    font-size: 13px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.swatch-label-hex {
+    font-size: 11px;
+    line-height: 1.4;
+    color: var(--flexoki-600);
+    font-family: var(--font-mono);
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+    background: var(--flexoki-50);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.controls label {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.controls input[type="range"] {
+    width: 100%;
+}
+
+.curve-editor {
+    display: grid;
+    gap: 1rem;
+}
+
+.curve-editor h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.curve-editor canvas {
+    width: 100%;
+    aspect-ratio: 1;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.curve-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.curve-actions button {
+    padding: 0.5rem 1rem;
+    background: var(--flexoki-paper);
+    border: 1px solid var(--flexoki-600);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.curve-actions button:hover {
+    background: var(--flexoki-50);
+}
+
+.curve-data {
+    grid-column: 1 / -1;
+}
+
+.curve-data textarea {
+    width: 100%;
+    height: 200px;
+    font-family: monospace;
+    font-size: 12px;
+    padding: 1rem;
+    background: var(--flexoki-paper);
+    border: 1px solid var(--flexoki-600);
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.curve-data + .curve-data {
+    margin-top: 2rem;
+} 
