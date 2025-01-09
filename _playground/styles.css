@@ -87,8 +87,8 @@ h1 {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
     margin: 2rem 0;
-    background: var(--flexoki-50);
-    padding: 2rem;
+
+
     border-radius: 8px;
 }
 

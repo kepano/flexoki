@@ -129,6 +129,10 @@ Please [see documentation](https://stephango.com/flexoki) for how to apply these
 
 ## Extended palette
 
+If you wish to use Flexoki for more complex applications beyond syntax highlighting and basic color schemes, the extended palette includes a complete set of values for every accent color from 50 to 950.
+
+![Flexoki Extended](_images/flexoki-palette.png)
+
 ### Red
 
 | Name         | Hex        | RGB             |
