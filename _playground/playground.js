@@ -414,7 +414,7 @@ class CurveEditor {
 		ctx.clearRect(0, 0, w, h);
 		
 		// Draw grid
-		ctx.strokeStyle = '#eee';
+		ctx.strokeStyle = '#E6E4D9';
 		ctx.lineWidth = 1;
 		ctx.beginPath();
 		for (let i = 0; i <= 10; i++) {
@@ -426,7 +426,7 @@ class CurveEditor {
 		ctx.stroke();
 		
 		// Draw curve with more points for smoothness
-		ctx.strokeStyle = '#000';
+		ctx.strokeStyle = '#100F0F';
 		ctx.lineWidth = 2;
 		ctx.beginPath();
 		ctx.moveTo(this.points[0].x * w, (1 - this.points[0].y) * h);
@@ -440,7 +440,7 @@ class CurveEditor {
 		ctx.stroke();
 		
 		// Draw control points
-		ctx.fillStyle = '#000';
+		ctx.fillStyle = '#100F0F';
 		this.points.forEach(p => {
 			ctx.beginPath();
 			ctx.arc(p.x * w, (1 - p.y) * h, 4, 0, Math.PI * 2);

@@ -114,9 +114,9 @@ h1 {
 .curve-editor canvas {
     width: 100%;
     aspect-ratio: 1;
-    background: white;
+    background: var(--flexoki-paper);
     border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: inset 0 0 1px 1px var(--flexoki-150);
 }
 
 .curve-actions {
