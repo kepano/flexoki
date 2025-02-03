@@ -1,0 +1,151 @@
+GIMP Palette
+Name: Flexoki (Extended)
+Columns: 15
+
+# Flexoki - An inky color scheme for prose and code.
+# https://stephango.com/flexoki
+# https://github.com/kepano/flexoki
+
+255 252 240  Paper
+242 240 229  Base 50
+230 228 217  Base 100
+218 216 206  Base 150
+206 205 195  Base 200
+183 181 172  Base 300
+159 157 150  Base 400
+135 133 128  Base 500
+111 110 105  Base 600
+ 87  86  83  Base 700
+ 64  62  60  Base 800
+ 52  51  49  Base 850
+ 40  39  38  Base 900
+ 28  27  26  Base 950
+ 16  15  15  Black
+
+255 252 240  Paper
+255 225 213  Red 50
+255 202 187  Red 100
+253 178 162  Red 150
+248 154 138  Red 200
+232 112  95  Red 300
+209  77  65  Red 400
+192  62  53  Red 500
+175  48  41  Red 600
+148  40  34  Red 700
+108  32  28  Red 800
+ 85  27  24  Red 850
+ 62  23  21  Red 900
+ 38  19  18  Red 950
+ 16  15  15  Black
+
+255 252 240  Paper
+255 231 206  Orange 50
+254 211 175  Orange 100
+252 193 146  Orange 150
+249 174 119  Orange 200
+236 139  73  Orange 300
+218 112  44  Orange 400
+203  97  32  Orange 500
+188  82  21  Orange 600
+157  67  16  Orange 700
+113  50  13  Orange 800
+ 89  41  13  Orange 850
+ 64  32  13  Orange 900
+ 39  24  14  Orange 950
+ 16  15  15  Black
+
+255 252 240  Paper
+250 238 198  Yellow 50
+246 226 160  Yellow 100
+241 214 126  Yellow 150
+236 203  96  Yellow 200
+223 180  49  Yellow 300
+208 162  21  Yellow 400
+190 146   7  Yellow 500
+173 131   1  Yellow 600
+142 107   1  Yellow 700
+102  77   1  Yellow 800
+ 80  61   2  Yellow 850
+ 58  45   4  Yellow 900
+ 36  30   8  Yellow 950
+ 16  15  15  Black
+
+255 252 240  Paper
+237 238 207  Green 50
+221 226 178  Green 100
+205 213 151  Green 150
+190 201 126  Green 200
+160 175  84  Green 300
+135 154  57  Green 400
+118 141  33  Green 500
+102 128  11  Green 600
+ 83 105   7  Green 700
+ 61  76   7  Green 800
+ 49  61   7  Green 850
+ 37  45   9  Green 900
+ 26  30  12  Green 950
+ 16  15  15  Black
+
+255 252 240  Paper
+221 241 228  Cyan 50
+191 232 217  Cyan 100
+162 222 206  Cyan 150
+135 211 195  Cyan 200
+ 90 189 172  Cyan 300
+ 58 169 159  Cyan 400
+ 47 150 141  Cyan 500
+ 36 131 123  Cyan 600
+ 28 108 102  Cyan 700
+ 22  79  74  Cyan 800
+ 20  63  60  Cyan 850
+ 18  47  44  Cyan 900
+ 16  31  29  Cyan 950
+ 16  15  15  Black
+
+255 252 240  Paper
+225 236 235  Blue 50
+198 221 232  Blue 100
+171 207 226  Blue 150
+146 191 219  Blue 200
+102 160 200  Blue 300
+ 67 133 190  Blue 400
+ 49 113 178  Blue 500
+ 32  94 166  Blue 600
+ 26  79 140  Blue 700
+ 22  59 102  Blue 800
+ 19  48  81  Blue 850
+ 18  37  59  Blue 900
+ 16  26  36  Blue 950
+ 16  15  15  Black
+
+255 252 240  Paper
+240 234 236  Purple 50
+226 217 233  Purple 100
+211 202 230  Purple 150
+196 185 224  Purple 200
+166 153 208  Purple 300
+139 126 200  Purple 400
+115  94 181  Purple 500
+ 94  64 157  Purple 600
+ 79  54 133  Purple 700
+ 60  42  98  Purple 800
+ 49  35  78  Purple 850
+ 38  28  57  Purple 900
+ 26  22  35  Purple 950
+ 16  15  15  Black
+
+255 252 240  Paper
+254 228 229  Magenta 50
+252 207 218  Magenta 100
+249 185 207  Magenta 150
+244 164 194  Magenta 200
+228 125 168  Magenta 300
+206  93 151  Magenta 400
+183  69 131  Magenta 500
+160  47 111  Magenta 600
+135  40  94  Magenta 700
+100  31  70  Magenta 800
+ 79  27  57  Magenta 850
+ 57  23  43  Magenta 900
+ 36  19  29  Magenta 950
+ 16  15  15  Black

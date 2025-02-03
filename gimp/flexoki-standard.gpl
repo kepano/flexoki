@@ -1,0 +1,41 @@
+GIMP Palette
+Name: Flexoki (Standard)
+Columns: 8
+
+# Flexoki - An inky color scheme for prose and code.
+# https://stephango.com/flexoki
+# https://github.com/kepano/flexoki
+
+175  48  41  Red 600
+188  82  21  Orange 600
+173 131   1  Yellow 600
+102 128  11  Green 600
+ 36 131 123  Cyan 600
+ 32  94 166  Blue 600
+ 94  64 157  Purple 600
+160  47 111  Magenta 600
+
+209  77  65  Red 400
+218 112  44  Orange 400
+208 162  21  Yellow 400
+135 154  57  Green 400
+ 58 169 159  Cyan 400
+ 67 133 190  Blue 400
+139 126 200  Purple 400
+206  93 151  Magenta 400
+
+ 16  15  15  Black
+ 28  27  26  Base 950
+ 40  39  38  Base 900
+ 52  51  49  Base 850
+ 64  62  60  Base 800
+ 87  86  83  Base 700
+111 110 105  Base 600
+135 133 128  Base 500
+159 157 150  Base 400
+183 181 172  Base 300
+206 205 195  Base 200
+218 216 206  Base 150
+230 228 217  Base 100
+242 240 229  Base 50
+255 252 240  Paper
