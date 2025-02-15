@@ -43,6 +43,7 @@ Flexoki is available for the following apps and tools.
 - [WezTerm](https://github.com/kepano/flexoki/tree/main/wezterm) by @jbromley
 - [Windows Terminal](https://github.com/kepano/flexoki/tree/main/windows-terminal) by @joukevandermaas
 - [Xresources](https://github.com/kepano/flexoki/tree/main/xresources) by @dmb2
+- [Chrome](https://github.com/kepano/flexoki/tree/main/chrome) by @FormalSnake
 
 ### System themes
 - [gtk](https://github.com/kepano/flexoki/tree/main/gtk) by @hydroakri
