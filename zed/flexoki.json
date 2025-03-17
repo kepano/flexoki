@@ -382,7 +382,8 @@
         "terminal.bright_foreground": null,
         "terminal.dim_foreground": null,
         "terminal.ansi.black": null,
-        "terminal.ansi.bright_black": null,
+        // Controls the foreground color of the terminal's auto-completion suggestions.
+        "terminal.ansi.bright_black": "#6F6E69",
         "terminal.ansi.dim_black": null,
         "terminal.ansi.red": "#D14D41",
         "terminal.ansi.bright_red": null,
