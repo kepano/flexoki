@@ -70,6 +70,7 @@
         "editor.indent_guide_active": null,
         "editor.document_highlight.read_background": null,
         "editor.document_highlight.write_background": null,
+        "editor.document_highlight.bracket_background": "#282726",
         "terminal.background": "#100F0F",
         "terminal.foreground": "#CECDC3",
         "terminal.bright_foreground": "#F2F0E5",
@@ -143,7 +144,7 @@
         "warning": "#D0A215",
         "warning.background": "#100F0F",
         "warning.border": "#D0A215",
-        "players": [],
+        "players": [{ "cursor": "#24837B", "selection": "#24837B3D" }],
         "syntax": {
           "attribute": {
             "color": "#D0A215",
@@ -377,6 +378,7 @@
         "editor.indent_guide_active": null,
         "editor.document_highlight.read_background": null,
         "editor.document_highlight.write_background": null,
+        "editor.document_highlight.bracket_background": "#E6E4D9",
         "terminal.background": "#FFFCF0",
         "terminal.foreground": null,
         "terminal.bright_foreground": null,
@@ -449,7 +451,7 @@
         "warning": "#AD8301",
         "warning.background": "#FFFCF0",
         "warning.border": "#AD8301",
-        "players": [],
+        "players": [{ "cursor": "#3AA99F", "selection": "#3AA99F3D" }],
         "syntax": {
           "attribute": {
             "color": "#AD8301",
