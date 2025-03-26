@@ -124,7 +124,9 @@
         "ignored.background": null,
         "ignored.border": null,
         "info": "#4385BE",
-        "info.background": null,
+        // Controls the background of the suggested changes by the inline
+        // assistant.
+        "info.background": "#205EA63D",
         "info.border": null,
         "modified": "#3AA99F",
         "modified.background": null,
@@ -431,7 +433,9 @@
         "ignored.background": null,
         "ignored.border": null,
         "info": "#205EA6",
-        "info.background": null,
+        // Controls the background of the suggested changes by the inline
+        // assistant.
+        "info.background": "#4385BE3D",
         "info.border": null,
         "modified": "#24837B",
         "modified.background": null,
