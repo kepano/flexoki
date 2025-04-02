@@ -72,33 +72,36 @@
         "terminal.foreground": "#CECDC3",
         "terminal.bright_foreground": "#CECDC3",
         "terminal.dim_foreground": "#CECDC380",
+        // The `terminal.ansi.bright_black` color controls the foreground color
+        // of the terminal's auto-completion suggestions, so instead of being set
+        // to the `tx` color, it is set to `tx-2`.
         "terminal.ansi.black": "#100F0F",
-        // Controls the foreground color of the terminal's auto-completion
-        // suggestions, so instead of being set to the `tx` color, it is set to
-        // `tx-2`.
         "terminal.ansi.bright_black": "#878580",
-        "terminal.ansi.dim_black": "#100F0F80",
+        "terminal.ansi.dim_black": "#100F0F",
+        // For the normal color values, the 400 value is used, just like
+        // suggested in the theme's Mappings, but for the bright color the 200
+        // value is used, while the dim one uses the 600 value.
         "terminal.ansi.red": "#D14D41",
-        "terminal.ansi.bright_red": "#D14D41",
-        "terminal.ansi.dim_red": "#D14D4180",
+        "terminal.ansi.bright_red": "#F89A8A",
+        "terminal.ansi.dim_red": "#AF3029",
         "terminal.ansi.green": "#879A39",
-        "terminal.ansi.bright_green": "#879A39",
-        "terminal.ansi.dim_green": "#879A3980",
+        "terminal.ansi.bright_green": "#BEC97E",
+        "terminal.ansi.dim_green": "#66800B",
         "terminal.ansi.yellow": "#D0A215",
-        "terminal.ansi.bright_yellow": "#D0A215",
-        "terminal.ansi.dim_yellow": "#D0A21580",
+        "terminal.ansi.bright_yellow": "#ECCB60",
+        "terminal.ansi.dim_yellow": "#AD8301",
         "terminal.ansi.blue": "#4385BE",
-        "terminal.ansi.bright_blue": "#4385BE",
-        "terminal.ansi.dim_blue": "#4385BE80",
+        "terminal.ansi.bright_blue": "#92BFDB",
+        "terminal.ansi.dim_blue": "#205EA6",
         "terminal.ansi.magenta": "#CE5D97",
-        "terminal.ansi.bright_magenta": "#CE5D97",
-        "terminal.ansi.dim_magenta": "#CE5D9780",
+        "terminal.ansi.bright_magenta": "#F4A4C2",
+        "terminal.ansi.dim_magenta": "#A02F6F",
         "terminal.ansi.cyan": "#3AA99F",
-        "terminal.ansi.bright_cyan": "#3AA99F",
-        "terminal.ansi.dim_cyan": "#3AA99F80",
+        "terminal.ansi.bright_cyan": "#87D3C3",
+        "terminal.ansi.dim_cyan": "#24837B",
         "terminal.ansi.white": "#FFFCF0",
         "terminal.ansi.bright_white": "#FFFCF0",
-        "terminal.ansi.dim_white": "#FFFCF080",
+        "terminal.ansi.dim_white": "#878580",
         "link_text.hover": "#4385BE",
         // For each of the colors in this section, we'll use the color from the
         // Mappings for both the regular class as well as the border class, but
@@ -394,33 +397,36 @@
         "terminal.foreground": "#100F0F",
         "terminal.bright_foreground": "#100F0F",
         "terminal.dim_foreground": "#100F0F80",
+        // The `terminal.ansi.bright_black` color controls the foreground color
+        // of the terminal's auto-completion suggestions, so instead of being set
+        // to the `tx` color, it is set to `tx-2`.
         "terminal.ansi.black": "#100F0F",
-        // Controls the foreground color of the terminal's auto-completion
-        // suggestions, so instead of being set to the `tx` color, it is set to
-        // `tx-2`.
         "terminal.ansi.bright_black": "#6F6E69",
-        "terminal.ansi.dim_black": "#100F0F80",
+        "terminal.ansi.dim_black": "#100F0F",
+        // For the normal color values, the 600 value is used, just like
+        // suggested in the theme's Mappings, but for the bright color the 400
+        // value is used, while the dim one uses the 800 value.
         "terminal.ansi.red": "#AF3029",
-        "terminal.ansi.bright_red": "#AF3029",
-        "terminal.ansi.dim_red": "#AF302980",
+        "terminal.ansi.bright_red": "#D14D41",
+        "terminal.ansi.dim_red": "#6C201C",
         "terminal.ansi.green": "#66800B",
-        "terminal.ansi.bright_green": "#66800B",
-        "terminal.ansi.dim_green": "#66800B80",
+        "terminal.ansi.bright_green": "#879A39",
+        "terminal.ansi.dim_green": "#3D4C07",
         "terminal.ansi.yellow": "#AD8301",
-        "terminal.ansi.bright_yellow": "#AD8301",
-        "terminal.ansi.dim_yellow": "#AD830180",
+        "terminal.ansi.bright_yellow": "#D0A215",
+        "terminal.ansi.dim_yellow": "#664D01",
         "terminal.ansi.blue": "#205EA6",
-        "terminal.ansi.bright_blue": "#205EA6",
-        "terminal.ansi.dim_blue": "#205EA680",
+        "terminal.ansi.bright_blue": "#4385BE",
+        "terminal.ansi.dim_blue": "#163B66",
         "terminal.ansi.magenta": "#A02F6F",
-        "terminal.ansi.bright_magenta": "#A02F6F",
-        "terminal.ansi.dim_magenta": "#A02F6F80",
+        "terminal.ansi.bright_magenta": "#CE5D97",
+        "terminal.ansi.dim_magenta": "#641F46",
         "terminal.ansi.cyan": "#24837B",
-        "terminal.ansi.bright_cyan": "#24837B",
-        "terminal.ansi.dim_cyan": "#24837B80",
+        "terminal.ansi.bright_cyan": "#3AA99F",
+        "terminal.ansi.dim_cyan": "#164F4A",
         "terminal.ansi.white": "#FFFCF0",
         "terminal.ansi.bright_white": "#FFFCF0",
-        "terminal.ansi.dim_white": "#FFFCF080",
+        "terminal.ansi.dim_white": "#F2F0E5",
         "link_text.hover": "#205EA6",
         // For each of the colors in this section, we'll use the color from the
         // Mappings for both the regular class as well as the border class, but
