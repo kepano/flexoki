@@ -100,49 +100,52 @@
         "terminal.ansi.bright_white": "#FFFCF0",
         "terminal.ansi.dim_white": "#FFFCF080",
         "link_text.hover": "#4385BE",
+        // For each of the colors in this section, we'll use the color from the
+        // Mappings for both the regular class as well as the border class, but
+        // for the background one the 950 variant will be used.
+        // For example, for red-400 is used for both `error` and `error.border`,
+        // but `error.background` uses red-950.
         "conflict": "#D0A215",
-        "conflict.background": "#D0A21540",
+        "conflict.background": "#241E08",
         "conflict.border": "#D0A215",
         "created": "#879A39",
-        "created.background": "#879A3940",
+        "created.background": "#1A1E0C",
         "created.border": "#879A39",
         "deleted": "#D14D41",
-        "deleted.background": "#D14D4140",
+        "deleted.background": "#261312",
         "deleted.border": "#D14D41",
         "error": "#D14D41",
-        "error.background": "#D14D4140",
+        "error.background": "#261312",
         "error.border": "#D14D41",
         "hidden": "#575653",
-        "hidden.background": "#57565340",
+        "hidden.background": "#1C1B1A",
         "hidden.border": "#575653",
-        "hint": "#4385BE",
-        "hint.background": "#4385BE40",
-        "hint.border": "#4385BE",
+        "hint": "#575653",
+        "hint.background": "#1C1B1A",
+        "hint.border": "#575653",
         "ignored": "#575653",
-        "ignored.background": "#57565340",
+        "ignored.background": "#1C1B1A",
         "ignored.border": "#575653",
         "info": "#3AA99F",
-        // Controls the background of the suggested changes by the inline
-        // assistant.
-        "info.background": "#3AA99F40",
+        "info.background": "#101F1D",
         "info.border": "#3AA99F",
         "modified": "#D0A215",
-        "modified.background": "#D0A21540",
+        "modified.background": "#241E08",
         "modified.border": "#D0A215",
         "predictive": "#878580",
         "predictive.background": "#00000000",
         "predictive.border": "#00000000",
         "renamed": "#3AA99F",
-        "renamed.background": "#3AA99F40",
+        "renamed.background": "#101F1D",
         "renamed.border": "#3AA99F",
         "success": "#879A39",
-        "success.background": "#879A3940",
+        "success.background": "#1A1E0C",
         "success.border": "#879A39",
         "unreachable": "#878580",
-        "unreachable.background": "#87858040",
+        "unreachable.background": "#1C1B1A",
         "unreachable.border": "#878580",
         "warning": "#D0A215",
-        "warning.background": "#D0A21540",
+        "warning.background": "#241E08",
         "warning.border": "#D0A215",
         "players": [
           {
@@ -153,6 +156,12 @@
         "syntax": {
           "attribute": {
             "color": "#4385BE",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          "boolean": {
+            "color": "#DA702C",
             "background_color": null,
             "font_style": null,
             "font_weight": null
@@ -296,7 +305,7 @@
             "font_weight": null
           },
           "type": {
-            "color": "#3AA99F",
+            "color": "#D0A215",
             "background_color": null,
             "font_style": null,
             "font_weight": null
@@ -413,49 +422,52 @@
         "terminal.ansi.bright_white": "#FFFCF0",
         "terminal.ansi.dim_white": "#FFFCF080",
         "link_text.hover": "#205EA6",
+        // For each of the colors in this section, we'll use the color from the
+        // Mappings for both the regular class as well as the border class, but
+        // for the background one the 50 variant will be used.
+        // For example, for red-600 is used for both `error` and `error.border`,
+        // but `error.background` uses red-50.
         "conflict": "#AD8301",
-        "conflict.background": "#AD830140",
+        "conflict.background": "#FAEEC6",
         "conflict.border": "#AD8301",
         "created": "#66800B",
-        "created.background": "#66800B40",
+        "created.background": "#EDEECF",
         "created.border": "#66800B",
         "deleted": "#AF3029",
-        "deleted.background": "#AF302940",
+        "deleted.background": "#FFE1D5",
         "deleted.border": "#AF3029",
         "error": "#AF3029",
-        "error.background": "#AF302940",
+        "error.background": "#FFE1D5",
         "error.border": "#AF3029",
         "hidden": "#B7B5AC",
-        "hidden.background": "#B7B5AC40",
+        "hidden.background": "#F2F0E5",
         "hidden.border": "#B7B5AC",
-        "hint": "#205EA6",
-        "hint.background": "#205EA640",
-        "hint.border": "#205EA6",
+        "hint": "#B7B5AC",
+        "hint.background": "#F2F0E5",
+        "hint.border": "#B7B5AC",
         "ignored": "#B7B5AC",
-        "ignored.background": "#B7B5AC40",
+        "ignored.background": "#F2F0E5",
         "ignored.border": "#B7B5AC",
         "info": "#24837B",
-        // Controls the background of the suggested changes by the inline
-        // assistant.
-        "info.background": "#24837B40",
+        "info.background": "#DDF1E4",
         "info.border": "#24837B",
         "modified": "#AD8301",
-        "modified.background": "#AD830140",
+        "modified.background": "#FAEEC6",
         "modified.border": "#AD8301",
         "predictive": "#B7B5AC",
         "predictive.background": null,
         "predictive.border": null,
         "renamed": "#24837B",
-        "renamed.background": "#24837B40",
+        "renamed.background": "#DDF1E4",
         "renamed.border": "#24837B",
         "success": "#66800B",
-        "success.background": "#66800B40",
+        "success.background": "#EDEECF",
         "success.border": "#66800B",
         "unreachable": "#6F6E69",
-        "unreachable.background": "#6F6E6940",
+        "unreachable.background": "#F2F0E5",
         "unreachable.border": "#6F6E69",
         "warning": "#AD8301",
-        "warning.background": "#AD830140",
+        "warning.background": "#FAEEC6",
         "warning.border": "#AD8301",
         "players": [
           {
@@ -466,6 +478,12 @@
         "syntax": {
           "attribute": {
             "color": "#205EA6",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          "boolean": {
+            "color": "#BC5215",
             "background_color": null,
             "font_style": null,
             "font_weight": null
@@ -609,7 +627,7 @@
             "font_weight": null
           },
           "type": {
-            "color": "#24837B",
+            "color": "#AD8301",
             "background_color": null,
             "font_style": null,
             "font_weight": null
