@@ -1,0 +1,12 @@
+id = "flexoki"
+name = "Flexoki"
+version = "2.0.0"
+schema_version = 1
+authors = [
+    "Steph Ango <stephango.com>",
+    "Dino <dinojoaocosta@gmail.com>",
+    "Rohan Verma <hello@rohanverma.net>",
+]
+description = "An inky color scheme for prose and code."
+repository = "https://github.com/kepano/flexoki/tree/main/zed"
+path = "zed"
