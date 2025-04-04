@@ -15,6 +15,7 @@ Flexoki is available for the following apps and tools.
 ### Apps
 
 - [Alacritty](https://github.com/kepano/flexoki/tree/main/alacritty) by @willtheodore
+- [Chrome](https://github.com/kepano/flexoki/tree/main/chrome) by @FormalSnake
 - [Discord](https://github.com/kepano/flexoki/discord) by @thatoddshade using [Discord Recolor](https://github.com/mwittrien/BetterDiscordAddons/tree/master/Themes/DiscordRecolor)
 - [Emacs](https://github.com/crmsnbleyd/flexoki-emacs-theme) by @crmsnbleyd
 - [Firefox](https://github.com/ddogfoodd/firefox-flexoki-dynamic-theme) by @ddogfoodd
@@ -43,7 +44,6 @@ Flexoki is available for the following apps and tools.
 - [WezTerm](https://github.com/kepano/flexoki/tree/main/wezterm) by @jbromley
 - [Windows Terminal](https://github.com/kepano/flexoki/tree/main/windows-terminal) by @joukevandermaas
 - [Xresources](https://github.com/kepano/flexoki/tree/main/xresources) by @dmb2
-- [Chrome](https://github.com/kepano/flexoki/tree/main/chrome) by @FormalSnake
 - [Yazi Dark](https://github.com/gosxrgxx/flexoki-dark.yazi), [Yazi Light](https://github.com/gosxrgxx/flexoki-light.yazi) by @gosxrgxx
 
 ### System themes
