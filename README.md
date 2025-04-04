@@ -44,6 +44,7 @@ Flexoki is available for the following apps and tools.
 - [Windows Terminal](https://github.com/kepano/flexoki/tree/main/windows-terminal) by @joukevandermaas
 - [Xresources](https://github.com/kepano/flexoki/tree/main/xresources) by @dmb2
 - [Chrome](https://github.com/kepano/flexoki/tree/main/chrome) by @FormalSnake
+- [Yazi Dark](https://github.com/gosxrgxx/flexoki-dark.yazi), [Yazi Light](https://github.com/gosxrgxx/flexoki-light.yazi) by @gosxrgxx
 
 ### System themes
 - [gtk](https://github.com/kepano/flexoki/tree/main/gtk) by @hydroakri
@@ -56,6 +57,7 @@ Flexoki is available for the following apps and tools.
 - [Tailwind](https://gist.github.com/martin-mael/4b50fa8e55da846f3f73399d84fa1848) by @martin-mael
 - [theme.sh](https://github.com/kepano/flexoki/tree/main/theme.sh) by @TheLastZombie
 - [pywal](https://github.com/kepano/flexoki/tree/main/pywal) by @hydroakri
+- [Starlight](https://delucis.github.io/starlight-theme-flexoki/) by @delucis
 
 ### Other
 
