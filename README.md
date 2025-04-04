@@ -55,6 +55,7 @@ Flexoki is available for the following apps and tools.
 - [Tailwind](https://gist.github.com/martin-mael/4b50fa8e55da846f3f73399d84fa1848) by @martin-mael
 - [theme.sh](https://github.com/kepano/flexoki/tree/main/theme.sh) by @TheLastZombie
 - [pywal](https://github.com/kepano/flexoki/tree/main/pywal) by @hydroakri
+- [Starlight](https://delucis.github.io/starlight-theme-flexoki/) by @delucis
 
 ### Other
 
