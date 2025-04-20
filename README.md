@@ -45,6 +45,7 @@ Flexoki is available for the following apps and tools.
 - [Windows Terminal](https://github.com/kepano/flexoki/tree/main/windows-terminal) by @joukevandermaas
 - [Xresources](https://github.com/kepano/flexoki/tree/main/xresources) by @dmb2
 - [Yazi Dark](https://github.com/gosxrgxx/flexoki-dark.yazi), [Yazi Light](https://github.com/gosxrgxx/flexoki-light.yazi) by @gosxrgxx
+- [Zed](https://github.com/kepano/flexoki/tree/main/zed) by @dinocosta
 
 ### System themes
 - [gtk](https://github.com/kepano/flexoki/tree/main/gtk) by @hydroakri
