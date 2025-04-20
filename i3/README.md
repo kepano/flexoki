@@ -1,7 +1,7 @@
 # Usage
 
-1. Copy selected mode or flexoki-full for raw range to `~/.config/waybar/`
-2. Include the file at the top of your `style.css`:
+1. Copy selected mode or flexoki-full for raw range to `~/.config/i3/` (or `~/.config/sway/` if you're using Sway)
+2. Include the file at the top of your config file:
 ```
 include flexoki-<mode>
 ```
