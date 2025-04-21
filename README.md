@@ -68,6 +68,7 @@ Flexoki is available for the following apps and tools.
 - [GIMP palette](https://github.com/kepano/flexoki/tree/main/gimp) by @xTibor
 - [Python/Matplotlib](https://github.com/kepano/flexoki/tree/main/python-matplotlib) by @moss-xyz
 - [R](https://github.com/mdscheuerell/flexoki/) by @mdscheuerell
+- [Clip Studio Paint](https://github.com/scottandrewlepera/flexoki-extended-csp) by @scottandrewlepera
 
 ## Contributing
 
