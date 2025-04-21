@@ -67,6 +67,7 @@ Flexoki is available for the following apps and tools.
 - [Figma](https://www.figma.com/community/file/1293274371462921490/flexoki) by @kepano
 - [GIMP palette](https://github.com/kepano/flexoki/tree/main/gimp) by @xTibor
 - [Python/Matplotlib](https://github.com/kepano/flexoki/tree/main/python-matplotlib) by @moss-xyz
+- [R](https://github.com/mdscheuerell/flexoki/) by @mdscheuerell
 
 ## Contributing
 
