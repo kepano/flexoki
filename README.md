@@ -63,12 +63,12 @@ Flexoki is available for the following apps and tools.
 ### Other
 
 - [Affinity palette](https://github.com/kepano/flexoki/tree/main/affinity) by @Spirou42
-- [Wikipedia UserCSS](https://userstyles.world/style/17944/wikipedia-flexoki) (requires [Stylus](https://github.com/openstyles/stylus/#releases)) by @KraXen72
+- [Clip Studio Paint](https://github.com/scottandrewlepera/flexoki-extended-csp) by @scottandrewlepera
 - [Figma](https://www.figma.com/community/file/1293274371462921490/flexoki) by @kepano
 - [GIMP palette](https://github.com/kepano/flexoki/tree/main/gimp) by @xTibor
 - [Python/Matplotlib](https://github.com/kepano/flexoki/tree/main/python-matplotlib) by @moss-xyz
 - [R](https://github.com/mdscheuerell/flexoki/) by @mdscheuerell
-- [Clip Studio Paint](https://github.com/scottandrewlepera/flexoki-extended-csp) by @scottandrewlepera
+- [Wikipedia UserCSS](https://userstyles.world/style/17944/wikipedia-flexoki) (requires [Stylus](https://github.com/openstyles/stylus/#releases)) by @KraXen72
 
 ## Contributing
 
