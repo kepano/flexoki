@@ -1,5 +1,5 @@
 {
-  "name": "Flexoki - Cyan Accent (Dark)",
+  "name": "Flexoki (Dark)",
   "author": "Jihad",
   "description": "An inky color scheme for Drafts. Based on stephango.com/flexoki",
   "isDark": true,
@@ -294,28 +294,28 @@
       "name": "Level 4 Heading",
       "settings": {
         "fontWeight": "bold",
-        "foreground": "accent-blue"
+        "foreground": "header"
       }
     },
     "text.heading05": {
       "name": "Level 5 Heading",
       "settings": {
         "fontWeight": "bold",
-        "foreground": "accent-purple"
+        "foreground": "header"
       }
     },
     "text.heading06": {
       "name": "Level 6 Heading",
       "settings": {
         "fontWeight": "bold",
-        "foreground": "accent-magenta"
+        "foreground": "header"
       }
     },
     "text.quotation": {
       "name": "Quotation block",
       "settings": {
         "fontStyle": "italic",
-        "foreground": "accent-cyan"
+        "foreground": "foreground"
       }
     },
     "text.link": {
@@ -424,7 +424,7 @@
       "name": "Inline code",
       "settings": {
         "fontStyle": "monospace",
-        "foreground": "code",
+        "foreground": "foreground",
         "background": "codeBackground"
       }
     },
@@ -578,11 +578,11 @@
       "strikethrough": "#878580",
       "comment": "#878580",
       "link": "#3AA99F",
-      "activeLink": "#4385BE",
+      "activeLink": "#3AA99F",
       "code": "#3AA99F",
       "codeBackground": "#1C1B1A",
       "literal": "#CE5D97",
-      "keyword": "#8B7EC8",
+      "keyword": "#879A39",
       "markup": "#575653",
       "addition": "#879A39",
       "deletion": "#D14D41",
