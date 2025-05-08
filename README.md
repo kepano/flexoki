@@ -28,6 +28,7 @@ Flexoki is available for the following apps and tools.
 - Neovim:
   - [@stevedylandev and @dinocosta](https://github.com/kepano/flexoki-neovim)
   - [@nuvic](https://github.com/nuvic/flexoki-nvim)
+  - [@cpplain](https://github.com/cpplain/flexoki.nvim)
 - [NetNewsWire](https://github.com/frznv/NetNewsWire-Flexoki) by @frznv
 - [Obsidian](https://github.com/kepano/flexoki-obsidian) and part of [Minimal theme](https://github.com/kepano/obsidian-minimal) by @kepano
 - [Slack](https://github.com/kepano/flexoki/tree/main/slack) by @maxobat
