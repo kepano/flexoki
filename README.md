@@ -68,6 +68,7 @@ Flexoki is available for the following apps and tools.
 - [GIMP palette](https://github.com/kepano/flexoki/tree/main/gimp) by @xTibor
 - [Python/Matplotlib](https://github.com/kepano/flexoki/tree/main/python-matplotlib) by @moss-xyz
 - [R](https://github.com/mdscheuerell/flexoki/) by @mdscheuerell
+- [Typst](https://codeberg.org/viriju/flexokify) by @viriju
 - [Wikipedia UserCSS](https://userstyles.world/style/17944/wikipedia-flexoki) (requires [Stylus](https://github.com/openstyles/stylus/#releases)) by @KraXen72
 
 ## Contributing
