@@ -424,8 +424,8 @@
         "terminal.ansi.cyan": "#24837B",
         "terminal.ansi.bright_cyan": "#3AA99F",
         "terminal.ansi.dim_cyan": "#164F4A",
-        "terminal.ansi.white": "#FFFCF0",
-        "terminal.ansi.bright_white": "#FFFCF0",
+        "terminal.ansi.white": "#6F6E69",
+        "terminal.ansi.bright_white": "#B7B5AC",
         "terminal.ansi.dim_white": "#F2F0E5",
         "link_text.hover": "#205EA6",
         // For each of the colors in this section, we'll use the color from the
