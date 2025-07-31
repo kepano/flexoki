@@ -1,0 +1,161 @@
+# Syntax highlighting
+# -------------------
+"attribute" = "blue"
+
+"type" = "yellow"
+"type.enum.variant" = "cyan"
+
+"constructor" = "blue"
+
+"constant" = "orange"
+"constant.character" = "cyan"
+"constant.character.escape" = "magenta"
+
+"string" = "cyan"
+"string.regexp" = "magenta"
+"string.special" = "blue"
+"string.special.symbol" = "red"
+
+"comment" = { fg = "tx-3", modifiers = ["italic"] }
+
+"variable" = "text"
+"variable.parameter" = { fg = "magenta", modifiers = ["italic"] }
+"variable.builtin" = "red"
+"variable.other.member" = "blue"
+
+"label" = "blue" # used for lifetimes
+
+"punctuation" = "tx-2"
+"punctuation.special" = "cyan"
+
+"keyword" = "green"
+"keyword.control.conditional" = { fg = "green", modifiers = ["italic"] }
+
+"operator" = "tx-2"
+
+"function" = "orange"
+"function.macro" = "cyan"
+
+"tag" = "blue"
+
+"namespace" = { fg = "yellow", modifiers = ["italic"] }
+
+"special" = "blue" # fuzzy highlight
+
+"markup.heading.1" = "red"
+"markup.heading.2" = "orange"
+"markup.heading.3" = "yellow"
+"markup.heading.4" = "green"
+"markup.heading.5" = "blue"
+"markup.heading.6" = "purple"
+"markup.list" = "cyan"
+"markup.list.unchecked" = "tx-2"
+"markup.list.checked" = "green"
+"markup.bold" = { fg = "red", modifiers = ["bold"] }
+"markup.italic" = { fg = "red", modifiers = ["italic"] }
+"markup.link.url" = { fg = "blue", modifiers = ["italic", "underlined"] }
+"markup.link.text" = "purple"
+"markup.link.label" = "blue"
+"markup.raw" = "green"
+"markup.quote" = "magenta"
+
+"diff.plus" = "green"
+"diff.minus" = "red"
+"diff.delta" = "blue"
+
+# User Interface
+# --------------
+"ui.background" = { fg = "text", bg = "base" }
+
+"ui.linenr" = { fg = "ui-3" }
+"ui.linenr.selected" = { fg = "cyan" }
+
+"ui.statusline" = { fg = "tx-1", bg = "bg-2" }
+"ui.statusline.inactive" = { fg = "tx-3", bg = "bg-2" }
+"ui.statusline.normal" = { fg = "base", bg = "text", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "base", bg = "green", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "base", bg = "purple", modifiers = ["bold"] }
+
+"ui.popup" = { fg = "text", bg = "ui-2" }
+"ui.window" = { fg = "bg-2" }
+"ui.help" = { fg = "tx-2", bg = "ui-2" }
+
+"ui.bufferline" = { fg = "tx-3", bg = "bg-2" }
+"ui.bufferline.active" = { fg = "green", bg = "base", underline = { color = "green", style = "line" } }
+"ui.bufferline.background" = { bg = "bg-2" }
+
+"ui.text" = "text"
+"ui.text.focus" = { fg = "text", bg = "ui-2", modifiers = ["bold"] }
+"ui.text.inactive" = { fg = "tx-2" }
+"ui.text.directory" = { fg = "blue" }
+
+"ui.virtual" = "tx-3"
+"ui.virtual.ruler" = { bg = "ui-2" }
+"ui.virtual.indent-guide" = "ui-2"
+"ui.virtual.inlay-hint" = { fg = "ui-3", bg = "bg-2" }
+"ui.virtual.jump-label" = { fg = "orange", modifiers = ["bold"] }
+
+"ui.selection" = { bg = "ui-3" }
+
+"ui.cursor" = { fg = "base", bg = "secondary_cursor" }
+"ui.cursor.primary" = { fg = "base", bg = "cyan" }
+"ui.cursor.match" = { fg = "orange", modifiers = ["bold"] }
+
+"ui.cursor.primary.normal" = { fg = "base", bg = "text" }
+"ui.cursor.primary.insert" = { fg = "base", bg = "green" }
+"ui.cursor.primary.select" = { fg = "base", bg = "purple" }
+
+"ui.cursor.normal" = { fg = "base", bg = "secondary_cursor_normal" }
+"ui.cursor.insert" = { fg = "base", bg = "secondary_cursor_insert" }
+"ui.cursor.select" = { fg = "base", bg = "secondary_cursor_select" }
+
+"ui.cursorline.primary" = { bg = "bg-2" }
+
+"ui.highlight" = { bg = "ui-3", modifiers = ["bold"] }
+
+"ui.menu" = { fg = "tx-2", bg = "ui-2" }
+"ui.menu.selected" = { fg = "text", bg = "ui-3", modifiers = ["bold"] }
+
+"diagnostic.error" = { underline = { color = "red", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "yellow", style = "curl" } }
+"diagnostic.info" = { underline = { color = "cyan", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "cyan", style = "curl" } }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+
+error = "red"
+warning = "yellow"
+info = "cyan"
+hint = "cyan"
+
+rainbow = ["red", "orange", "yellow", "green", "blue", "purple"]
+
+[palette]
+# Main colors
+text = "#CECDC3"
+base = "#100F0F"
+bg-2 = "#1C1B1A"
+
+# Text variations
+tx-1 = "#B7B5AC"
+tx-2 = "#878580"
+tx-3 = "#575653"
+
+# UI colors
+ui-2 = "#282726"
+ui-3 = "#343331"
+
+# Syntax colors
+red = "#D14D41"
+orange = "#DA702C"
+yellow = "#D0A215"
+green = "#879A39"
+cyan = "#3AA99F"
+blue = "#4385BE"
+purple = "#8B7EC8"
+magenta = "#CE5D97"
+
+# Cursor colors
+secondary_cursor = "#878580"
+secondary_cursor_select = "#8B7EC8"
+secondary_cursor_normal = "#878580"
+secondary_cursor_insert = "#879A39"
