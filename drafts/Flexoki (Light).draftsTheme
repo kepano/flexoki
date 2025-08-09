@@ -432,7 +432,7 @@
       "name": "Code block",
       "settings": {
         "fontStyle": "monospace",
-        "foreground": "code",
+        "foreground": "base-tx",
         "background":"codeBackground"
       }
     },
@@ -583,7 +583,7 @@
       "codeBackground": "#F2F0E5",
       "literal": "#A02F6F",
       "keyword": "#66800B",
-      "markup": "#B7B5AC",
+      "markup": "#6F6E69",
       "addition": "#66800B",
       "deletion": "#AF3029",
       "substitution": "#BC5215",
@@ -615,20 +615,20 @@
       "base-tx": "#100F0F"
     },
     "interface": {
-      "tint": "#24837B",
+      "tint": "#CECDC3",
       "textCaret": "#100F0F",
-      "tintAlternate": "#154F4A",
-      "textSelection": "#92BFDB",
+      "tintAlternate": "#6F6E69",
+      "textSelection": "#24837B",
       "textHighlight": "#F2F0E5",
       "background": "#FFFCF0",
       "textBackground": "#FFFCF0",
       "backgroundCollection": "#E6E4D9",
 
       "promptBackground": "#FFFCF0",
-      "promptButtonBackground": "#66800B",
-      "promptButtonForeground": "#B7B5AC",
+      "promptButtonBackground": "#100F0F",
+      "promptButtonForeground": "#FFFCF0",
       "promptButtonDestructiveBackground": "#AF3029",
-      "promptButtonDestructiveForeground": "#6F6E69",
+      "promptButtonDestructiveForeground": "#FFFCF0",
 
       "foreground": "#6F6E69",
       "textForeground": "#100F0F",

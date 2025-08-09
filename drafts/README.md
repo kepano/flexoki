@@ -10,34 +10,19 @@
 
 Below are some screenshots of the Drafts theme:
 
-### iOS
-#### LIGHT
+### iOS (Light & Dark)
 <table>
   <tr>
     <td>
       <img src="screenshots/iphone-light-1.PNG" width="300"/>
     </td>
     <td>
-      <img src="screenshots/iphone-light-2.PNG" width="300"/>
-    </td>
-  </tr>
-</table>
-
-
-#### DARK
-<table>
-  <tr>
-    <td>
       <img src="screenshots/iphone-dark-1.PNG" width="300"/>
     </td>
-    <td>
-      <img src="screenshots/iphone-dark-2.PNG" width="300"/>
-    </td>
   </tr>
 </table>
 
-
-### iPadOS (LIGHT & Dark)
+### iPadOS (Light & Dark)
 
 <table>
   <tr>
