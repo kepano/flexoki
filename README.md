@@ -33,7 +33,6 @@ Flexoki is available for the following apps and tools.
   - [@nuvic](https://github.com/nuvic/flexoki-nvim)
 - [NetNewsWire](https://github.com/frznv/NetNewsWire-Flexoki) by @frznv
 - [Obsidian](https://github.com/kepano/flexoki-obsidian) and part of [Minimal theme](https://github.com/kepano/obsidian-minimal) by @kepano
-- [Omarchy](https://github.com/euandeas/omarchy-flexoki-dark-theme) by @euandeas
 - [Slack](https://github.com/kepano/flexoki/tree/main/slack) by @maxobat
 - [Standard Notes](https://github.com/myreli/sn-flexoki) by @myreli
 - [Sublime Text](https://github.com/kepano/flexoki-sublime) by @kepano
@@ -53,9 +52,11 @@ Flexoki is available for the following apps and tools.
 - [Zellij](https://github.com/kepano/flexoki/tree/main/zellij) by @jackplus-xyz
 
 ### System themes
+
 - [gtk](https://github.com/kepano/flexoki/tree/main/gtk) by @hydroakri
 - [qt5ct/qt6ct](https://github.com/kepano/flexoki/tree/main/qt6ct) by @hydroakri
 - [KDE color](https://github.com/kepano/flexoki/tree/main/kde) by @hydroakri
+- [Omarchy](https://github.com/euandeas/omarchy-flexoki-dark-theme) by @euandeas
 
 ### Frameworks
 
