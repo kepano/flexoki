@@ -17,6 +17,7 @@ Flexoki is available for the following apps and tools.
 - [Alacritty](https://github.com/kepano/flexoki/tree/main/alacritty) by @willtheodore
 - [Chrome](https://github.com/kepano/flexoki/tree/main/chrome) by @FormalSnake
 - [Discord](https://github.com/kepano/flexoki/tree/main/discord) by @thatoddshade using [Discord Recolor](https://github.com/mwittrien/BetterDiscordAddons/tree/master/Themes/DiscordRecolor)
+- [Drafts](https://github.com/kepano/flexoki/tree/main/drafts) by @jihad
 - [Emacs](https://github.com/crmsnbleyd/flexoki-emacs-theme) by @crmsnbleyd
 - [Firefox](https://github.com/ddogfoodd/firefox-flexoki-dynamic-theme) by @ddogfoodd
 - [fish](https://github.com/kepano/flexoki/tree/main/fish) by @Orest58008
