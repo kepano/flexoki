@@ -1,5 +1,5 @@
 {
-  "$schema": "https://zed.dev/schema/themes/v0.1.0.json",
+  "$schema": "https://zed.dev/schema/themes/v0.2.0.json",
   "name": "Flexoki",
   "author": "Steph Ango <stephango.com>",
   "themes": [
@@ -21,7 +21,7 @@
         "element.active": "#343331",
         "element.selected": "#343331",
         "element.disabled": "#1C1B1A",
-        "drop_target.background": "#C403E3C",
+        "drop_target.background": "#403E3C",
         "ghost_element.background": "#00000000",
         "ghost_element.hover": "#1C1B1A",
         "ghost_element.active": "#282726",
@@ -35,7 +35,7 @@
         "icon": "#CECDC3",
         "icon.muted": "#878580",
         "icon.disabled": "#575653",
-        "icon.placholder": "#878580",
+        "icon.placeholder": "#878580",
         "icon.accent": "#4385BE",
         "status_bar.background": "#1C1B1A",
         "title_bar.background": "#1C1B1A",
@@ -72,15 +72,9 @@
         "terminal.foreground": "#CECDC3",
         "terminal.bright_foreground": "#CECDC3",
         "terminal.dim_foreground": "#CECDC380",
-        // The `terminal.ansi.bright_black` color controls the foreground color
-        // of the terminal's auto-completion suggestions, so instead of being set
-        // to the `tx` color, it is set to `tx-2`.
         "terminal.ansi.black": "#100F0F",
         "terminal.ansi.bright_black": "#878580",
         "terminal.ansi.dim_black": "#100F0F",
-        // For the normal color values, the 400 value is used, just like
-        // suggested in the theme's Mappings, but for the bright color the 200
-        // value is used, while the dim one uses the 600 value.
         "terminal.ansi.red": "#D14D41",
         "terminal.ansi.bright_red": "#F89A8A",
         "terminal.ansi.dim_red": "#AF3029",
@@ -103,11 +97,6 @@
         "terminal.ansi.bright_white": "#FFFCF0",
         "terminal.ansi.dim_white": "#878580",
         "link_text.hover": "#4385BE",
-        // For each of the colors in this section, we'll use the color from the
-        // Mappings for both the regular class as well as the border class, but
-        // for the background one the 950 variant will be used.
-        // For example, for red-400 is used for both `error` and `error.border`,
-        // but `error.background` uses red-950.
         "conflict": "#D0A215",
         "conflict.background": "#241E08",
         "conflict.border": "#D0A215",
@@ -164,7 +153,7 @@
             "font_weight": null
           },
           "boolean": {
-            "color": "#DA702C",
+            "color": "#D0A215",
             "background_color": null,
             "font_style": null,
             "font_weight": null
@@ -181,8 +170,32 @@
             "font_style": null,
             "font_weight": null
           },
+          "constant": {
+            "color": "#DA702C",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
           "constructor": {
             "color": "#4385BE",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          "emphasis": {
+            "color": "#3AA99F",
+            "background_color": null,
+            "font_style": "italic",
+            "font_weight": null
+          },
+          "emphasis.strong": {
+            "color": "#3AA99F",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": 700
+          },
+          "enum": {
+            "color": "#D0A215",
             "background_color": null,
             "font_style": null,
             "font_weight": null
@@ -193,8 +206,20 @@
             "font_style": null,
             "font_weight": null
           },
+          "hint": {
+            "color": "#575653",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
           "keyword": {
             "color": "#879A39",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          "label": {
+            "color": "#4385BE",
             "background_color": null,
             "font_style": null,
             "font_weight": null
@@ -223,8 +248,20 @@
             "font_style": null,
             "font_weight": null
           },
+          "predictive": {
+            "color": "#878580",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
           "preproc": {
             "color": "#CE5D97",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          "primary": {
+            "color": "#3AA99F",
             "background_color": null,
             "font_style": null,
             "font_weight": null
@@ -301,8 +338,20 @@
             "font_style": null,
             "font_weight": null
           },
+          "tag.doctype": {
+            "color": "#4385BE",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
           "text.literal": {
             "color": "#3AA99F",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          "title": {
+            "color": "#D0A215",
             "background_color": null,
             "font_style": null,
             "font_weight": null
@@ -321,6 +370,12 @@
           },
           "variable.special": {
             "color": "#4385BE",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          "variant": {
+            "color": "#3AA99F",
             "background_color": null,
             "font_style": null,
             "font_weight": null
@@ -397,15 +452,9 @@
         "terminal.foreground": "#100F0F",
         "terminal.bright_foreground": "#100F0F",
         "terminal.dim_foreground": "#100F0F80",
-        // The `terminal.ansi.bright_black` color controls the foreground color
-        // of the terminal's auto-completion suggestions, so instead of being set
-        // to the `tx` color, it is set to `tx-2`.
         "terminal.ansi.black": "#100F0F",
         "terminal.ansi.bright_black": "#6F6E69",
         "terminal.ansi.dim_black": "#100F0F",
-        // For the normal color values, the 600 value is used, just like
-        // suggested in the theme's Mappings, but for the bright color the 400
-        // value is used, while the dim one uses the 800 value.
         "terminal.ansi.red": "#AF3029",
         "terminal.ansi.bright_red": "#D14D41",
         "terminal.ansi.dim_red": "#6C201C",
@@ -428,11 +477,6 @@
         "terminal.ansi.bright_white": "#B7B5AC",
         "terminal.ansi.dim_white": "#F2F0E5",
         "link_text.hover": "#205EA6",
-        // For each of the colors in this section, we'll use the color from the
-        // Mappings for both the regular class as well as the border class, but
-        // for the background one the 50 variant will be used.
-        // For example, for red-600 is used for both `error` and `error.border`,
-        // but `error.background` uses red-50.
         "conflict": "#AD8301",
         "conflict.background": "#FAEEC6",
         "conflict.border": "#AD8301",
@@ -489,7 +533,7 @@
             "font_weight": null
           },
           "boolean": {
-            "color": "#BC5215",
+            "color": "#AD8301",
             "background_color": null,
             "font_style": null,
             "font_weight": null
@@ -506,8 +550,32 @@
             "font_style": null,
             "font_weight": null
           },
+          "constant": {
+            "color": "#BC5215",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
           "constructor": {
             "color": "#205EA6",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          "emphasis": {
+            "color": "#24837B",
+            "background_color": null,
+            "font_style": "italic",
+            "font_weight": null
+          },
+          "emphasis.strong": {
+            "color": "#24837B",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": 700
+          },
+          "enum": {
+            "color": "#AD8301",
             "background_color": null,
             "font_style": null,
             "font_weight": null
@@ -518,8 +586,20 @@
             "font_style": null,
             "font_weight": null
           },
+          "hint": {
+            "color": "#B7B5AC",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
           "keyword": {
             "color": "#66800B",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          "label": {
+            "color": "#205EA6",
             "background_color": null,
             "font_style": null,
             "font_weight": null
@@ -548,8 +628,20 @@
             "font_style": null,
             "font_weight": null
           },
+          "predictive": {
+            "color": "#B7B5AC",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
           "preproc": {
             "color": "#A02F6F",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          "primary": {
+            "color": "#24837B",
             "background_color": null,
             "font_style": null,
             "font_weight": null
@@ -626,8 +718,20 @@
             "font_style": null,
             "font_weight": null
           },
+          "tag.doctype": {
+            "color": "#205EA6",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
           "text.literal": {
             "color": "#24837B",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          "title": {
+            "color": "#AD8301",
             "background_color": null,
             "font_style": null,
             "font_weight": null
@@ -646,6 +750,12 @@
           },
           "variable.special": {
             "color": "#205EA6",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          "variant": {
+            "color": "#24837B",
             "background_color": null,
             "font_style": null,
             "font_weight": null
