@@ -41,6 +41,7 @@ Flexoki is available for the following apps and tools.
 - [Tealdeer](https://github.com/kepano/flexoki/tree/main/tealdeer) by @Orest58008
 - [Telegram](https://github.com/kepano/flexoki/tree/main/telegram) by @Orest58008
 - [tmux](https://github.com/kepano/flexoki/tree/main/tmux) by @tklai
+- [Typora](https://github.com/guidovicino/flexoki-typora) by @guidovicino
 - [Ulysses](https://github.com/kepano/flexoki/tree/main/ulysses) by @jasonekratz
 - [Visual Studio Code](https://github.com/kepano/flexoki/tree/main/vscode) by @Railly
 - [Warp](https://github.com/kepano/flexoki/tree/main/warp-terminal) by @tplesnar
