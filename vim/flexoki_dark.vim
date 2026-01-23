@@ -105,17 +105,22 @@ function! s:Hi(group, opts) abort
   execute l:cmd
 endfunction
 
+" Normal / UI
 call s:Hi('Normal',       {'fg': s:variants.dark.tx,   'bg': s:variants.dark.bg})
 call s:Hi('NormalNC',     {'fg': 'NONE',              'bg': 'NONE'})
-call s:Hi('Underlined',   {'fg': 'NONE',              'bg': 'NONE', 'style': 'underline'})
-call s:Hi('Bold',         {'fg': 'NONE',              'bg': 'NONE', 'style': 'bold'})
-call s:Hi('Italic',       {'fg': 'NONE',              'bg': 'NONE', 'style': 'italic'})
+call s:Hi('Underlined',   {'fg': 'NONE',              'bg': 'NONE', 'style':'underline'})
+call s:Hi('Bold',         {'fg': 'NONE',              'bg': 'NONE', 'style':'bold'})
+call s:Hi('Italic',       {'fg': 'NONE',              'bg': 'NONE', 'style':'italic'})
+call s:Hi('NonText',      {'fg': s:variants.dark.tx_3,'bg':'NONE'})
+call s:Hi('EndOfBuffer',  {'fg':'NONE', 'bg':'NONE'})
 
-call s:Hi('SpellBad',     {'fg': s:variants.dark.re_2, 'bg': 'NONE', 'style': 'underline'})
-call s:Hi('SpellCap',     {'fg': s:variants.dark.ye,   'bg': 'NONE', 'style': 'underline'})
-call s:Hi('SpellLocal',   {'fg': s:variants.dark.gr,   'bg': 'NONE', 'style': 'underline'})
-call s:Hi('SpellRare',    {'fg': s:variants.dark.pu,   'bg': 'NONE', 'style': 'underline'})
+" Spell
+call s:Hi('SpellBad',   {'fg': s:variants.dark.re_2, 'bg':'NONE', 'style':'underline'})
+call s:Hi('SpellCap',   {'fg': s:variants.dark.ye,   'bg':'NONE', 'style':'underline'})
+call s:Hi('SpellLocal', {'fg': s:variants.dark.gr,   'bg':'NONE', 'style':'underline'})
+call s:Hi('SpellRare',  {'fg': s:variants.dark.pu,   'bg':'NONE', 'style':'underline'})
 
+" Search / Diff
 call s:Hi('Search',       {'fg': s:variants.dark.tx, 'bg': s:variants.dark.ye})
 call s:Hi('IncSearch',    {'fg': s:variants.dark.tx, 'bg': s:variants.dark.ye})
 call s:Hi('CurSearch',    {'fg': s:variants.dark.tx, 'bg': s:variants.dark.ye_2})
@@ -126,42 +131,59 @@ call s:Hi('DiffChange',   {'fg': s:variants.dark.bg_2, 'bg': s:variants.dark.pu}
 call s:Hi('DiffDelete',   {'fg': s:variants.dark.bg_2, 'bg': s:variants.dark.re})
 call s:Hi('DiffText',     {'fg': s:variants.dark.bg,   'bg': s:variants.dark.bl_2})
 
-call s:Hi('Comment',      {'fg': s:variants.dark.tx_3, 'bg': 'NONE'})
-call s:Hi('Constant',     {'fg': s:variants.dark.ye,   'bg': 'NONE'})
-call s:Hi('String',       {'fg': s:variants.dark.cy,   'bg': 'NONE'})
-call s:Hi('Character',    {'fg': s:variants.dark.cy,   'bg': 'NONE'})
-call s:Hi('Number',       {'fg': s:variants.dark.pu,   'bg': 'NONE'})
-call s:Hi('Boolean',      {'fg': s:variants.dark.ma,   'bg': 'NONE'})
-call s:Hi('Float',        {'fg': s:variants.dark.pu,   'bg': 'NONE'})
+" Text / Syntax
+call s:Hi('Comment',      {'fg': s:variants.dark.tx_3, 'bg':'NONE'})
+call s:Hi('Constant',     {'fg': s:variants.dark.ye,   'bg':'NONE'})
+call s:Hi('String',       {'fg': s:variants.dark.cy,   'bg':'NONE'})
+call s:Hi('Character',    {'fg': s:variants.dark.cy,   'bg':'NONE'})
+call s:Hi('Number',       {'fg': s:variants.dark.pu,   'bg':'NONE'})
+call s:Hi('Boolean',      {'fg': s:variants.dark.ma,   'bg':'NONE'})
+call s:Hi('Float',        {'fg': s:variants.dark.pu,   'bg':'NONE'})
 
-call s:Hi('Identifier',   {'fg': s:variants.dark.bl, 'bg': 'NONE'})
-call s:Hi('Function',     {'fg': s:variants.dark.or, 'bg': 'NONE'})
-call s:Hi('Keyword',      {'fg': s:variants.dark.gr, 'bg': 'NONE'})
-call s:Hi('Operator',     {'fg': s:variants.dark.tx_2, 'bg': 'NONE'})
-call s:Hi('PreProc',      {'fg': s:variants.dark.ma, 'bg': 'NONE'})
-call s:Hi('Include',      {'fg': s:variants.dark.re, 'bg': 'NONE'})
-call s:Hi('Define',       {'fg': s:variants.dark.ma, 'bg': 'NONE'})
-call s:Hi('Macro',        {'fg': s:variants.dark.ma, 'bg': 'NONE'})
-call s:Hi('Type',         {'fg': s:variants.dark.gr, 'bg': 'NONE'})
-call s:Hi('StorageClass', {'fg': s:variants.dark.or, 'bg': 'NONE'})
-call s:Hi('Structure',    {'fg': s:variants.dark.or, 'bg': 'NONE'})
-call s:Hi('Typedef',      {'fg': s:variants.dark.or, 'bg': 'NONE'})
+call s:Hi('Identifier',   {'fg': s:variants.dark.bl, 'bg':'NONE'})
+call s:Hi('Function',     {'fg': s:variants.dark.or, 'bg':'NONE'})
+call s:Hi('Keyword',      {'fg': s:variants.dark.gr, 'bg':'NONE'})
+call s:Hi('Statement',    {'fg':'NONE','bg':'NONE'})
+call s:Hi('Conditional',  {'fg': s:variants.dark.gr, 'bg':'NONE'}) " link Keyword
+call s:Hi('Repeat',       {'fg': s:variants.dark.gr, 'bg':'NONE'}) " link Keyword
+call s:Hi('Label',        {'fg': s:variants.dark.gr, 'bg':'NONE'}) " link Keyword
+call s:Hi('Operator',     {'fg': s:variants.dark.tx_2,'bg':'NONE'})
+call s:Hi('Exception',    {'fg': s:variants.dark.gr, 'bg':'NONE'}) " link Keyword
 
-call s:Hi('Special',      {'fg': s:variants.dark.tx_2, 'bg': 'NONE'})
-call s:Hi('SpecialChar',  {'fg': s:variants.dark.ma,   'bg': 'NONE'})
-call s:Hi('Tag',          {'fg': s:variants.dark.cy,   'bg': 'NONE'})
-call s:Hi('Error',        {'fg': s:variants.dark.re,   'bg': s:variants.dark.bg, 'style': 'bold'})
-call s:Hi('Todo',         {'fg': s:variants.dark.ma,   'bg': 'NONE', 'style': 'bold'})
+call s:Hi('PreProc',      {'fg': s:variants.dark.ma, 'bg':'NONE'})
+call s:Hi('Include',      {'fg': s:variants.dark.re, 'bg':'NONE'})
+call s:Hi('Define',       {'fg': s:variants.dark.ma, 'bg':'NONE'})
+call s:Hi('Macro',        {'fg': s:variants.dark.ma, 'bg':'NONE'})
+call s:Hi('PreCondit',    {'fg': s:variants.dark.ma, 'bg':'NONE'})
 
-call s:Hi('Cursor',       {'fg': s:variants.dark.bg, 'bg': s:variants.dark.tx})
-call s:Hi('CursorLine',   {'bg': s:variants.dark.ui})
-call s:Hi('Visual',       {'bg': s:variants.dark.ui_2})
-call s:Hi('ColorColumn',  {'bg': s:variants.dark.ui})
+call s:Hi('Type',          {'fg': s:variants.dark.gr, 'bg':'NONE'})
+call s:Hi('StorageClass',  {'fg': s:variants.dark.or, 'bg':'NONE'})
+call s:Hi('Structure',     {'fg': s:variants.dark.or, 'bg':'NONE'})
+call s:Hi('Typedef',       {'fg': s:variants.dark.or, 'bg':'NONE'})
 
+call s:Hi('SpecialComment', {'fg': s:variants.dark.tx,   'bg':'NONE'})
+call s:Hi('Special',        {'fg': s:variants.dark.tx_2, 'bg':'NONE'})
+call s:Hi('SpecialChar',    {'fg': s:variants.dark.ma,   'bg':'NONE'})
+call s:Hi('Tag',            {'fg': s:variants.dark.cy,   'bg':'NONE'})
+call s:Hi('Debug',          {'fg': s:variants.dark.ma,   'bg':'NONE'})
+call s:Hi('Delimiter',      {'fg': s:variants.dark.tx_2, 'bg':'NONE'})
+call s:Hi('Error',          {'fg': s:variants.dark.re,   'bg': s:variants.dark.bg, 'style':'bold'})
+call s:Hi('Todo',           {'fg': s:variants.dark.ma,   'bg':'NONE', 'style':'bold'})
+
+" Line numbers, cursor, visual
+call s:Hi('LineNr',        {'fg': s:variants.dark.tx_3, 'bg':'NONE'})
+call s:Hi('CursorLineNr',  {'fg': s:variants.dark.tx,   'bg':'NONE', 'style':'bold'})
+call s:Hi('Cursor',        {'fg': s:variants.dark.bg,   'bg': s:variants.dark.tx})
+call s:Hi('CursorLine',    {'bg': s:variants.dark.ui})
+call s:Hi('ColorColumn',   {'bg': s:variants.dark.ui})
+call s:Hi('Visual',        {'bg': s:variants.dark.ui_2})
+
+" Diagnostic / Git
 call s:Hi('DiagnosticError', {'fg': s:variants.dark.re})
 call s:Hi('DiagnosticWarn',  {'fg': s:variants.dark.ye})
 call s:Hi('DiagnosticInfo',  {'fg': s:variants.dark.cy})
 call s:Hi('DiagnosticHint',  {'fg': s:variants.dark.bl})
-call s:Hi('Added',           {'fg': s:variants.dark.gr})
-call s:Hi('Removed',         {'fg': s:variants.dark.re})
-call s:Hi('Changed',         {'fg': s:variants.dark.or})
+
+call s:Hi('Added',   {'fg': s:variants.dark.gr})
+call s:Hi('Removed', {'fg': s:variants.dark.re})
+call s:Hi('Changed', {'fg': s:variants.dark.or})
