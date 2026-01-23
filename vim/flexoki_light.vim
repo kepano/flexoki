@@ -105,17 +105,22 @@ function! s:Hi(group, opts) abort
   execute l:cmd
 endfunction
 
+" Normal / UI
 call s:Hi('Normal',       {'fg': s:variants.light.tx,   'bg': s:variants.light.bg})
 call s:Hi('NormalNC',     {'fg': 'NONE',              'bg': 'NONE'})
-call s:Hi('Underlined',   {'fg': 'NONE',              'bg': 'NONE', 'style': 'underline'})
-call s:Hi('Bold',         {'fg': 'NONE',              'bg': 'NONE', 'style': 'bold'})
-call s:Hi('Italic',       {'fg': 'NONE',              'bg': 'NONE', 'style': 'italic'})
+call s:Hi('Underlined',   {'fg': 'NONE',              'bg': 'NONE', 'style':'underline'})
+call s:Hi('Bold',         {'fg': 'NONE',              'bg': 'NONE', 'style':'bold'})
+call s:Hi('Italic',       {'fg': 'NONE',              'bg': 'NONE', 'style':'italic'})
+call s:Hi('NonText',      {'fg': s:variants.light.tx_3,'bg':'NONE'})
+call s:Hi('EndOfBuffer',  {'fg':'NONE', 'bg':'NONE'})
 
-call s:Hi('SpellBad',     {'fg': s:variants.light.re_2, 'bg': 'NONE', 'style': 'underline'})
-call s:Hi('SpellCap',     {'fg': s:variants.light.ye,   'bg': 'NONE', 'style': 'underline'})
-call s:Hi('SpellLocal',   {'fg': s:variants.light.gr,   'bg': 'NONE', 'style': 'underline'})
-call s:Hi('SpellRare',    {'fg': s:variants.light.pu,   'bg': 'NONE', 'style': 'underline'})
+" Spell
+call s:Hi('SpellBad',   {'fg': s:variants.light.re_2, 'bg':'NONE', 'style':'underline'})
+call s:Hi('SpellCap',   {'fg': s:variants.light.ye,   'bg':'NONE', 'style':'underline'})
+call s:Hi('SpellLocal', {'fg': s:variants.light.gr,   'bg':'NONE', 'style':'underline'})
+call s:Hi('SpellRare',  {'fg': s:variants.light.pu,   'bg':'NONE', 'style':'underline'})
 
+" Search / Diff
 call s:Hi('Search',       {'fg': s:variants.light.tx, 'bg': s:variants.light.ye})
 call s:Hi('IncSearch',    {'fg': s:variants.light.tx, 'bg': s:variants.light.ye})
 call s:Hi('CurSearch',    {'fg': s:variants.light.tx, 'bg': s:variants.light.ye_2})
@@ -126,42 +131,59 @@ call s:Hi('DiffChange',   {'fg': s:variants.light.bg_2, 'bg': s:variants.light.p
 call s:Hi('DiffDelete',   {'fg': s:variants.light.bg_2, 'bg': s:variants.light.re})
 call s:Hi('DiffText',     {'fg': s:variants.light.bg,   'bg': s:variants.light.bl_2})
 
-call s:Hi('Comment',      {'fg': s:variants.light.tx_3, 'bg': 'NONE'})
-call s:Hi('Constant',     {'fg': s:variants.light.ye,   'bg': 'NONE'})
-call s:Hi('String',       {'fg': s:variants.light.cy,   'bg': 'NONE'})
-call s:Hi('Character',    {'fg': s:variants.light.cy,   'bg': 'NONE'})
-call s:Hi('Number',       {'fg': s:variants.light.pu,   'bg': 'NONE'})
-call s:Hi('Boolean',      {'fg': s:variants.light.ma,   'bg': 'NONE'})
-call s:Hi('Float',        {'fg': s:variants.light.pu,   'bg': 'NONE'})kepano
+" Text / Syntax
+call s:Hi('Comment',      {'fg': s:variants.light.tx_3, 'bg':'NONE'})
+call s:Hi('Constant',     {'fg': s:variants.light.ye,   'bg':'NONE'})
+call s:Hi('String',       {'fg': s:variants.light.cy,   'bg':'NONE'})
+call s:Hi('Character',    {'fg': s:variants.light.cy,   'bg':'NONE'})
+call s:Hi('Number',       {'fg': s:variants.light.pu,   'bg':'NONE'})
+call s:Hi('Boolean',      {'fg': s:variants.light.ma,   'bg':'NONE'})
+call s:Hi('Float',        {'fg': s:variants.light.pu,   'bg':'NONE'})
 
-call s:Hi('Identifier',   {'fg': s:variants.light.bl, 'bg': 'NONE'})
-call s:Hi('Function',     {'fg': s:variants.light.or, 'bg': 'NONE'})
-call s:Hi('Keyword',      {'fg': s:variants.light.gr, 'bg': 'NONE'})
-call s:Hi('Operator',     {'fg': s:variants.light.tx_2, 'bg': 'NONE'})
-call s:Hi('PreProc',      {'fg': s:variants.light.ma, 'bg': 'NONE'})
-call s:Hi('Include',      {'fg': s:variants.light.re, 'bg': 'NONE'})
-call s:Hi('Define',       {'fg': s:variants.light.ma, 'bg': 'NONE'})
-call s:Hi('Macro',        {'fg': s:variants.light.ma, 'bg': 'NONE'})
-call s:Hi('Type',         {'fg': s:variants.light.gr, 'bg': 'NONE'})
-call s:Hi('StorageClass', {'fg': s:variants.light.or, 'bg': 'NONE'})
-call s:Hi('Structure',    {'fg': s:variants.light.or, 'bg': 'NONE'})
-call s:Hi('Typedef',      {'fg': s:variants.light.or, 'bg': 'NONE'})
+call s:Hi('Identifier',   {'fg': s:variants.light.bl, 'bg':'NONE'})
+call s:Hi('Function',     {'fg': s:variants.light.or, 'bg':'NONE'})
+call s:Hi('Keyword',      {'fg': s:variants.light.gr, 'bg':'NONE'})
+call s:Hi('Statement',    {'fg':'NONE','bg':'NONE'})
+call s:Hi('Conditional',  {'fg': s:variants.light.gr, 'bg':'NONE'}) " link Keyword
+call s:Hi('Repeat',       {'fg': s:variants.light.gr, 'bg':'NONE'}) " link Keyword
+call s:Hi('Label',        {'fg': s:variants.light.gr, 'bg':'NONE'}) " link Keyword
+call s:Hi('Operator',     {'fg': s:variants.light.tx_2,'bg':'NONE'})
+call s:Hi('Exception',    {'fg': s:variants.light.gr, 'bg':'NONE'}) " link Keyword
 
-call s:Hi('Special',      {'fg': s:variants.light.tx_2, 'bg': 'NONE'})
-call s:Hi('SpecialChar',  {'fg': s:variants.light.ma,   'bg': 'NONE'})
-call s:Hi('Tag',          {'fg': s:variants.light.cy,   'bg': 'NONE'})
-call s:Hi('Error',        {'fg': s:variants.light.re,   'bg': s:variants.light.bg, 'style': 'bold'})
-call s:Hi('Todo',         {'fg': s:variants.light.ma,   'bg': 'NONE', 'style': 'bold'})
+call s:Hi('PreProc',      {'fg': s:variants.light.ma, 'bg':'NONE'})
+call s:Hi('Include',      {'fg': s:variants.light.re, 'bg':'NONE'})
+call s:Hi('Define',       {'fg': s:variants.light.ma, 'bg':'NONE'})
+call s:Hi('Macro',        {'fg': s:variants.light.ma, 'bg':'NONE'})
+call s:Hi('PreCondit',    {'fg': s:variants.light.ma, 'bg':'NONE'})
 
-call s:Hi('Cursor',       {'fg': s:variants.light.bg, 'bg': s:variants.light.tx})
-call s:Hi('CursorLine',   {'bg': s:variants.light.ui})
-call s:Hi('Visual',       {'bg': s:variants.light.ui_2})
-call s:Hi('ColorColumn',  {'bg': s:variants.light.ui})
+call s:Hi('Type',          {'fg': s:variants.light.gr, 'bg':'NONE'})
+call s:Hi('StorageClass',  {'fg': s:variants.light.or, 'bg':'NONE'})
+call s:Hi('Structure',     {'fg': s:variants.light.or, 'bg':'NONE'})
+call s:Hi('Typedef',       {'fg': s:variants.light.or, 'bg':'NONE'})
 
+call s:Hi('SpecialComment', {'fg': s:variants.light.tx,   'bg':'NONE'})
+call s:Hi('Special',        {'fg': s:variants.light.tx_2, 'bg':'NONE'})
+call s:Hi('SpecialChar',    {'fg': s:variants.light.ma,   'bg':'NONE'})
+call s:Hi('Tag',            {'fg': s:variants.light.cy,   'bg':'NONE'})
+call s:Hi('Debug',          {'fg': s:variants.light.ma,   'bg':'NONE'})
+call s:Hi('Delimiter',      {'fg': s:variants.light.tx_2, 'bg':'NONE'})
+call s:Hi('Error',          {'fg': s:variants.light.re,   'bg': s:variants.light.bg, 'style':'bold'})
+call s:Hi('Todo',           {'fg': s:variants.light.ma,   'bg':'NONE', 'style':'bold'})
+
+" Line numbers, cursor, visual
+call s:Hi('LineNr',        {'fg': s:variants.light.tx_3, 'bg':'NONE'})
+call s:Hi('CursorLineNr',  {'fg': s:variants.light.tx,   'bg':'NONE', 'style':'bold'})
+call s:Hi('Cursor',        {'fg': s:variants.light.bg,   'bg': s:variants.light.tx})
+call s:Hi('CursorLine',    {'bg': s:variants.light.ui})
+call s:Hi('ColorColumn',   {'bg': s:variants.light.ui})
+call s:Hi('Visual',        {'bg': s:variants.light.ui_2})
+
+" Diagnostic / Git
 call s:Hi('DiagnosticError', {'fg': s:variants.light.re})
 call s:Hi('DiagnosticWarn',  {'fg': s:variants.light.ye})
 call s:Hi('DiagnosticInfo',  {'fg': s:variants.light.cy})
 call s:Hi('DiagnosticHint',  {'fg': s:variants.light.bl})
-call s:Hi('Added',           {'fg': s:variants.light.gr})
-call s:Hi('Removed',         {'fg': s:variants.light.re})
-call s:Hi('Changed',         {'fg': s:variants.light.or})
+
+call s:Hi('Added',   {'fg': s:variants.light.gr})
+call s:Hi('Removed', {'fg': s:variants.light.re})
+call s:Hi('Changed', {'fg': s:variants.light.or})
