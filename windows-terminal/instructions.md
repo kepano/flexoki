@@ -9,3 +9,23 @@
 4. Find the `schemes` key and paste the contents of the JSON file in there
 
 5. Now you should be able to select the "Flexoki" theme for your profiles or as the default from the settings UI
+
+## Auto switch
+
+```
+{
+    "profiles":
+    {
+        "defaults":
+        {
+            "colorScheme":
+            {
+                "dark": "Flexoki Dark",
+                "light": "Flexoki Light"
+            },
+            "opacity": 100,
+            "useAcrylic": true
+        }
+    }
+}
+```

@@ -1,0 +1,23 @@
+{
+  "background": "#FFFCF0",
+  "black": "#100F0F",
+  "blue": "#205EA6",
+  "brightBlack": "#575653",
+  "brightBlue": "#4385BE",
+  "brightCyan": "#3AA99F",
+  "brightGreen": "#879A39",
+  "brightPurple": "#8B7EC8",
+  "brightRed": "#D14D41",
+  "brightWhite": "#FFFCF0",
+  "brightYellow": "#D0A215",
+  "cursorColor": "#100F0F",
+  "cyan": "#24837B",
+  "foreground": "#100F0F",
+  "green": "#66800B",
+  "name": "Flexoki Light",
+  "purple": "#5E409D",
+  "red": "#AF3029",
+  "selectionBackground": "#CECDC3",
+  "white": "#F2F0E5",
+  "yellow": "#C19C00"
+}
