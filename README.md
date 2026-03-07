@@ -45,6 +45,7 @@ Flexoki is available for the following apps and tools.
 - [Typora](https://github.com/guidovicino/flexoki-typora) by @guidovicino
 - [Ulysses](https://github.com/kepano/flexoki/tree/main/ulysses) by @jasonekratz
 - [Visual Studio Code](https://github.com/kepano/flexoki/tree/main/vscode) by @Railly
+- [Vim](https://github.com/kepano/flexoki/tree/main/vim) by @stevepan643
 - [Warp](https://github.com/kepano/flexoki/tree/main/warp-terminal) by @tplesnar
 - [Waybar](https://github.com/kepano/flexoki/tree/main/waybar) by @Orest58008
 - [WezTerm](https://github.com/kepano/flexoki/tree/main/wezterm) by @jbromley
