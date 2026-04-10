@@ -34,6 +34,7 @@ Flexoki is available for the following apps and tools.
   - [@nuvic](https://github.com/nuvic/flexoki-nvim)
 - [NetNewsWire](https://github.com/frznv/NetNewsWire-Flexoki) by @frznv
 - [Obsidian](https://github.com/kepano/flexoki-obsidian) and part of [Minimal theme](https://github.com/kepano/obsidian-minimal) by @kepano
+- [Spotify Via Spicetify](https://github.com/wlygon7/Flexoki-Spotify) by @wlygon7
 - [Slack](https://github.com/kepano/flexoki/tree/main/slack) by @maxobat
 - [Standard Notes](https://github.com/myreli/sn-flexoki) by @myreli
 - [Sublime Text](https://github.com/kepano/flexoki-sublime) by @kepano
