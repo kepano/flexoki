@@ -1,42 +1,41 @@
 # Flexoki for Xcode
 
+Xcode themes based on [Flexoki](https://stephango.com/flexoki), the inky color system created by [Steph Ango](https://github.com/kepano).
+
+This directory includes the Xcode port with:
+
+- `Flexoki Dark.xccolortheme`
+- `Flexoki Light.xccolortheme`
+
+## Screenshots
+
+| Flexoki Dark | Flexoki Light |
+| --- | --- |
+| ![Flexoki Dark theme in Xcode](img/dark.png) | ![Flexoki Light theme in Xcode](img/light.png) |
+
 ## Installation
 
-1. Download the `.xccolortheme` files:
-   - `Flexoki Dark.xccolortheme`
-   - `Flexoki Light.xccolortheme`
+1. Clone or download this repository, then open the `xcode/` directory.
+2. Create Xcode's themes directory if it does not exist:
 
-2. Copy the files to your Xcode themes directory:
-   ```bash
-   cp "Flexoki Dark.xccolortheme" ~/Library/Developer/Xcode/UserData/FontAndColorThemes/
-   cp "Flexoki Light.xccolortheme" ~/Library/Developer/Xcode/UserData/FontAndColorThemes/
-   ```
+```bash
+mkdir -p ~/Library/Developer/Xcode/UserData/FontAndColorThemes
+```
 
-3. Restart Xcode
+3. Copy the theme files into Xcode's theme folder:
 
-4. Go to **Xcode > Preferences > Themes** and select either "Flexoki Dark" or "Flexoki Light"
+```bash
+cp "Flexoki Dark.xccolortheme" ~/Library/Developer/Xcode/UserData/FontAndColorThemes/
+cp "Flexoki Light.xccolortheme" ~/Library/Developer/Xcode/UserData/FontAndColorThemes/
+```
 
-## Color Mapping
+4. Restart Xcode.
+5. Open `Xcode > Settings > Themes` and select `Flexoki Dark` or `Flexoki Light`.
 
-The themes use the following Flexoki colors:
+Older Xcode releases use `Xcode > Preferences > Themes`.
 
-### Dark Theme
-- Background: `#100F0F` RGB(16, 15, 15) - **black**
-- Foreground: `#CECDC3` RGB(206, 205, 195) - **base-200**
-- Comments: `#878580` RGB(135, 133, 128) - **base-500**
-- Keywords: `#879A39` RGB(135, 154, 57) - **green-400**
-- Strings: `#3AA99F` RGB(58, 169, 159) - **cyan-400**
-- Numbers: `#8B7EC8` RGB(139, 126, 200) - **purple-400**
-- Functions: `#DA702C` RGB(218, 112, 44) - **orange-400**
-- Types: `#D0A215` RGB(208, 162, 21) - **yellow-400**
+## Notes
 
-### Light Theme
-- Background: `#FFFCF0` RGB(255, 252, 240) - **paper**
-- Foreground: `#100F0F` RGB(16, 15, 15) - **black**
-- Comments: `#5A5955` RGB(90, 89, 85) - *custom (between base-600 and base-700)*
-- Doc comments: `#8B8A82` RGB(139, 138, 130) - *custom (between base-500 and base-600)*
-- Keywords: `#66800B` RGB(102, 128, 11) - **green-600**
-- Strings: `#24837B` RGB(36, 131, 123) - **cyan-600**
-- Numbers: `#5E409D` RGB(94, 64, 157) - **purple-600**
-- Functions: `#BC5215` RGB(188, 82, 21) - **orange-600**
-- Types: `#AD8301` RGB(173, 131, 1) - **yellow-600**
+- The light and dark themes keep Flexoki's published palette values.
+- A few Xcode-only syntax keys missing from the upstream export are filled in here so recent Xcode releases can color every built-in token category consistently.
+- After selecting the theme, you can still change the editor font and size from Xcode's theme editor.

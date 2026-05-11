@@ -50,6 +50,7 @@ Flexoki is available for the following apps and tools.
 - [Waybar](https://github.com/kepano/flexoki/tree/main/waybar) by @Orest58008
 - [WezTerm](https://github.com/kepano/flexoki/tree/main/wezterm) by @jbromley
 - [Windows Terminal](https://github.com/kepano/flexoki/tree/main/windows-terminal) by @joukevandermaas
+- [Xcode](https://github.com/kepano/flexoki/tree/main/xcode) by @ezefranca
 - [Xresources](https://github.com/kepano/flexoki/tree/main/xresources) by @dmb2
 - [Yazi Dark](https://github.com/gosxrgxx/flexoki-dark.yazi), [Yazi Light](https://github.com/gosxrgxx/flexoki-light.yazi) by @gosxrgxx
 - [Zed](https://github.com/kepano/flexoki/tree/main/zed) by @dinocosta
