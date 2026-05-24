@@ -70,6 +70,7 @@ Flexoki is available for the following apps and tools.
 - [pywal](https://github.com/kepano/flexoki/tree/main/pywal) by @hydroakri
 - [Starlight](https://delucis.github.io/starlight-theme-flexoki/) by @delucis
 - [VitePress](https://github.com/mancuoj/vitepress-theme-flexoki) by @mancuoj
+- [Zensical](https://github.com/leightonpayne/flexoki-zensical) by @leightonpayne
 
 ### Other
 
