@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "version": "1.0.0",
+  "name": "Flexoki Light",
+  "theme": {
+    "colors": {
+      "frame": [255, 252, 240],
+      "frame_inactive": [242, 240, 229],
+      "frame_incognito": [242, 240, 229],
+      "frame_incognito_inactive": [230, 228, 217],
+      "background_tab": [255, 252, 240],
+      "background_tab_inactive": [242, 240, 229],
+      "background_tab_incognito": [242, 240, 229],
+      "background_tab_incognito_inactive": [230, 228, 217],
+      "tab_text": [64, 62, 60],
+      "tab_background_text": [135, 133, 128],
+      "tab_background_text_inactive": [159, 157, 150],
+      "tab_background_text_incognito": [159, 157, 150],
+      "tab_background_text_incognito_inactive": [183, 181, 172],
+      "bookmark_text": [64, 62, 60],
+      "toolbar": [242, 240, 229],
+      "toolbar_text": [87, 86, 83],
+      "toolbar_button_icon": [111, 110, 105],
+      "omnibox_background": [255, 252, 240],
+      "omnibox_text": [64, 62, 60],
+      "ntp_background": [255, 252, 240],
+      "ntp_text": [87, 86, 83],
+      "ntp_header": [159, 157, 150],
+      "button_background": [255, 252, 240],
+      "ntp_link": [32, 94, 166]
+    },
+    "tints": {},
+    "properties": {
+      "ntp_background_alignment": "top",
+      "ntp_background_repeat": "no-repeat"
+    }
+  }
+}
