@@ -2,7 +2,7 @@
 A Chrome theme based on Flexoki.
 
 ## Installation
-1. Download the zipped light [Flexoki-Light.zip](../chrome/Flexoki.zip) or dark [Flexoki-Dark.zip](../chrome/Flexoki.zip) theme in this directory.
+1. Download the zipped light [Flexoki-Light.zip](../chrome/Flexoki-Light.zip) or dark [Flexoki-Dark.zip](../chrome/Flexoki-Dark.zip) theme in this directory.
 2. Open Chrome and go to `chrome://extensions`.
 3. Enable "Developer mode" in the top right corner.
 4. Click "Load unpacked" and select the theme directory.
