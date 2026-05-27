@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "version": "1.0.0",
-  "name": "Flexoki",
+  "name": "Flexoki Dark",
   "theme": {
     "colors": {
       "frame": [40, 39, 38],
