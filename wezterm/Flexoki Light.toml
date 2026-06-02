@@ -37,6 +37,29 @@ cursor_fg = "#FFFCF0"
 selection_fg = "#100F0F"
 selection_bg = "#E6E4D9"
 
+[colors.tab_bar]
+background = "#FFFCF0"
+
+[colors.tab_bar.active_tab]
+bg_color = "#4385BE"
+fg_color = "#FFFCF0"
+
+[colors.tab_bar.inactive_tab]
+bg_color = "#E6E4D9"
+fg_color = "#B7B5AC"
+
+[colors.tab_bar.inactive_tab_hover]
+bg_color = "#DAD8CE"
+fg_color = "#100F0F"
+
+[colors.tab_bar.new_tab]
+bg_color = "#E6E4D9"
+fg_color = "#B7B5AC"
+
+[colors.tab_bar.new_tab_hover]
+bg_color = "#DAD8CE"
+fg_color = "#100F0F"
+
 [colors.indexed]
 
 [metadata]
