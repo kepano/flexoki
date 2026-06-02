@@ -17,19 +17,19 @@ fi
 
 echo "Installing $THEME_NAME GTK theme..."
 
-# Install GTK3 theme files
+# ── GTK3 ─────────────────────────────────────────────────────────────────────
 mkdir -p "$THEME_DIR"
 cp -r "$THEME_SRC"/. "$THEME_DIR/"
 echo "  GTK3: $THEME_DIR"
 
-# Install GTK4 user CSS.
-#
-# libadwaita ignores gtk-theme gsettings entirely. GTK4 only loads
-# ~/.config/gtk-4.0/gtk.css — it does NOT load gtk-dark.css from user
-# config when color-scheme changes. To support dark/light switching we
-# generate a single combined file that uses @media (prefers-color-scheme: dark),
-# which GTK4 4.x maps from the color-scheme gsettings value.
-# Absolute @import paths avoid symlink relative-path resolution issues.
+# ── GTK4 user CSS ─────────────────────────────────────────────────────────────
+# libadwaita ignores the gtk-theme gsettings key entirely. GTK4 only loads
+# ~/.config/gtk-4.0/gtk.css; it does NOT auto-load gtk-dark.css from user
+# config when color-scheme changes (that variant mechanism only applies to
+# files inside a theme directory). We generate a single self-contained file
+# that uses @media (prefers-color-scheme: dark), which GTK4 4.x maps from
+# the color-scheme gsettings value. Widget CSS is inlined so the generated
+# file has no external dependencies and survives theme directory moves.
 mkdir -p "$GTK4_DIR"
 
 # Remove any old gtk-dark.css symlink left by a previous install
@@ -38,34 +38,51 @@ if [[ -L "$GTK4_DIR/gtk-dark.css" ]] && [[ "$(readlink "$GTK4_DIR/gtk-dark.css")
 fi
 
 light_colors=$(grep '^@define-color' "$THEME_DIR/gtk-4.0/gtk.css")
-dark_colors=$(grep '^@define-color' "$THEME_DIR/gtk-4.0/gtk-dark.css" | sed 's/^/  /')
+dark_colors=$(grep  '^@define-color' "$THEME_DIR/gtk-4.0/gtk-dark.css" | sed 's/^/  /')
+widget_css=$(cat "$THEME_DIR/gtk-3.0/libadwaita.css")
+tweaks_css=$(cat "$THEME_DIR/gtk-3.0/libadwaita-tweaks.css")
 
 cat > "$GTK4_CSS" << CSSEOF
 ${GENERATED_HEADER}
 
-/* Light mode colors */
+/* ── Light mode colors ─────────────────────────────────────────────────── */
 ${light_colors}
 
-/* Dark mode overrides — responds to: gsettings set org.gnome.desktop.interface color-scheme prefer-dark */
+/* ── Dark mode overrides ───────────────────────────────────────────────── */
+/* Activated by: gsettings set org.gnome.desktop.interface color-scheme prefer-dark */
 @media (prefers-color-scheme: dark) {
 ${dark_colors}
 }
 
-/* Widget styles (absolute paths avoid symlink resolution issues) */
-@import '${THEME_DIR}/gtk-3.0/libadwaita.css';
-@import '${THEME_DIR}/gtk-3.0/libadwaita-tweaks.css';
+/* ── Widget styles (inlined — no external dependencies) ────────────────── */
+${widget_css}
+
+/* ── GNOME palette + libadwaita tweaks ─────────────────────────────────── */
+${tweaks_css}
 CSSEOF
 
-echo "  GTK4: $GTK4_CSS (generated)"
+echo "  GTK4: $GTK4_CSS (self-contained, $(wc -l < "$GTK4_CSS") lines)"
 
-# Apply GTK3 theme via gsettings if available
+# ── Apply settings ────────────────────────────────────────────────────────────
 if command -v gsettings &>/dev/null; then
     gsettings set org.gnome.desktop.interface gtk-theme "$THEME_NAME"
-    echo "  Applied via gsettings (GTK3)"
+
+    # Read the current color-scheme and keep it — don't override the user's
+    # existing dark/light preference, just ensure the theme is applied.
+    current_scheme=$(gsettings get org.gnome.desktop.interface color-scheme 2>/dev/null || echo "'default'")
+    echo "  Applied via gsettings (GTK3, color-scheme: ${current_scheme})"
+
+    # If still on default (no preference set), nudge the user.
+    if [[ "$current_scheme" == "'default'" ]]; then
+        echo ""
+        echo "  Your color-scheme is currently 'default' (follows system)."
+        echo "  To pin it:"
+        echo "    Dark:  gsettings set org.gnome.desktop.interface color-scheme prefer-dark"
+        echo "    Light: gsettings set org.gnome.desktop.interface color-scheme prefer-light"
+    fi
 else
-    echo "  gsettings not found — set the theme manually in your DE settings"
+    echo "  gsettings not found — set gtk-theme manually in your DE settings"
 fi
 
-echo "Done. GTK4 apps will pick up the theme on next launch."
-echo "  Dark:  gsettings set org.gnome.desktop.interface color-scheme prefer-dark"
-echo "  Light: gsettings set org.gnome.desktop.interface color-scheme prefer-light"
+echo ""
+echo "Done. Restart running apps to pick up the new theme."

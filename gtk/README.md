@@ -155,5 +155,5 @@ defined in `../_generators/src/palette.ts`. They are grouped into four layers:
 
 The standard accent color convention used throughout:
 
-- **400-series** (e.g. `#4385BE`) — light-mode foreground accents and dark-mode button backgrounds
-- **600-series** (e.g. `#205EA6`) — dark-mode foreground accents and light-mode button backgrounds
+- **600-series** (e.g. `#205EA6`) — light-mode foreground accents and dark-mode button backgrounds
+- **400-series** (e.g. `#4385BE`) — dark-mode foreground accents and light-mode button backgrounds
