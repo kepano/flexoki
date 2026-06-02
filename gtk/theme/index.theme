@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Flexoki
+Comment=Flexoki color scheme for GTK, based on adw-gtk3
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=flexoki
+MetacityTheme=Adwaita
+IconTheme=Adwaita
+CursorTheme=Adwaita

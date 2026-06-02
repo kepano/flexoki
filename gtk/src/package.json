@@ -1,0 +1,14 @@
+{
+  "name": "@flexoki/gtk-generator",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "ts-node generate.ts",
+    "test": "gcc $(pkg-config --cflags --libs gtk4) -lm -o test-colors test-colors.c && GDK_BACKEND=x11 DISPLAY=:0 ./test-colors"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}
