@@ -1,0 +1,9 @@
+/*
+ * Flexoki Auto for Forgejo — follows the OS light/dark preference.
+ *
+ * Flexoki is an inky color scheme for prose and code by Steph Ango.
+ * https://stephango.com/flexoki — MIT licensed.
+ */
+
+@import "theme-flexoki-light.css" (prefers-color-scheme: light);
+@import "theme-flexoki-dark.css" (prefers-color-scheme: dark);
