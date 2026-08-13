@@ -21,6 +21,7 @@ Flexoki is available for the following apps and tools.
 - [Emacs](https://github.com/crmsnbleyd/flexoki-emacs-theme) by @crmsnbleyd
 - [Firefox](https://codeberg.org/ddogfoodd/firefox-flexoki-dynamic-theme) by @ddogfoodd
 - [fish](https://github.com/kepano/flexoki/tree/main/fish) by @Orest58008
+- [Forgejo](https://github.com/getcake/flexoki-forgejo) by @getcake
 - Ghostty (built-in)
 - [Helix](https://github.com/kepano/flexoki/tree/main/helix) by @apcamargo
 - [IntelliJ](https://github.com/kepano/flexoki/tree/main/intellij) by @annoyingmouse

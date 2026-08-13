@@ -1,0 +1,298 @@
+/*
+ * Flexoki Dark for Forgejo
+ *
+ * Flexoki is an inky color scheme for prose and code by Steph Ango.
+ * https://stephango.com/flexoki — MIT licensed.
+ *
+ * This theme imports the built-in Forgejo dark theme and overrides its
+ * CSS variables, so it stays compatible across Forgejo upgrades and
+ * inherits sensible defaults for anything not explicitly themed here.
+ *
+ * Install: custom/public/assets/css/theme-flexoki-dark.css
+ * app.ini: [ui] THEMES = ...,flexoki-dark
+ */
+
+@import "theme-forgejo-dark.css";
+
+:root {
+  --is-dark-theme: true;
+
+  /* ---- primary (Flexoki blue, 400 anchor for dark) ---- */
+  --color-primary: #4385BE;          /* blue-400 */
+  --color-primary-contrast: #FFFCF0; /* paper */
+  --color-primary-dark-1: #66A0C8;   /* blue-300 */
+  --color-primary-dark-2: #92BFDB;   /* blue-200 */
+  --color-primary-dark-3: #ABCFE2;   /* blue-150 */
+  --color-primary-dark-4: #C6DDE8;   /* blue-100 */
+  --color-primary-dark-5: #E1ECEB;   /* blue-50 */
+  --color-primary-dark-6: #F0F4EE;
+  --color-primary-dark-7: #FAFAEF;
+  --color-primary-light-1: #3171B2;  /* blue-500 */
+  --color-primary-light-2: #205EA6;  /* blue-600 */
+  --color-primary-light-3: #1A4F8C;  /* blue-700 */
+  --color-primary-light-4: #163B66;  /* blue-800 */
+  --color-primary-light-5: #133051;  /* blue-850 */
+  --color-primary-light-6: #12253B;  /* blue-900 */
+  --color-primary-light-7: #101A24;  /* blue-950 */
+  --color-primary-alpha-10: #4385BE19;
+  --color-primary-alpha-20: #4385BE33;
+  --color-primary-alpha-30: #4385BE4b;
+  --color-primary-alpha-40: #4385BE66;
+  --color-primary-alpha-50: #4385BE80;
+  --color-primary-alpha-60: #4385BE99;
+  --color-primary-alpha-70: #4385BEb3;
+  --color-primary-alpha-80: #4385BEcc;
+  --color-primary-alpha-90: #4385BEe1;
+  --color-primary-hover: var(--color-primary-dark-1);
+  --color-primary-active: var(--color-primary-light-1);
+
+  /* ---- secondary (Flexoki base scale, 850 anchor) ---- */
+  --color-secondary: #343331;        /* base-850 */
+  --color-secondary-dark-1: #403E3C; /* base-800 */
+  --color-secondary-dark-2: #4C4A48;
+  --color-secondary-dark-3: #575653; /* base-700 */
+  --color-secondary-dark-4: #6F6E69; /* base-600 */
+  --color-secondary-dark-5: #878580; /* base-500 */
+  --color-secondary-dark-6: #9F9D96; /* base-400 */
+  --color-secondary-dark-7: #B7B5AC; /* base-300 */
+  --color-secondary-dark-8: #CECDC3; /* base-200 */
+  --color-secondary-dark-9: #DAD8CE; /* base-150 */
+  --color-secondary-dark-10: #E6E4D9; /* base-100 */
+  --color-secondary-dark-11: #F2F0E5; /* base-50 */
+  --color-secondary-dark-12: #F8F6EA;
+  --color-secondary-dark-13: #FFFCF0; /* paper */
+  --color-secondary-light-1: #282726; /* base-900 */
+  --color-secondary-light-2: #222120;
+  --color-secondary-light-3: #1C1B1A; /* base-950 */
+  --color-secondary-light-4: #100F0F; /* black */
+  --color-secondary-alpha-10: #34333119;
+  --color-secondary-alpha-20: #34333133;
+  --color-secondary-alpha-30: #3433314b;
+  --color-secondary-alpha-40: #34333166;
+  --color-secondary-alpha-50: #34333180;
+  --color-secondary-alpha-60: #34333199;
+  --color-secondary-alpha-70: #343331b3;
+  --color-secondary-alpha-80: #343331cc;
+  --color-secondary-alpha-90: #343331e1;
+  --color-secondary-button: var(--color-secondary-dark-4);
+  --color-secondary-hover: var(--color-secondary-dark-3);
+  --color-secondary-active: var(--color-secondary-dark-2);
+
+  /* ---- console (Actions logs) ---- */
+  --color-console-fg: #CECDC3;
+  --color-console-fg-subtle: #878580;
+  --color-console-bg: #100F0F;
+  --color-console-border: #343331;
+  --color-console-hover-bg: #1C1B1A;
+  --color-console-active-bg: #282726;
+  --color-console-menu-bg: #1C1B1A;
+  --color-console-menu-border: #403E3C;
+
+  /* ---- named colors (400 anchors on dark) ---- */
+  --color-red: #D14D41;
+  --color-orange: #DA702C;
+  --color-yellow: #D0A215;
+  --color-olive: #A0AF54;    /* green-300 */
+  --color-green: #879A39;    /* green-400 */
+  --color-teal: #3AA99F;     /* cyan-400 */
+  --color-blue: #4385BE;
+  --color-violet: #8B7EC8;   /* purple-400 */
+  --color-purple: #A699D0;   /* purple-300 */
+  --color-pink: #CE5D97;     /* magenta-400 */
+  --color-brown: #B57952;
+  --color-black: #1C1B1A;
+  /* light variants (one step lighter) */
+  --color-red-light: #E8705F;
+  --color-orange-light: #EC8B49;
+  --color-yellow-light: #DFB431;
+  --color-olive-light: #BEC97E;
+  --color-green-light: #A0AF54;
+  --color-teal-light: #5ABDAC;
+  --color-blue-light: #66A0C8;
+  --color-violet-light: #A699D0;
+  --color-purple-light: #C4B9E0;
+  --color-pink-light: #E47DA8;
+  --color-brown-light: #C9936C;
+  --color-black-light: #403E3C;
+  /* dark 1 variants (one step darker) */
+  --color-red-dark-1: #C03E35;
+  --color-orange-dark-1: #CB6120;
+  --color-yellow-dark-1: #BE9207;
+  --color-olive-dark-1: #879A39;
+  --color-green-dark-1: #768D21;
+  --color-teal-dark-1: #2F968D;
+  --color-blue-dark-1: #3171B2;
+  --color-violet-dark-1: #735EB5;
+  --color-purple-dark-1: #8B7EC8;
+  --color-pink-dark-1: #B74583;
+  --color-brown-dark-1: #AC714B;
+  --color-black-dark-1: #282726;
+  /* dark 2 variants (two steps darker) */
+  --color-red-dark-2: #AF3029;
+  --color-orange-dark-2: #BC5215;
+  --color-yellow-dark-2: #AD8301;
+  --color-olive-dark-2: #768D21;
+  --color-green-dark-2: #66800B;
+  --color-teal-dark-2: #24837B;
+  --color-blue-dark-2: #205EA6;
+  --color-violet-dark-2: #5E409D;
+  --color-purple-dark-2: #735EB5;
+  --color-pink-dark-2: #A02F6F;
+  --color-brown-dark-2: #995F3B;
+  --color-black-dark-2: #100F0F;
+
+  /* ---- ANSI (Actions console) ---- */
+  --color-ansi-black: #100F0F;
+  --color-ansi-red: #D14D41;
+  --color-ansi-green: #879A39;
+  --color-ansi-yellow: #D0A215;
+  --color-ansi-blue: #4385BE;
+  --color-ansi-magenta: #CE5D97;
+  --color-ansi-cyan: #3AA99F;
+  --color-ansi-white: var(--color-console-fg-subtle);
+  --color-ansi-bright-black: #6F6E69;
+  --color-ansi-bright-red: #E8705F;
+  --color-ansi-bright-green: #A0AF54;
+  --color-ansi-bright-yellow: #DFB431;
+  --color-ansi-bright-blue: #66A0C8;
+  --color-ansi-bright-magenta: #E47DA8;
+  --color-ansi-bright-cyan: #5ABDAC;
+  --color-ansi-bright-white: var(--color-console-fg);
+
+  /* ---- other ---- */
+  --color-grey: #343331;
+  --color-grey-light: #878580;
+  --color-gold: #D0A215;
+  --color-white: #FFFCF0;
+
+  /* ---- diffs ---- */
+  --color-diff-added-linenum-bg: #313D07;   /* green-850 */
+  --color-diff-added-row-bg: #252D09;       /* green-900 */
+  --color-diff-added-row-border: #3D4C07;   /* green-800 */
+  --color-diff-added-word-bg: #536907;      /* green-700 */
+  --color-diff-moved-row-bg: #664D01;       /* yellow-800 */
+  --color-diff-moved-row-border: #AD8301;   /* yellow-600 */
+  --color-diff-removed-linenum-bg: #551B18; /* red-850 */
+  --color-diff-removed-row-bg: #3E1715;     /* red-900 */
+  --color-diff-removed-row-border: #6C201C; /* red-800 */
+  --color-diff-removed-word-bg: #942822;    /* red-700 */
+  --color-diff-inactive: #1C1B1A;
+
+  /* ---- states ---- */
+  --color-error-border: #C03E35;   /* red-500 */
+  --color-error-bg: #261312;       /* red-950 */
+  --color-error-bg-active: #551B18;/* red-850 */
+  --color-error-bg-hover: #3E1715; /* red-900 */
+  --color-error-text: #F89A8A;     /* red-200 */
+  --color-success-border: #768D21; /* green-500 */
+  --color-success-bg: #1A1E0C;     /* green-950 */
+  --color-success-text: #A0AF54;   /* green-300 */
+  --color-warning-border: #BE9207; /* yellow-500 */
+  --color-warning-bg: #241E08;     /* yellow-950 */
+  --color-warning-text: #DFB431;   /* yellow-300 */
+  --color-info-border: #3171B2;    /* blue-500 */
+  --color-info-bg: #101A24;        /* blue-950 */
+  --color-info-text: #66A0C8;      /* blue-300 */
+
+  /* ---- badges ---- */
+  --color-red-badge: #D14D41;
+  --color-red-badge-bg: #D14D411a;
+  --color-red-badge-hover-bg: #D14D414d;
+  --color-green-badge: #879A39;
+  --color-green-badge-bg: #879A391a;
+  --color-green-badge-hover-bg: #879A394d;
+  --color-yellow-badge: #D0A215;
+  --color-yellow-badge-bg: #D0A2151a;
+  --color-yellow-badge-hover-bg: #D0A2154d;
+  --color-orange-badge: #DA702C;
+  --color-orange-badge-bg: #DA702C1a;
+  --color-orange-badge-hover-bg: #DA702C4d;
+
+  /* ---- target-based ---- */
+  --color-body: #1C1B1A;               /* base-950 */
+  --color-box-header: #161514;
+  --color-box-body: #100F0F;           /* black */
+  --color-box-body-highlight: #1C1B1A;
+  --color-text-dark: #F2F0E5;          /* base-50 */
+  --color-text: #CECDC3;               /* base-200 */
+  --color-text-light: #B7B5AC;         /* base-300 */
+  --color-text-light-1: #9F9D96;       /* base-400 */
+  --color-text-light-2: #878580;       /* base-500 */
+  --color-text-light-3: #6F6E69;       /* base-600 */
+  --color-footer: var(--color-nav-bg);
+  --color-timeline: #403E3C;
+  --color-input-text: var(--color-text-dark);
+  --color-input-background: #100F0F;
+  --color-input-toggle-background: #403E3C;
+  --color-input-border: var(--color-secondary);
+  --color-input-border-hover: var(--color-secondary-dark-1);
+  --color-light: #100F0F28;
+  --color-light-mimic-enabled: rgba(0, 0, 0, calc(40 / 255 * 222 / 255 / var(--opacity-disabled)));
+  --color-light-border: #FFFCF028;
+  --color-hover: #FFFCF014;
+  --color-active: #FFFCF01f;
+  --color-menu: #161514;
+  --color-card: #161514;
+  --color-markup-table-row: #FFFCF00f;
+  --color-markup-code-block: #FFFCF012;
+  --color-markup-code-inline: #FFFCF028;
+  --color-button: #161514;
+  --color-code-bg: #100F0F;
+  --color-shadow: #00000058;
+  --color-secondary-bg: #282726;
+  --color-expand-button: #343331;
+  --color-placeholder-text: var(--color-text-light-3);
+  --color-editor-line-highlight: var(--color-primary-light-5);
+  --color-project-board-bg: var(--color-secondary-light-2);
+  --color-caret: var(--color-text);
+  --color-reaction-bg: #FFFCF012;
+  --color-reaction-hover-bg: var(--color-primary-light-4);
+  --color-reaction-active-bg: var(--color-primary-light-5);
+  --color-tooltip-text: #FFFCF0;
+  --color-tooltip-bg: #100F0Ff0;
+  --color-nav-bg: #100F0F;
+  --color-nav-hover-bg: var(--color-secondary-light-1);
+  --color-nav-text: var(--color-text);
+  --color-secondary-nav-bg: #161514;
+  --color-label-text: var(--color-text);
+  --color-label-bg: #6F6E694b;
+  --color-label-hover-bg: #6F6E69a0;
+  --color-label-active-bg: #6F6E69ff;
+  --color-accent: var(--color-primary-dark-1);
+  --color-small-accent: var(--color-primary-light-5);
+  --color-highlight-fg: #DFB431; /* yellow-300 */
+  --color-highlight-bg: #3A2D04; /* yellow-900 */
+  --color-overlay-backdrop: #100F0Fc0;
+  accent-color: var(--color-accent);
+  color-scheme: dark;
+}
+
+/*
+ * Syntax highlighting (chroma) — Flexoki code mapping:
+ * keywords green · functions orange · strings cyan · constants purple
+ * variables/attributes blue · types yellow · comments muted
+ */
+.chroma .k, .chroma .kd, .chroma .kn,
+.chroma .kp, .chroma .kr { color: #879A39; }            /* keyword: green-400 */
+.chroma .kt, .chroma .nc, .chroma .nn { color: #D0A215; } /* type/class: yellow-400 */
+.chroma .nf, .chroma .fm, .chroma .nd { color: #DA702C; } /* function: orange-400 */
+.chroma .s, .chroma .sa, .chroma .sb, .chroma .sc, .chroma .dl,
+.chroma .sd, .chroma .s2, .chroma .se, .chroma .sh, .chroma .si,
+.chroma .sx, .chroma .sr, .chroma .s1, .chroma .ss { color: #3AA99F; } /* string: cyan-400 */
+.chroma .m, .chroma .mb, .chroma .mf, .chroma .mh, .chroma .mi,
+.chroma .il, .chroma .mo, .chroma .kc { color: #8B7EC8; } /* number/const: purple-400 */
+.chroma .no, .chroma .bp { color: #8B7EC8; }
+.chroma .na, .chroma .nv, .chroma .vc, .chroma .vg,
+.chroma .vi, .chroma .vm, .chroma .nb { color: #4385BE; } /* variable/attr: blue-400 */
+.chroma .nt { color: #4385BE; }                           /* tags: blue-400 */
+.chroma .n, .chroma .nx, .chroma .py, .chroma .ni,
+.chroma .nl, .chroma .ne { color: #CECDC3; }              /* names: tx */
+.chroma .o, .chroma .ow, .chroma .p { color: #878580; }   /* operator/punct: tx-2 */
+.chroma .c, .chroma .ch, .chroma .cm, .chroma .cs,
+.chroma .c1, .chroma .cp, .chroma .cpf { color: #6F6E69; font-style: italic; } /* comment: tx-3 */
+.chroma .err { color: #D14D41; }                          /* error: red-400 */
+.chroma .gd { color: #D14D41; background-color: #3E1715; }
+.chroma .gi { color: #879A39; background-color: #252D09; }
+.chroma .gh, .chroma .gu { color: #4385BE; font-weight: 600; }
+.chroma .ge { font-style: italic; }
+.chroma .gs { font-weight: 600; }
