@@ -9,6 +9,14 @@ A Flexoki port for terminal coding agents in the [pi](https://github.com/earendi
 
 Oh My Pi adds 15 color tokens that pi does not have (`pythonMode` and the 14 `statusLine*` tokens). The files define all of them, and pi ignores the ones it does not use, so a single pair of themes covers both. No separate variants are needed.
 
+## Flexoki Dark
+
+![Flexoki Dark - Pi](screenshots/dark.png)
+
+## Flexoki Light
+
+![Flexoki Light - Pi](screenshots/light.png)
+
 ## Installation
 
 Custom themes are JSON files discovered by filename in the agent's themes directory. Copy them to whichever agent you use — or both.
