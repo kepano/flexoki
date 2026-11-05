@@ -15,6 +15,7 @@ Flexoki is available for the following apps and tools.
 ### Apps
 
 - [Alacritty](https://github.com/kepano/flexoki/tree/main/alacritty) by @willtheodore
+- [BB](https://github.com/ponomr/bb-plugin-flexoki) by @ponomr
 - [Chrome](https://github.com/kepano/flexoki/tree/main/chrome) by @FormalSnake
 - [Discord](https://github.com/kepano/flexoki/tree/main/discord) by @thatoddshade using [Discord Recolor](https://github.com/mwittrien/BetterDiscordAddons/tree/master/Themes/DiscordRecolor)
 - [Drafts](https://github.com/kepano/flexoki/tree/main/drafts) by @jihad
